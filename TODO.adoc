@@ -1,0 +1,6 @@
+//TODO Refactor root includes
+//TODO Proofreading
+//TODO Copyrights
+//TODO Test examples
+//TODO Harmonize header attributes
+//TODO Maybe find better names for directories/categories

@@ -1,0 +1,17 @@
+// Copyright (c) 2020, RTE (http://www.rte-france.com)
+//
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+OperatorFabric is a modular, extensible, industrial-strength and field-tested
+platform for use in electricity, water, and other utility operations.
+
+* System visualization and console integration
+* Precise alerting
+* Workflow scheduling
+* Historian
+* Scripting (ex: Python, JavaScript)
+
+It is an open source project initiated by http://www.rte-france.com/[RTE]
+with https://www.lfenergy.org/[LF Energy].

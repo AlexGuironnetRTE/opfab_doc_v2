@@ -1,0 +1,2 @@
+CICD/prepare_release_version.sh:: performs the changes necessary to tag a RELEASE version
+CICD/prepare_snapshot_version.sh:: performs the changes necessary to tag a SNAPSHOT version

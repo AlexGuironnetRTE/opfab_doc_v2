@@ -1,0 +1,19 @@
+== Environment variables
+
+These variables are loaded by bin/load_environment_light.sh
+bin/load_environment_ramdisk.sh
+
+* OF_HOME: OperatorFabric root dir
+* OF_CORE: OperatorFabric business services subroot dir
+* OF_INFRA: OperatorFabric infrastructure services subroot dir
+* OF_CLIENT: OperatorFabric client data definition subroot dir
+* OF_TOOLS: OperatorFabric tooling libraries subroot dir
+
+Additionally, you may want to configure the following variables
+
+* Docker build proxy configuration (used to configure alpine apk proxy
+settings)
+** APK_PROXY_URI
+** APK_PROXY_HTTPS_URI
+** APK_PROXY_USER
+** APK_PROXY_PASSWORD
