@@ -1,6 +1,30 @@
+//TODO Move existing 1.0.0.RELEASE content (core and website) to new repo
+//TODO Add changes to 1.0.0.RELEASE notes
 //TODO Refactor root includes
 //TODO Proofreading
 //TODO Copyrights
 //TODO Test examples
 //TODO Harmonize header attributes
 //TODO Maybe find better names for directories/categories
+//TODO Check links
+//TODO Organize images
+//TODO Replace drawio files by svg or png with embedded drawio info
+//TODO Check all images
+//TODO Add link to API doc
+
+//TODO Add HSA archive doc
+//TODO Create 1.1.0.RELEASE or SNAPSHOT using diff
+
+//TODO Turn doc into simple website
+//TODO Test generation
+//TODO Put it on mock website
+//TODO Change gradle tasks and travis on mock
+//TODO Decide how to present archives
+//TODO Read back notes
+//TODO Document new documentation org, guidelines and pipelines
+
+// Optional
+//TODO What should we do with javadoc/compodoc
+//TODO What should we do with security/dependencies reports
+//TODO What should we do with posts?
+//TODO What should we do with <1.0.0 docs
