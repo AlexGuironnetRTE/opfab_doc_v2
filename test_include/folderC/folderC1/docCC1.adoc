@@ -1,0 +1,11 @@
+:imagesdir: ../../images
+
+= DocCC1
+
+Text for doc CC1.
+
+Image included in CC1 (image_3.png)
+
+image::image_3.png[]
+
+*End of doc CC1.*

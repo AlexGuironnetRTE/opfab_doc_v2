@@ -1,0 +1,11 @@
+:imagesdir: images
+
+= DocA
+
+Text for doc A.
+
+Image included in A (image_4.png)
+
+image::image_4.png[]
+
+*End of doc A.*
