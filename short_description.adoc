@@ -13,5 +13,9 @@ platform for use in electricity, water, and other utility operations.
 * Historian
 * Scripting (ex: Python, JavaScript)
 
+NOTE: Workflow Scheduling could be addressed either as an internal module or
+through simplified and standardized (BPMN) integration with external workflow
+engines, we're still weighing the pros and cons of the two options._
+
 It is an open source project initiated by http://www.rte-france.com/[RTE]
 with https://www.lfenergy.org/[LF Energy].
