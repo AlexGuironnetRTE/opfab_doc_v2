@@ -1,5 +1,3 @@
-//TODO Move existing 1.0.0.RELEASE content (core and website) to new repo
-//TODO Add changes to 1.0.0.RELEASE notes
 //TODO Refactor root includes
 //TODO Proofreading
 //TODO Copyrights
@@ -13,6 +11,7 @@
 //TODO Add link to API doc
 
 //TODO Add HSA archive doc
+//TODO Add CICD doc
 //TODO Create 1.1.0.RELEASE or SNAPSHOT using diff
 
 //TODO Turn doc into simple website
@@ -28,3 +27,4 @@
 //TODO What should we do with security/dependencies reports
 //TODO What should we do with posts?
 //TODO What should we do with <1.0.0 docs
+

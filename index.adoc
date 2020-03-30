@@ -6,21 +6,14 @@
 
 :revnumber: 1.0.0.RELEASE
 :revdate: 09 March 2020
-:imagesdir: ../images
 :sectnums:
 :toc: left
-:toclevels: 2
+:toclevels: 3
 :icons: font
 :hide-uri-scheme:
 
-//TODO
+= OperatorFabric Documentation
 
+include::architecture/index.adoc[leveloffset=+1]
 
-
-Imagedir is {imagesdir}
-
-ifdef::env-github[]
-This content is for GitHub only. 1
-endif::[]
-
-include::../business_description.adoc[]
+include::CICD/index.adoc[leveloffset=+1]

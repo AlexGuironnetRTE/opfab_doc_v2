@@ -7,7 +7,7 @@
 
 = Cloud Registry service
 
-Operator Fabric Registry service is a Spring Eureka application
+OperatorFabric Registry service is a Spring Eureka application
 bootstrapped using SpringBoot.
 
 In our spring micro service architecture Eureka Registry instances are the second

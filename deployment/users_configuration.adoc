@@ -7,7 +7,7 @@
 
 = Users Business service
 
-Operator Fabric Users Business service is a Spring MVC application
+OperatorFabric Users Business service is a Spring MVC application
 bootstrapped using SpringBoot.
 
 In our spring micro service architecture this service depends on Eureka

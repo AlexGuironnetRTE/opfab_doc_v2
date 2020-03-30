@@ -7,7 +7,7 @@
 
 = Cards-Publication Business service
 
-Operator Fabric Cards-Publication Business service is a Spring Webflux application
+OperatorFabric Cards-Publication Business service is a Spring Webflux application
 bootstrapped using SpringBoot.
 
 In our spring micro service architecture this service depends on Eureka

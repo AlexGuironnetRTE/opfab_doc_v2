@@ -7,7 +7,7 @@
 
 = Cloud Configuration service
 
-Operator Fabric Configuration service is a Spring Cloud Config application
+OperatorFabric Configuration service is a Spring Cloud Config application
 bootstrapped using SpringBoot.
 
 In our spring micro service architecture Configuration instances are the first

@@ -7,7 +7,7 @@
 
 = Cloud Gateway service
 
-Operator Fabric Client Gateway service is a Spring Cloud Gateway application
+OperatorFabric Client Gateway service is a Spring Cloud Gateway application
 bootstrapped using SpringBoot.
 
 In our spring micro service architecture the gateway service depends on Eureka

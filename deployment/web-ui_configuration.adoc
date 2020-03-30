@@ -7,7 +7,7 @@
 
 = Web UI
 
-Operator Fabric Web UI service is a Spring MVC application bootstrapped using
+OperatorFabric Web UI service is a Spring MVC application bootstrapped using
 SpringBoot. Its sole purpose is to serve the Angular SPA to browsers.
 
 In our spring micro service architecture this service depends on Eureka

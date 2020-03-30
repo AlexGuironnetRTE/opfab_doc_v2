@@ -4,9 +4,9 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-== Versioning
+= Release process
 
-=== Version numbers
+== Version numbers
 
 Version numbers X.Y.Z.label should be understood like this:
 
@@ -18,7 +18,7 @@ the same major version.
 ** SNAPSHOT: a version whose development is in progress, nightly builds only deliver SNAPSHOT versions
 ** RELEASE: a version whose development is finished
 
-=== Releasing Version
+== Releasing Version
 
 IMPORTANT: To release a version we use some Travis dedicated jobs. These jobs are triggered by specific commit keywords and rely
 on the VERSION file at the root of this repository to know which version is being produced.
@@ -28,7 +28,7 @@ Before releasing a version, you need to prepare the release.
 
 Considering a version X.X.X.SNAPSHOT.
 
-==== In the source repository (operatorfabric-core)
+=== In the source repository (operatorfabric-core)
 
 . Use the ./CICD/prepare_release_version.sh script to automatically perform all the necessary changes:
 +
@@ -97,7 +97,7 @@ repository, so instead you can just type https://opfab.github.io/documentation/X
 . Check that the tag was correctly pushed to GitHub and is visible under the
 https://github.com/opfab/operatorfabric-core/releases[releases page] for the repository.
 
-==== Checking deploy docker-compose
+=== Checking deploy docker-compose
 
 The deploy docker-compose file should always rely on the latest RELEASE version
 available on DockerHub. Once the CI pipeline triggered by the previous steps has completed successfully,
@@ -106,7 +106,7 @@ and you can see X.X.X.RELEASE images for all services on DockerHub, you should:
 . Remove your locally built X.X.X.RELEASE images if any
 . Run each of the two docker-compose files to make sure they pull the images from DockerHub and behave as intended.
 
-==== In the documentation repository (opfab.github.io)
+=== In the documentation repository (opfab.github.io)
 
 . In the _data/versions.yml file:
 +
@@ -139,13 +139,13 @@ to:
 +
 . Commit and push changes
 
-==== In Jira
+=== In Jira
 
 . Set all concerned tickets (US, BUG, FR) and set fix version to X.X.X.RELEASE
 
 . In the "Releases" screen release X.X.X.RELEASE version
 
-=== Advertising the new release (opfab.github.io and mailing list)
+== Advertising the new release (opfab.github.io and mailing list)
 
 . Click the appropriate version from
 https://opfab.atlassian.net/projects/OC?orderField=RANK&selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=all[JIRA the release list]
@@ -159,7 +159,7 @@ This post should highlight new features and necessary upgrade actions if any.
 
 . Send the same content as an email to the opfab-announce@lists.lfenergy.org mailing list.
 
-=== Preparing next version
+== Preparing next version
 
 IMPORTANT: You should wait for all the tasks associated with creating the X.X.X.RELEASE
 version to finish and make sure that they've had the expected output before starting the
@@ -168,7 +168,7 @@ new version will make rolling back or correcting any mistake on the release more
 
 To prepare a next version you simply need to increment the version after a release (see <<Version numbers>>).
 
-==== In the source repository (operatorfabric-core)
+=== In the source repository (operatorfabric-core)
 
 . Use the ./CICD/prepare_snapshot_version.sh script to automatically perform all the necessary changes:
 +
@@ -196,7 +196,7 @@ notes for next version.
 [PREPARE] next version: Y.Y.Y.SNAPSHOT
 ```
 
-==== In the documentation repository (opfab.github.io)
+=== In the documentation repository (opfab.github.io)
 
 . In the _data/versions.yml file, add the Y.Y.Y.SNAPSHOT version
 +
@@ -210,11 +210,11 @@ notes for next version.
 
 . Commit and push changes.
 
-==== In Jira
+=== In Jira
 
 . In the "Releases" screen create a  Y.Y.Y.RELEASE version.
 
-==== Checking DockerHub the following day
+=== Checking DockerHub the following day
 
 A CRON Travis job runs daily (the time of the day may vary) and generates the documentation and docker snapshot images.
 After you have finished switching to the Y.Y.Y.SNAPSHOT version, you should wait for such a job to run and check that

@@ -17,7 +17,7 @@
 :hide-uri-scheme:
 
 Third service is used by third party service to customize some parts of OperatorFabric to fit their needs.
-It allows to refine Operator Fabric behavior regarding:
+It allows to refine OperatorFabric behavior regarding:
 
 * Published card details rendering
 * Card available actions and rendering

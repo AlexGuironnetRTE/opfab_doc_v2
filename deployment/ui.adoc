@@ -10,7 +10,7 @@
 
 This project was partially generated with https://github.com/angular/angular-cli[Angular CLI] version 6.0.8.
 
-IMPORTANT: In the following document the variable declared as `OF_HOME` is the root folder of the `operator fabric core project`.
+IMPORTANT: In the following document the variable declared as `OF_HOME` is the root folder of the `operatorfabric-core project`.
 
 [horizontal]
 CLI:: stands for *Command Line Interface*

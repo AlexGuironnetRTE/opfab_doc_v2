@@ -316,7 +316,7 @@ You should see in the UI the detail card with the new template.
 ==== Internationalization
 If you switch langage to french in the UI (Settings menu on the top rigth of the screen), you should see the cards in french.
 
-Operator fabric will use templates define in repository "template/fr" and keys define in "i18n/fr.json".
+OperatorFabric will use templates define in repository "template/fr" and keys define in "i18n/fr.json".
 
 === Example 3 : Process with state
 
@@ -326,7 +326,7 @@ For this example , we will set the following process :
 - Step 2 : The critical situation evolve
 - Step 3 : The critical situation ended 
 
-To modelise this process in operator fabric, we will use a "Process" with "States"  , we will modelize this in the config.json of the bundle :
+To modelise this process in OperatorFabric, we will use a "Process" with "States"  , we will modelize this in the config.json of the bundle :
 
 ----
 {

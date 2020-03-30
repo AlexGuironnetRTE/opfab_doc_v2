@@ -60,7 +60,7 @@ de.json
 
 Supported media files type : * ogg * wav * mp3
 
-Due to web nature of Operator Fabric, we encourage business modules provider to
+Due to web nature of OperatorFabric, we encourage business modules provider to
 favor the lightest file formats (ogg,mp3, ...)
 
 [[templates]]
@@ -76,7 +76,7 @@ are fuelled with a scope structure composed of
    ** *firstName*: user first name
    ** *lastName*: user last name
 
-In addition to Handlebars basic syntax and helpers, Operator Fabric defines the
+In addition to Handlebars basic syntax and helpers, OperatorFabric defines the
 following helpers :
 
 [[numberformat]]

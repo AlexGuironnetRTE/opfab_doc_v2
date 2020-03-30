@@ -5,12 +5,12 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 
-== Deploying Operator Fabric
+== Deploying OperatorFabric
 
-For now Operator Fabric consist of Docker images available either by compiling
+For now OperatorFabric consist of Docker images available either by compiling
 the project or by using images releases from Dockerhub.
 
-=== Deploy Operator Fabric With Docker
+=== Deploy OperatorFabric With Docker
 
 All our services are build as images. They are deployed on the public
 link:https://hub.docker.com/[docker hub]

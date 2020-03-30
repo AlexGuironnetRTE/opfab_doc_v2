@@ -4,12 +4,11 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-:revnumber: 
+:revnumber: 1.0.0.RELEASE
 :revdate: 09 March 2020
-:imagesdir: images
 :sectnums:
 :toc: left
-:toclevels: 2
+:toclevels: 3
 :icons: font
 :hide-uri-scheme:
 
@@ -24,16 +23,14 @@ deals with and then showing how this translates into the technical architecture.
 
 == Business Architecture
 
-Operator Fabric is based on the concept of *cards*, which contain data regarding events that are relevant for the
+OperatorFabric is based on the concept of *cards*, which contain data regarding events that are relevant for the
 operator.
 A third party tool publish cards and the cards are received on the screen of the operators. Depending on the type
 of the cards, the operator  can send back information to the third party via an "action".
 
-
 === Business components
 
 image::FunctionalDiagram.jpg[functional diagram]
-
 
 To do the job, the following business components are defined:  
 
@@ -57,9 +54,6 @@ image::BusinessObjects.jpg[business objects diagram]
 * State : the step in the process
 * Card Rendering : data for card rendering 
 * Action : a list of possible actions for a specific state in a process
-
-
-
 
 == Technical Architecture
 
@@ -99,7 +93,6 @@ compliant accesses. It provide the rooting and load balancing for accessing the 
 
 A configuration service is not mandatory in a micro-services architecture but may allow for better sharing of common configuration and
 to dispatch global configuration changes to all services. It is implemented via https://cloud.spring.io/spring-cloud-config/reference/html/[Spring Cloud Config].
-
 
 ==== Broker
 
