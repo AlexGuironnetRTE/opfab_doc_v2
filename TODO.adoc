@@ -5,16 +5,21 @@
 //TODO Harmonize header attributes
 //TODO Maybe find better names for directories/categories
 //TODO Check links
-//TODO Organize images
-//TODO Replace drawio files by svg or png with embedded drawio info
+
 //TODO Check all images
 //TODO Add link to API doc
+
+//TODO yml examples: links to github repo, include from github repo, include copies? tradeoff between self-sufficient
+//and risk that 1) content is not available at the time of generation 2) content evolves (rather than remaining snapshot
+// of what it was for this version) -> not for html
 
 //TODO Add HSA archive doc
 //TODO Add CICD doc
 //TODO Create 1.1.0.RELEASE or SNAPSHOT using diff
+//TODO Organize root content
 
 //TODO Turn doc into simple website
+//TODO Replace file copies by includes from code
 //TODO Test generation
 //TODO Put it on mock website
 //TODO Change gradle tasks and travis on mock
@@ -27,4 +32,7 @@
 //TODO What should we do with security/dependencies reports
 //TODO What should we do with posts?
 //TODO What should we do with <1.0.0 docs
-
+//TODO Includes seem to work ok out of the box, check what happens with relative links.
+//TODO Is there a way to have links that work both in adoc and html?
+//TODO Organize images
+//TODO Replace drawio files by svg or png with embedded drawio info

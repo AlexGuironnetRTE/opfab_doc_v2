@@ -12,22 +12,12 @@
 :icons: font
 :hide-uri-scheme:
 
-= OperatorFabric Documentation
+= OperatorFabric Community
 
-include::architecture/index.adoc[leveloffset=+1]
+== Introduction
 
-include::CICD/index.adoc[leveloffset=+1]
+The aim of this document is to present the OperatorFabric community, its code of conduct and to welcome contributors!
 
-include::community/index.adoc[leveloffset=+1]
+include::CONTRIBUTING.adoc[leveloffset=+1]
 
-include::deployment/index.adoc[leveloffset=+1]
-
-//TODO dev_env
-
-//TODO getting_started
-
-//TODO reference_documentation
-
-include::release_notes/index.adoc[leveloffset=+1]
-
-//TODO Reorder
+include::CODE_OF_CONDUCT.adoc[leveloffset=+1]

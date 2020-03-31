@@ -5,11 +5,11 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 = Contributing
+
 :revnumber: 1.0.0.RELEASE
 :revdate: 09 March 2020
-:imagesdir: images
 :sectnums:
-:toc: macro
+:toc: left
 :toclevels: 2
 :icons: font
 :hide-uri-scheme:
@@ -20,8 +20,6 @@ We can't stress enough that feedback, discussions, questions and contributions o
 appreciated.
 However, because the project is still in its early stages, we're not fully equipped for any of it yet, so please bear
 with us while the contribution process and tooling are sorted out.
-
-toc::[]
 
 == Code of Conduct
 

@@ -4,6 +4,13 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+:revnumber: 1.0.0.RELEASE
+:revdate: 09 March 2020
+:sectnums:
+:toc: left
+:icons: font
+:hide-uri-scheme:
+
 = RabbitMQ
 
 == Docker container
@@ -58,5 +65,3 @@ _if the MQTT plugin is enabled_)
 
 See the https://www.rabbitmq.com/production-checklist.html[guide] for
 production configuration guidelines
-
-*_TODO : summarize configuration for a default production environment_*
