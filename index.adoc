@@ -16,17 +16,27 @@
 
 include::architecture/index.adoc[leveloffset=+1]
 
-include::CICD/index.adoc[leveloffset=+1]
+include::getting_started/index.adoc[leveloffset=+1]
 
-include::community/index.adoc[leveloffset=+1]
+//TODO reference_documentation
 
 include::deployment/index.adoc[leveloffset=+1]
 
 //TODO dev_env
 
-//TODO getting_started
+include::community/index.adoc[leveloffset=+1]
 
-//TODO reference_documentation
+include::CICD/index.adoc[leveloffset=+1]
+
+
+
+
+
+
+
+
+
+
 
 include::release_notes/index.adoc[leveloffset=+1]
 

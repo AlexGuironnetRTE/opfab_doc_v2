@@ -12,8 +12,8 @@
 :icons: font
 :hide-uri-scheme:
 
-include::../website/repo_badges.adoc[]
-include::../website/short_description.adoc[]
+include::repo_badges.adoc[]
+include::short_description.adoc[]
 
 toc::[]
 
@@ -25,17 +25,15 @@ link:https://opfab.github.io/documentation/1.0.0.RELEASE/start/[Getting
 Started guide on our website] exists.
 Check it out !
 
-
 == Docker demo
 
-A global docker compose files for demonstration purposes is available at
+A global docker-compose file for demonstration purposes is available at
 link:src/main/docker/deploy[src/main/docker/deploy] : sets up all services,
 ready for card reception
 
 *This setup expose the application UI at localhost:2002/ui/*
 
 WARNING: Don't forget the *final slash* in the URL or you will get an error.
-
 
 == Open source
 

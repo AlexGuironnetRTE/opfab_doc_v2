@@ -4,20 +4,15 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-
-
-
 :revnumber: 1.0.0.RELEASE
 :revdate: 09 March 2020
-:imagesdir: images
 :sectnums:
 :toc: left
 :toclevels: 2
-:toc-title: Get Started
 :icons: font
 :hide-uri-scheme:
 
-= OperatorFabric Get Started
+= OperatorFabric Getting Started
 
 == Prerequisites 
 To use OperatorFabric, you need a linux OS with the following :
@@ -500,3 +495,5 @@ A second card (card2.json) is provided as example, you need again to set times v
 This time the criticity of the card is ALERT, you should see the point in red in the timeline 
 
 image::example4.jpg[example 4 screenshot]
+
+include::troubleshooting.adoc[leveloffset=+1]

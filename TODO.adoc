@@ -5,6 +5,8 @@
 //TODO Harmonize header attributes
 //TODO Maybe find better names for directories/categories
 //TODO Check links
+//TODO Change links starting with https://opfab.github.io/documentation
+//TODO Add link back to summary (only for html?)
 
 //TODO Check all images
 //TODO Add link to API doc
@@ -17,6 +19,8 @@
 //TODO Add CICD doc
 //TODO Create 1.1.0.RELEASE or SNAPSHOT using diff
 //TODO Organize root content
+//TODO Cross-reference troubleshooting and organize into sections
+//TODO Do links work in single page document?
 
 //TODO Turn doc into simple website
 //TODO Replace file copies by includes from code
