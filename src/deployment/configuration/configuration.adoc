@@ -112,7 +112,7 @@ Below are description of OperatorFabric specific configuration properties.
 Note that other components may have specific configuration, see the relevant
 sub-sections.
 
-include::security_configuration.adoc[leveloffset=+4]
+include::security_configuration.adoc[leveloffset=+2]
 //TODO Should it all be here? Maybe move detailed explanations out of configuration... might be difficult to tease it apart
 
 === User creation
