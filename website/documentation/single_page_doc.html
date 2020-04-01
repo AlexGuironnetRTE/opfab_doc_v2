@@ -437,7 +437,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article toc2 toc-left">
+<body class="book toc2 toc-left">
 <div id="header">
 <h1>OperatorFabric Documentation</h1>
 <div class="details">
@@ -446,124 +446,244 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
+<ul class="sectlevel0">
+<li><a href="#_operatorfabric_architecture">OperatorFabric Architecture</a>
 <ul class="sectlevel1">
-<li><a href="#_operatorfabric_architecture">1. OperatorFabric Architecture</a>
+<li><a href="#_introduction">1. Introduction</a></li>
+<li><a href="#_business_architecture">2. Business Architecture</a>
 <ul class="sectlevel2">
-<li><a href="#_introduction">1.1. Introduction</a></li>
-<li><a href="#_business_architecture">1.2. Business Architecture</a>
-<ul class="sectlevel3">
-<li><a href="#_business_components">1.2.1. Business components</a></li>
-<li><a href="#_business_objects">1.2.2. Business objects</a></li>
+<li><a href="#_business_components">2.1. Business components</a></li>
+<li><a href="#_business_objects">2.2. Business objects</a></li>
 </ul>
 </li>
-<li><a href="#_technical_architecture">1.3. Technical Architecture</a>
-<ul class="sectlevel3">
-<li><a href="#_business_components_2">1.3.1. Business components</a></li>
-<li><a href="#_technical_components">1.3.2. Technical components</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#_operatorfabric_getting_started">2. OperatorFabric Getting Started</a>
+<li><a href="#_technical_architecture">3. Technical Architecture</a>
 <ul class="sectlevel2">
-<li><a href="#_prerequisites">2.1. Prerequisites</a></li>
-<li><a href="#_install_and_run_server">2.2. Install and run server</a></li>
-<li><a href="#_examples">2.3. Examples</a>
+<li><a href="#_business_components_2">3.1. Business components</a></li>
+<li><a href="#_technical_components">3.2. Technical components</a>
 <ul class="sectlevel3">
-<li><a href="#_example_1_send_and_update_a_basic_card">2.3.1. Example 1 : Send and update a basic card</a></li>
-<li><a href="#_example_2_publish_a_new_bundle">2.3.2. Example 2 : Publish a new bundle</a></li>
-<li><a href="#_example_3_process_with_state">2.3.3. Example 3 : Process with state</a></li>
-<li><a href="#_example_4_time_line">2.3.4. Example 4 : Time Line</a></li>
-</ul>
-</li>
-<li><a href="#_troubleshooting">2.4. Troubleshooting</a>
-<ul class="sectlevel3">
-<li><a href="#_my_bundle_is_not_loaded">2.4.1. My bundle is not loaded</a></li>
-<li><a href="#_i_cant_upload_my_bundle">2.4.2. I can&#8217;t upload my bundle</a></li>
-<li><a href="#_my_bundle_is_rejected_due_to_internal_structure">2.4.3. My bundle is rejected due to internal structure</a></li>
-<li><a href="#_no_template_display">2.4.4. No template display</a></li>
-<li><a href="#_my_template_is_not_used">2.4.5. My template is not used.</a></li>
-<li><a href="#_my_value_is_not_displayed_in_the_detail_template">2.4.6. My value is not displayed in the detail template</a></li>
+<li><a href="#_registry">3.2.1. Registry</a></li>
+<li><a href="#_gateway">3.2.2. Gateway</a></li>
+<li><a href="#_configuration">3.2.3. Configuration</a></li>
+<li><a href="#_broker">3.2.4. Broker</a></li>
+<li><a href="#_authentication">3.2.5. Authentication</a></li>
+<li><a href="#_database">3.2.6. Database</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_deployment_and_administration_of_operatorfabric">3. Deployment and Administration of OperatorFabric</a>
+</ul>
+</li>
+<li><a href="#_operatorfabric_getting_started">OperatorFabric Getting Started</a>
+<ul class="sectlevel1">
+<li><a href="#_prerequisites">4. Prerequisites</a></li>
+<li><a href="#_install_and_run_server">5. Install and run server</a></li>
+<li><a href="#_examples">6. Examples</a>
 <ul class="sectlevel2">
-<li><a href="#_introduction_2">3.1. Introduction</a></li>
-<li><a href="#_deployment">3.2. Deployment</a></li>
-<li><a href="#_rabbitmq">3.3. RabbitMQ</a>
+<li><a href="#_example_1_send_and_update_a_basic_card">6.1. Example 1 : Send and update a basic card</a>
 <ul class="sectlevel3">
-<li><a href="#_docker_container">3.3.1. Docker container</a></li>
-<li><a href="#_server_installation">3.3.2. Server installation</a></li>
+<li><a href="#_anatomy_of_the_card">6.1.1. Anatomy of the card :</a></li>
+<li><a href="#_update_the_card">6.1.2. Update the card</a></li>
+<li><a href="#_delete_the_card">6.1.3. Delete the card</a></li>
 </ul>
 </li>
-<li><a href="#_configuration_2">3.4. Configuration</a>
+<li><a href="#_example_2_publish_a_new_bundle">6.2. Example 2 : Publish a new bundle</a>
 <ul class="sectlevel3">
-<li><a href="#_global_configuration">3.4.1. Global configuration</a></li>
-<li><a href="#_operatorfabric_mongo_configuration">3.4.2. OperatorFabric Mongo configuration</a></li>
-<li><a href="#_operatorfabric_specific_configuration">3.4.3. OperatorFabric Specific configuration</a></li>
-<li><a href="#_service_specific_configuration">3.4.4. Service-specific configuration</a></li>
-<li><a href="#_users_and_groups_administration">3.4.5. Users and Groups Administration</a></li>
+<li><a href="#_package_you_bundle">6.2.1. Package you bundle</a></li>
+<li><a href="#_get_a_token">6.2.2. Get a Token</a></li>
+<li><a href="#_send_the_bundle">6.2.3. Send the bundle</a></li>
+<li><a href="#_send_a_card">6.2.4. Send a card</a></li>
+<li><a href="#_internationalization">6.2.5. Internationalization</a></li>
 </ul>
 </li>
-<li><a href="#_service_port_table">3.5. Service port table</a></li>
-<li><a href="#_restricted_operations_administration">3.6. Restricted operations (administration)</a></li>
+<li><a href="#_example_3_process_with_state">6.3. Example 3 : Process with state</a></li>
+<li><a href="#_example_4_time_line">6.4. Example 4 : Time Line</a></li>
 </ul>
 </li>
-<li><a href="#_operatorfabric_community">4. OperatorFabric Community</a>
+<li><a href="#_troubleshooting">7. Troubleshooting</a>
 <ul class="sectlevel2">
-<li><a href="#_introduction_3">4.1. Introduction</a></li>
-<li><a href="#_contributing">4.2. Contributing</a>
+<li><a href="#_my_bundle_is_not_loaded">7.1. My bundle is not loaded</a>
 <ul class="sectlevel3">
-<li><a href="#_code_of_conduct">4.2.1. Code of Conduct</a></li>
-<li><a href="#_license_and_developer_certificate_of_origin">4.2.2. License and Developer Certificate of Origin</a></li>
-<li><a href="#_how_can_i_contribute">4.2.3. How Can I Contribute ?</a></li>
-<li><a href="#_project_governance">4.2.4. Project Governance</a></li>
-<li><a href="#_communication_channels">4.2.5. Communication channels</a></li>
+<li><a href="#_solution">7.1.1. Solution</a></li>
 </ul>
 </li>
-<li><a href="#_contributor_covenant_code_of_conduct">4.3. Contributor Covenant Code of Conduct</a>
+<li><a href="#_i_cant_upload_my_bundle">7.2. I can&#8217;t upload my bundle</a>
 <ul class="sectlevel3">
-<li><a href="#_our_pledge">4.3.1. Our Pledge</a></li>
-<li><a href="#_our_standards">4.3.2. Our Standards</a></li>
-<li><a href="#_our_responsibilities">4.3.3. Our Responsibilities</a></li>
-<li><a href="#_scope">4.3.4. Scope</a></li>
-<li><a href="#_enforcement">4.3.5. Enforcement</a></li>
-<li><a href="#_attribution">4.3.6. Attribution</a></li>
+<li><a href="#_format_verification">7.2.1. Format verification</a></li>
+<li><a href="#_solution_2">7.2.2. Solution</a></li>
+</ul>
+</li>
+<li><a href="#_my_bundle_is_rejected_due_to_internal_structure">7.3. My bundle is rejected due to internal structure</a>
+<ul class="sectlevel3">
+<li><a href="#_reason">7.3.1. Reason</a></li>
+<li><a href="#_solution_3">7.3.2. Solution</a></li>
+</ul>
+</li>
+<li><a href="#_no_template_display">7.4. No template display</a>
+<ul class="sectlevel3">
+<li><a href="#_verification">7.4.1. Verification</a></li>
+<li><a href="#_solution_4">7.4.2. Solution</a></li>
+</ul>
+</li>
+<li><a href="#_my_template_is_not_used">7.5. My template is not used.</a>
+<ul class="sectlevel3">
+<li><a href="#_solution_5">7.5.1. Solution</a></li>
+</ul>
+</li>
+<li><a href="#_my_value_is_not_displayed_in_the_detail_template">7.6. My value is not displayed in the detail template</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_operatorfabric_cicd">5. OperatorFabric CICD</a>
+<li><a href="#_deployment_and_administration_of_operatorfabric">Deployment and Administration of OperatorFabric</a>
+<ul class="sectlevel1">
+<li><a href="#_introduction_2">8. Introduction</a></li>
+<li><a href="#_deployment">9. Deployment</a></li>
+<li><a href="#_rabbitmq">10. RabbitMQ</a>
 <ul class="sectlevel2">
-<li><a href="#_introduction_4">5.1. Introduction</a></li>
-<li><a href="#_release_process">5.2. Release process</a>
+<li><a href="#_docker_container">10.1. Docker container</a></li>
+<li><a href="#_server_installation">10.2. Server installation</a>
 <ul class="sectlevel3">
-<li><a href="#_version_numbers">5.2.1. Version numbers</a></li>
-<li><a href="#_releasing_version">5.2.2. Releasing Version</a></li>
-<li><a href="#_advertising_the_new_release_opfab_github_io_and_mailing_list">5.2.3. Advertising the new release (opfab.github.io and mailing list)</a></li>
-<li><a href="#_preparing_next_version">5.2.4. Preparing next version</a></li>
+<li><a href="#_download_installation">10.2.1. Download &amp; Installation</a></li>
+<li><a href="#_used_ports">10.2.2. Used ports</a></li>
+<li><a href="#_production_configuration">10.2.3. Production configuration</a></li>
 </ul>
 </li>
-<li><a href="#_cicd_scripts">5.3. CICD Scripts</a></li>
 </ul>
 </li>
-<li><a href="#_operatorfabric_release_notes">6. OperatorFabric Release Notes</a>
+<li><a href="#_configuration_2">11. Configuration</a>
 <ul class="sectlevel2">
-<li><a href="#_version_1_0_0_release">6.1. Version 1.0.0.RELEASE</a>
+<li><a href="#_global_configuration">11.1. Global configuration</a></li>
+<li><a href="#_operatorfabric_mongo_configuration">11.2. OperatorFabric Mongo configuration</a>
 <ul class="sectlevel3">
-<li><a href="#_story">6.1.1. Story</a></li>
-<li><a href="#_bug">6.1.2. Bug</a></li>
-<li><a href="#_task">6.1.3. Task</a></li>
-<li><a href="#_feature">6.1.4. Feature</a></li>
+<li><a href="#_define_time_to_live_for_archived_cards">11.2.1. Define time to live for archived cards</a></li>
 </ul>
 </li>
-<li><a href="#_version_0_15_1_release">6.2. Version 0.15.1.RELEASE</a>
+<li><a href="#_operatorfabric_specific_configuration">11.3. OperatorFabric Specific configuration</a>
 <ul class="sectlevel3">
-<li><a href="#_bug_2">6.2.1. Bug</a></li>
-<li><a href="#_story_2">6.2.2. Story</a></li>
-<li><a href="#_task_2">6.2.3. Task</a></li>
+<li><a href="#_security_configuration">11.3.1. Security Configuration</a></li>
+<li><a href="#_user_creation">11.3.2. User creation</a></li>
+<li><a href="#_alternative_way_to_manage_groups">11.3.3. Alternative way to manage groups</a></li>
+</ul>
+</li>
+<li><a href="#_service_specific_configuration">11.4. Service-specific configuration</a>
+<ul class="sectlevel3">
+<li><a href="#_actions_business_service">11.4.1. Actions Business service</a></li>
+<li><a href="#_cards_consultation_business_service">11.4.2. Cards-Consultation Business service</a></li>
+<li><a href="#_cards_publication_business_service">11.4.3. Cards-Publication Business service</a></li>
+<li><a href="#_cloud_gateway_service">11.4.4. Cloud Gateway service</a></li>
+<li><a href="#_cloud_configuration_service">11.4.5. Cloud Configuration service</a></li>
+<li><a href="#_cloud_registry_service">11.4.6. Cloud Registry service</a></li>
+<li><a href="#_thirds_business_service">11.4.7. Thirds Business service</a></li>
+<li><a href="#_users_business_service">11.4.8. Users Business service</a></li>
+<li><a href="#_web_ui">11.4.9. Web UI</a></li>
+</ul>
+</li>
+<li><a href="#_users_and_groups_administration">11.5. Users and Groups Administration</a>
+<ul class="sectlevel3">
+<li><a href="#_list_all_users">11.5.1. List all users</a></li>
+<li><a href="#_create_a_new_user">11.5.2. Create a new User</a></li>
+<li><a href="#_fetch_user_details">11.5.3. Fetch user details</a></li>
+<li><a href="#_update_user_details">11.5.4. Update user details</a></li>
+<li><a href="#_list_groups">11.5.5. List groups</a></li>
+<li><a href="#_create_a_new_group">11.5.6. Create a new Group</a></li>
+<li><a href="#_fetch_details_of_a_given_group">11.5.7. Fetch details of a given group</a></li>
+<li><a href="#_update_details_of_a_group">11.5.8. Update details of a group</a></li>
+<li><a href="#_add_a_user_to_a_group">11.5.9. Add a user to a group</a></li>
+<li><a href="#_remove_a_user_from_a_group">11.5.10. Remove a user from a Group</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_service_port_table">12. Service port table</a></li>
+<li><a href="#_restricted_operations_administration">13. Restricted operations (administration)</a></li>
+</ul>
+</li>
+<li><a href="#_operatorfabric_community">OperatorFabric Community</a>
+<ul class="sectlevel1">
+<li><a href="#_introduction_3">14. Introduction</a></li>
+<li><a href="#_contributing">15. Contributing</a>
+<ul class="sectlevel2">
+<li><a href="#_code_of_conduct">15.1. Code of Conduct</a></li>
+<li><a href="#_license_and_developer_certificate_of_origin">15.2. License and Developer Certificate of Origin</a></li>
+<li><a href="#_how_can_i_contribute">15.3. How Can I Contribute ?</a>
+<ul class="sectlevel3">
+<li><a href="#_reporting_bugs_and_suggesting_enhancements">15.3.1. Reporting Bugs and Suggesting Enhancements</a></li>
+<li><a href="#_contributing_code">15.3.2. Contributing Code</a></li>
+</ul>
+</li>
+<li><a href="#_project_governance">15.4. Project Governance</a>
+<ul class="sectlevel3">
+<li><a href="#_project_owner">15.4.1. Project Owner</a></li>
+<li><a href="#_committers">15.4.2. Committers</a></li>
+<li><a href="#_technical_steering_committee">15.4.3. Technical Steering Committee</a></li>
+<li><a href="#_contributors">15.4.4. Contributors</a></li>
+</ul>
+</li>
+<li><a href="#_communication_channels">15.5. Communication channels</a>
+<ul class="sectlevel3">
+<li><a href="#_website_opfab_org">15.5.1. Website: opfab.org</a></li>
+<li><a href="#_spectrum_community_spectrum_chatopfab">15.5.2. Spectrum Community : spectrum.chat/opfab</a></li>
+<li><a href="#_lf_energy_mailing_lists">15.5.3. LF Energy Mailing Lists</a></li>
+<li><a href="#_jira">15.5.4. JIRA</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_contributor_covenant_code_of_conduct">16. Contributor Covenant Code of Conduct</a>
+<ul class="sectlevel2">
+<li><a href="#_our_pledge">16.1. Our Pledge</a></li>
+<li><a href="#_our_standards">16.2. Our Standards</a></li>
+<li><a href="#_our_responsibilities">16.3. Our Responsibilities</a></li>
+<li><a href="#_scope">16.4. Scope</a></li>
+<li><a href="#_enforcement">16.5. Enforcement</a></li>
+<li><a href="#_attribution">16.6. Attribution</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_operatorfabric_cicd">OperatorFabric CICD</a>
+<ul class="sectlevel1">
+<li><a href="#_introduction_4">17. Introduction</a></li>
+<li><a href="#_release_process">18. Release process</a>
+<ul class="sectlevel2">
+<li><a href="#_version_numbers">18.1. Version numbers</a></li>
+<li><a href="#_releasing_version">18.2. Releasing Version</a>
+<ul class="sectlevel3">
+<li><a href="#_in_the_source_repository_operatorfabric_core">18.2.1. In the source repository (operatorfabric-core)</a></li>
+<li><a href="#_checking_deploy_docker_compose">18.2.2. Checking deploy docker-compose</a></li>
+<li><a href="#_in_the_documentation_repository_opfab_github_io">18.2.3. In the documentation repository (opfab.github.io)</a></li>
+<li><a href="#_in_jira">18.2.4. In Jira</a></li>
+</ul>
+</li>
+<li><a href="#_advertising_the_new_release_opfab_github_io_and_mailing_list">18.3. Advertising the new release (opfab.github.io and mailing list)</a></li>
+<li><a href="#_preparing_next_version">18.4. Preparing next version</a>
+<ul class="sectlevel3">
+<li><a href="#_in_the_source_repository_operatorfabric_core_2">18.4.1. In the source repository (operatorfabric-core)</a></li>
+<li><a href="#_in_the_documentation_repository_opfab_github_io_2">18.4.2. In the documentation repository (opfab.github.io)</a></li>
+<li><a href="#_in_jira_2">18.4.3. In Jira</a></li>
+<li><a href="#_checking_dockerhub_the_following_day">18.4.4. Checking DockerHub the following day</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_cicd_scripts">19. CICD Scripts</a></li>
+</ul>
+</li>
+<li><a href="#_operatorfabric_release_notes">OperatorFabric Release Notes</a>
+<ul class="sectlevel1">
+<li><a href="#_version_1_0_0_release">20. Version 1.0.0.RELEASE</a>
+<ul class="sectlevel2">
+<li><a href="#_story">20.1. Story</a></li>
+<li><a href="#_bug">20.2. Bug</a></li>
+<li><a href="#_task">20.3. Task</a></li>
+<li><a href="#_feature">20.4. Feature</a></li>
+</ul>
+</li>
+<li><a href="#_version_0_15_1_release">21. Version 0.15.1.RELEASE</a>
+<ul class="sectlevel2">
+<li><a href="#_bug_2">21.1. Bug</a></li>
+<li><a href="#_story_2">21.2. Story</a></li>
+<li><a href="#_task_2">21.3. Task</a></li>
 </ul>
 </li>
 </ul>
@@ -572,11 +692,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div id="content">
+<h1 id="_operatorfabric_architecture" class="sect0">OperatorFabric Architecture</h1>
 <div class="sect1">
-<h2 id="_operatorfabric_architecture">1. OperatorFabric Architecture</h2>
+<h2 id="_introduction">1. Introduction</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_introduction">1.1. Introduction</h3>
 <div class="paragraph">
 <p>OperatorFabric is a modular, extensible, industrial-strength and field-tested
 platform for use in electricity, water, and other utility operations.</p>
@@ -623,19 +742,21 @@ with <a href="https://www.lfenergy.org/">LF Energy</a>.</p>
 deals with and then showing how this translates into the technical architecture.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_business_architecture">1.2. Business Architecture</h3>
+</div>
+<div class="sect1">
+<h2 id="_business_architecture">2. Business Architecture</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>OperatorFabric is based on the concept of <strong>cards</strong>, which contain data regarding events that are relevant for the
 operator.
 A third party tool publish cards and the cards are received on the screen of the operators. Depending on the type
 of the cards, the operator  can send back information to the third party via an "action".</p>
 </div>
-<div class="sect3">
-<h4 id="_business_components">1.2.1. Business components</h4>
+<div class="sect2">
+<h3 id="_business_components">2.1. Business components</h3>
 <div class="imageblock">
 <div class="content">
-<img src="/home/guironnetale/IdeaProjects/opfab_doc_v2/images/FunctionalDiagram.jpg" alt="functional diagram">
+<img src="./images/FunctionalDiagram.jpg" alt="functional diagram">
 </div>
 </div>
 <div class="paragraph">
@@ -661,14 +782,14 @@ of the cards, the operator  can send back information to the third party via an 
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_business_objects">1.2.2. Business objects</h4>
+<div class="sect2">
+<h3 id="_business_objects">2.2. Business objects</h3>
 <div class="paragraph">
 <p>The business objects can be represented as follow:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="/home/guironnetale/IdeaProjects/opfab_doc_v2/images/BusinessObjects.jpg" alt="business objects diagram">
+<img src="./images/BusinessObjects.jpg" alt="business objects diagram">
 </div>
 </div>
 <div class="ulist">
@@ -701,18 +822,20 @@ of the cards, the operator  can send back information to the third party via an 
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_technical_architecture">1.3. Technical Architecture</h3>
+</div>
+<div class="sect1">
+<h2 id="_technical_architecture">3. Technical Architecture</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The architecture is based on micro-services. All business services are accessible via REST API.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="/home/guironnetale/IdeaProjects/opfab_doc_v2/images/LogicalDiagram.jpg" alt="functional diagram">
+<img src="./images/LogicalDiagram.jpg" alt="functional diagram">
 </div>
 </div>
-<div class="sect3">
-<h4 id="_business_components_2">1.3.1. Business components</h4>
+<div class="sect2">
+<h3 id="_business_components_2">3.1. Business components</h3>
 <div class="paragraph">
 <p>We find here the business component seen before:</p>
 </div>
@@ -749,43 +872,43 @@ of the cards, the operator  can send back information to the third party via an 
 <p><a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html">Spring WebFlux</a> is used to provide the card in a fluid way.</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_technical_components">3.2. Technical components</h3>
 <div class="sect3">
-<h4 id="_technical_components">1.3.2. Technical components</h4>
-<div class="sect4">
-<h5 id="_registry">Registry</h5>
+<h4 id="_registry">3.2.1. Registry</h4>
 <div class="paragraph">
 <p>It is the central component where all services are registered. It serves as a reference point for the gateway and other
 services to find information about the running services instance and allow for local load balancing of accesses. It is implemented by <a href="https://spring.io/projects/spring-cloud-netflix">Spring Cloud Netflix</a> .</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_gateway">Gateway</h5>
+<div class="sect3">
+<h4 id="_gateway">3.2.2. Gateway</h4>
 <div class="paragraph">
 <p>It provides a filtered view of the APIS and static served pages for external access through browsers or other http
 compliant accesses. It provide the rooting and load balancing for accessing the micro-services from outside. It is implemented by <a href="https://cloud.spring.io/spring-cloud-gateway/reference/html/">Spring Cloud Gateway</a>.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_configuration">Configuration</h5>
+<div class="sect3">
+<h4 id="_configuration">3.2.3. Configuration</h4>
 <div class="paragraph">
 <p>A configuration service is not mandatory in a micro-services architecture but may allow for better sharing of common configuration and
 to dispatch global configuration changes to all services. It is implemented via <a href="https://cloud.spring.io/spring-cloud-config/reference/html/">Spring Cloud Config</a>.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_broker">Broker</h5>
+<div class="sect3">
+<h4 id="_broker">3.2.4. Broker</h4>
 <div class="paragraph">
 <p>The broker is used to share information asynchronously across the whole services. It is implemented via <a href="https://www.rabbitmq.com/">RabbitMQ</a></p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_authentication">Authentication</h5>
+<div class="sect3">
+<h4 id="_authentication">3.2.5. Authentication</h4>
 <div class="paragraph">
 <p>The architecture provide a default authentication service via <a href="https://www.keycloak.org/">KeyCloak</a> but it can delegates it to an external provider. Authentication is done through the use of  Oauth2, three flows are supported: implicit, authorization code and password.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_database">Database</h5>
+<div class="sect3">
+<h4 id="_database">3.2.6. Database</h4>
 <div class="paragraph">
 <p>The cards are stored in a <a href="https://www.mongodb.com/">MongoDb</a> database. The bundles are stored in a file system.</p>
 </div>
@@ -793,12 +916,10 @@ to dispatch global configuration changes to all services. It is implemented via 
 </div>
 </div>
 </div>
-</div>
+<h1 id="_operatorfabric_getting_started" class="sect0">OperatorFabric Getting Started</h1>
 <div class="sect1">
-<h2 id="_operatorfabric_getting_started">2. OperatorFabric Getting Started</h2>
+<h2 id="_prerequisites">4. Prerequisites</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_prerequisites">2.1. Prerequisites</h3>
 <div class="paragraph">
 <p>To use OperatorFabric, you need a linux OS with the following :</p>
 </div>
@@ -813,8 +934,10 @@ to dispatch global configuration changes to all services. It is implemented via 
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_install_and_run_server">2.2. Install and run server</h3>
+</div>
+<div class="sect1">
+<h2 id="_install_and_run_server">5. Install and run server</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>To start OperatorFabric, you first need to clone the getting started git</p>
 </div>
@@ -842,7 +965,7 @@ to dispatch global configuration changes to all services. It is implemented via 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="/home/guironnetale/IdeaProjects/opfab_doc_v2/images/empty-opfab-page.jpg" alt="empty opfab screenshot">
+<img src="./images/empty-opfab-page.jpg" alt="empty opfab screenshot">
 </div>
 </div>
 <div class="paragraph">
@@ -854,16 +977,18 @@ to dispatch global configuration changes to all services. It is implemented via 
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_examples">2.3. Examples</h3>
+</div>
+<div class="sect1">
+<h2 id="_examples">6. Examples</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>For each example, useful files and scripts are in the directory "client/exampleX".</p>
 </div>
 <div class="paragraph">
 <p>All examples assume you connect to the server from localhost (if not, you will need to change the provided scripts)</p>
 </div>
-<div class="sect3">
-<h4 id="_example_1_send_and_update_a_basic_card">2.3.1. Example 1 : Send and update a basic card</h4>
+<div class="sect2">
+<h3 id="_example_1_send_and_update_a_basic_card">6.1. Example 1 : Send and update a basic card</h3>
 <div class="paragraph">
 <p>Go in directory "client/example1" and send a card :</p>
 </div>
@@ -893,11 +1018,11 @@ to dispatch global configuration changes to all services. It is implemented via 
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="/home/guironnetale/IdeaProjects/opfab_doc_v2/images/formated-card-details.jpg" alt="detail card screenshot">
+<img src="./images/formated-card-details.jpg" alt="detail card screenshot">
 </div>
 </div>
-<div class="sect4">
-<h5 id="_anatomy_of_the_card">Anatomy of the card :</h5>
+<div class="sect3">
+<h4 id="_anatomy_of_the_card">6.1.1. Anatomy of the card :</h4>
 <div class="paragraph">
 <p>A card is containing information regarding the publisher, the recipients , the process , the data to show &#8230;&#8203;</p>
 </div>
@@ -925,8 +1050,8 @@ to dispatch global configuration changes to all services. It is implemented via 
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_update_the_card">Update the card</h5>
+<div class="sect3">
+<h4 id="_update_the_card">6.1.2. Update the card</h4>
 <div class="paragraph">
 <p>We can send a new version of the card (updateCard.json) :</p>
 </div>
@@ -972,8 +1097,8 @@ to dispatch global configuration changes to all services. It is implemented via 
 <p>The card should be updated on the UI.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_delete_the_card">Delete the card</h5>
+<div class="sect3">
+<h4 id="_delete_the_card">6.1.3. Delete the card</h4>
 <div class="paragraph">
 <p>You can delete the card using DELETE HTTP code with reference to publisher and processId</p>
 </div>
@@ -992,8 +1117,8 @@ to dispatch global configuration changes to all services. It is implemented via 
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_example_2_publish_a_new_bundle">2.3.2. Example 2 : Publish a new bundle</h4>
+<div class="sect2">
+<h3 id="_example_2_publish_a_new_bundle">6.2. Example 2 : Publish a new bundle</h3>
 <div class="paragraph">
 <p>The way the card is display in the UI is defined via a Bundle containing templates and process description .</p>
 </div>
@@ -1081,8 +1206,8 @@ The message</pre>
 <div class="paragraph">
 <p>To keep the old bundle , we create a new version by setting version to 2.</p>
 </div>
-<div class="sect4">
-<h5 id="_package_you_bundle">Package you bundle</h5>
+<div class="sect3">
+<h4 id="_package_you_bundle">6.2.1. Package you bundle</h4>
 <div class="paragraph">
 <p>Your bundle need to be package in a tar.gz file, a script is available</p>
 </div>
@@ -1095,8 +1220,8 @@ The message</pre>
 <p>A file name bundle.tar.gz will be created.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_get_a_token">Get a Token</h5>
+<div class="sect3">
+<h4 id="_get_a_token">6.2.2. Get a Token</h4>
 <div class="paragraph">
 <p>To send the bundle you need to be authentified . To do that you need to get a token with the following commande :</p>
 </div>
@@ -1125,8 +1250,8 @@ The message</pre>
 <p>Your token is the access_token value in the JSON. The token will be valid for 10 hours , after you will need to ask for a new one.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_send_the_bundle">Send the bundle</h5>
+<div class="sect3">
+<h4 id="_send_the_bundle">6.2.3. Send the bundle</h4>
 <div class="paragraph">
 <p>Replace the value "THE TOKEN" with the token in the sendBundle.sh script :</p>
 </div>
@@ -1153,8 +1278,8 @@ curl -s -X POST "http://localhost:2100/thirds" -H  "accept: application/json" -H
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_send_a_card">Send a card</h5>
+<div class="sect3">
+<h4 id="_send_a_card">6.2.4. Send a card</h4>
 <div class="paragraph">
 <p>You can send the following card to test your new bundle :</p>
 </div>
@@ -1193,8 +1318,8 @@ curl -s -X POST "http://localhost:2100/thirds" -H  "accept: application/json" -H
 <p>You should see in the UI the detail card with the new template.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_internationalization">Internationalization</h5>
+<div class="sect3">
+<h4 id="_internationalization">6.2.5. Internationalization</h4>
 <div class="paragraph">
 <p>If you switch langage to french in the UI (Settings menu on the top rigth of the screen), you should see the cards in french.</p>
 </div>
@@ -1203,8 +1328,8 @@ curl -s -X POST "http://localhost:2100/thirds" -H  "accept: application/json" -H
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_example_3_process_with_state">2.3.3. Example 3 : Process with state</h4>
+<div class="sect2">
+<h3 id="_example_3_process_with_state">6.3. Example 3 : Process with state</h3>
 <div class="paragraph">
 <p>For this example , we will set the following process :</p>
 </div>
@@ -1347,8 +1472,8 @@ curl -s -X POST "http://localhost:2100/thirds" -H  "accept: application/json" -H
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_example_4_time_line">2.3.4. Example 4 : Time Line</h4>
+<div class="sect2">
+<h3 id="_example_4_time_line">6.4. Example 4 : Time Line</h3>
 <div class="paragraph">
 <p>To view the card in the time line , you need to set times in the card using timeSpans attributes as in the following card :</p>
 </div>
@@ -1430,15 +1555,17 @@ server/thirds-storage/scheduledMaintenance-publisher/1.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="/home/guironnetale/IdeaProjects/opfab_doc_v2/images/example4.jpg" alt="example 4 screenshot">
+<img src="./images/example4.jpg" alt="example 4 screenshot">
 </div>
 </div>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_troubleshooting">7. Troubleshooting</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="_troubleshooting">2.4. Troubleshooting</h3>
-<div class="sect3">
-<h4 id="_my_bundle_is_not_loaded">2.4.1. My bundle is not loaded</h4>
+<h3 id="_my_bundle_is_not_loaded">7.1. My bundle is not loaded</h3>
 <div class="paragraph">
 <p>The server send a <code>{"status":"BAD_REQUEST","message":"unable to open submitted
 file","errors":["Error detected parsing the header"]}</code>, despite correct http
@@ -1460,16 +1587,16 @@ tar: Skipping to next header
 tar: Exiting with failure status due to previous errors</pre>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_solution">Solution</h5>
+<div class="sect3">
+<h4 id="_solution">7.1.1. Solution</h4>
 <div class="paragraph">
 <p>Extract content if possible and compress it to a correct compressed archive
 format.</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_i_cant_upload_my_bundle">2.4.2. I can&#8217;t upload my bundle</h4>
+<div class="sect2">
+<h3 id="_i_cant_upload_my_bundle">7.2. I can&#8217;t upload my bundle</h3>
 <div class="paragraph">
 <p>The server responds with a message like the following:
 <code>{"status":"BAD_REQUEST","message":"unable to open submitted
@@ -1478,10 +1605,10 @@ file","errors":["Input is not in the .gz format"]}</code></p>
 <div class="paragraph">
 <p>The bundle has been compressed using an unmanaged format.</p>
 </div>
+<div class="sect3">
+<h4 id="_format_verification">7.2.1. Format verification</h4>
 <div class="sect4">
-<h5 id="_format_verification">Format verification</h5>
-<div class="sect5">
-<h6 id="_linux_solution">Linux solution</h6>
+<h5 id="_linux_solution">Linux solution</h5>
 <div class="paragraph">
 <p>Command line example to verify the format of a bundle archive named
 <code>MyBundleToTest.tar.gz</code>(which gives the mentioned error when uploaded):</p>
@@ -1503,8 +1630,8 @@ tar: Error is not recoverable: exiting now</pre>
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_solution_2">Solution</h5>
+<div class="sect3">
+<h4 id="_solution_2">7.2.2. Solution</h4>
 <div class="paragraph">
 <p>Use <code>tar.gz</code> format for the archive compression. Shell command is <code>tar -czvf
 MyBundleToTest.tar.gz config.json template/ css/</code> for a bundle containing
@@ -1512,8 +1639,8 @@ templates and css files.</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_my_bundle_is_rejected_due_to_internal_structure">2.4.3. My bundle is rejected due to internal structure</h4>
+<div class="sect2">
+<h3 id="_my_bundle_is_rejected_due_to_internal_structure">7.3. My bundle is rejected due to internal structure</h3>
 <div class="paragraph">
 <p>The server sends <code>{"status":"BAD_REQUEST","message":"Incorrect inner file
 structure","errors":["$OPERATOR_FABRIC_INSTANCE_PATH/d91ba68c-de6b-4635-a8e8-b58
@@ -1523,31 +1650,31 @@ fff77dfd2/config.json (Aucun fichier ou dossier de ce type)"]}</code></p>
 <p>Where <code>$OPERATOR_FABRIC_INSTANCE_PATH</code> is the folder where thirds files are
 stored server side.</p>
 </div>
-<div class="sect4">
-<h5 id="_reason">Reason</h5>
+<div class="sect3">
+<h4 id="_reason">7.3.1. Reason</h4>
 <div class="paragraph">
 <p>The internal file structure of your bundle is incorrect. <code>config.json</code> file and
 folders need to be at the first level.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_solution_3">Solution</h5>
+<div class="sect3">
+<h4 id="_solution_3">7.3.2. Solution</h4>
 <div class="paragraph">
 <p>Add or organize the files and folders of the bundle to fit the Third bundle
 requirements.</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_no_template_display">2.4.4. No template display</h4>
+<div class="sect2">
+<h3 id="_no_template_display">7.4. No template display</h3>
 <div class="paragraph">
 <p>The server send 404 for requested template with a response like
 <code>{"status":"NOT_FOUND","message":"The specified resource does not
 exist","errors":["$OPERATOR_FABRIC_INSTANCE_PATH/thirds-storage/BUNDLE_TEST/1/te
 mplate/fr/template1.handlebars (Aucun fichier ou dossier de ce type)"]}</code></p>
 </div>
-<div class="sect4">
-<h5 id="_verification">Verification</h5>
+<div class="sect3">
+<h4 id="_verification">7.4.1. Verification</h4>
 <div class="paragraph">
 <p>The previous server response is return for a request like:
 <code>http://localhost:2002/thirds/BUNDLE_TEST/templates/template1?locale=fr&amp;version
@@ -1563,29 +1690,29 @@ should list the content of
 <code>$CARDS_PUBLICATION_PROJECT/build/docker-volume/third-storage</code></p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_solution_4">Solution</h5>
+<div class="sect3">
+<h4 id="_solution_4">7.4.2. Solution</h4>
 <div class="paragraph">
 <p>Either request another l10n or add the requested one to the bundle and
 re-upload it.</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_my_template_is_not_used">2.4.5. My template is not used.</h4>
+<div class="sect2">
+<h3 id="_my_template_is_not_used">7.5. My template is not used.</h3>
 <div class="paragraph">
 <p>It need to be declared in the config.json of the bundle.</p>
 </div>
-<div class="sect4">
-<h5 id="_solution_5">Solution</h5>
+<div class="sect3">
+<h4 id="_solution_5">7.5.1. Solution</h4>
 <div class="paragraph">
 <p>Add or verify the name of the templates declared in the <code>config.json</code> file of
 the bundle.</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_my_value_is_not_displayed_in_the_detail_template">2.4.6. My value is not displayed in the detail template</h4>
+<div class="sect2">
+<h3 id="_my_value_is_not_displayed_in_the_detail_template">7.6. My value is not displayed in the detail template</h3>
 <div class="paragraph">
 <p>There are several possibilities:</p>
 </div>
@@ -1612,18 +1739,18 @@ the bundle.</p>
 </div>
 </div>
 </div>
-</div>
+<h1 id="_deployment_and_administration_of_operatorfabric" class="sect0">Deployment and Administration of OperatorFabric</h1>
 <div class="sect1">
-<h2 id="_deployment_and_administration_of_operatorfabric">3. Deployment and Administration of OperatorFabric</h2>
+<h2 id="_introduction_2">8. Introduction</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_introduction_2">3.1. Introduction</h3>
 <div class="paragraph">
 <p>The aim of this document is to explain how to configure and deploy OperatorFabric.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_deployment">3.2. Deployment</h3>
+</div>
+<div class="sect1">
+<h2 id="_deployment">9. Deployment</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>For now OperatorFabric consist of Docker images available either by compiling
 the project or by using images releases from <a href="https://hub.docker.com/">Dockerhub</a></p>
@@ -1640,33 +1767,35 @@ deployment as a docker-compose file
 <p>To run OperatorFabric in development mode, see <a href="../dev_env/index.html">the development environment documentation</a>.</p>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_rabbitmq">10. RabbitMQ</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="_rabbitmq">3.3. RabbitMQ</h3>
-<div class="sect3">
-<h4 id="_docker_container">3.3.1. Docker container</h4>
+<h3 id="_docker_container">10.1. Docker container</h3>
 <div class="paragraph">
 <p>In development mode, the simplest way to deploy a RabbitMQ server is to
 create a RabbitMQ docker container. A <a href="src/main/docker/rabbitmq">docker-compose file</a> is provided to allow quick setup of a convenient RabbitMQ
  server.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_server_installation">3.3.2. Server installation</h4>
+<div class="sect2">
+<h3 id="_server_installation">10.2. Server installation</h3>
 <div class="paragraph">
 <p>This section is dedicated to production deployment of RabbitMQ. It is
  not complete and needs to be tailored to any specific production
  environment.</p>
 </div>
-<div class="sect4">
-<h5 id="_download_installation">Download &amp; Installation</h5>
+<div class="sect3">
+<h4 id="_download_installation">10.2.1. Download &amp; Installation</h4>
 <div class="paragraph">
 <p>Download and install RabbitMQ following the
 <a href="https://www.rabbitmq.com/download.html">official procedure</a> for the
 target environment</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_used_ports">Used ports</h5>
+<div class="sect3">
+<h4 id="_used_ports">10.2.2. Used ports</h4>
 <div class="paragraph">
 <p>If RabbitMQ may not bind to the following ports, it won&#8217;t start :</p>
 </div>
@@ -1718,8 +1847,8 @@ the management plugin is enabled</strong>)</p>
 </ul>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_production_configuration">Production configuration</h5>
+<div class="sect3">
+<h4 id="_production_configuration">10.2.3. Production configuration</h4>
 <div class="paragraph">
 <p>See the <a href="https://www.rabbitmq.com/production-checklist.html">guide</a> for
 production configuration guidelines</p>
@@ -1727,8 +1856,10 @@ production configuration guidelines</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_configuration_2">3.4. Configuration</h3>
+</div>
+<div class="sect1">
+<h2 id="_configuration_2">11. Configuration</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>OperatorFabric has multiple services to configure. These configurations are managed by a Configuration Service, of which
 they can be several instances to ensure availability.</p>
@@ -1754,8 +1885,8 @@ configuration which is described in the following documentation:</p>
 </li>
 </ul>
 </div>
-<div class="sect3">
-<h4 id="_global_configuration">3.4.1. Global configuration</h4>
+<div class="sect2">
+<h3 id="_global_configuration">11.1. Global configuration</h3>
 <div class="paragraph">
 <p>Aside from the one for the configuration service, all configurations are gathered as resources in the
 configuration service (under /services/infra/config/src/main/docker/volume).</p>
@@ -1860,16 +1991,16 @@ operatorfabric:
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_operatorfabric_mongo_configuration">3.4.2. OperatorFabric Mongo configuration</h4>
+<div class="sect2">
+<h3 id="_operatorfabric_mongo_configuration">11.2. OperatorFabric Mongo configuration</h3>
 <div class="paragraph">
 <p>We only use URI configuration for mongo through the usage of the <code><code>spring.data.mongodb.uris</code></code>,
 it allows us to share the same configuration behavior for simple or cluster
 configuration and with both spring classic and reactive mongo configuration.
 See <a href="https://docs.mongodb.com/manual/reference//connection-string/">mongo connection string</a> for the complete URI syntax.</p>
 </div>
-<div class="sect4">
-<h5 id="_define_time_to_live_for_archived_cards">Define time to live for archived cards</h5>
+<div class="sect3">
+<h4 id="_define_time_to_live_for_archived_cards">11.2.1. Define time to live for archived cards</h4>
 <div class="paragraph">
 <p>By default, archived cards will remain stored in the database forever. It is possible to have them automatically
 removed after a specified duration by using the <a href="https://docs.mongodb.com/manual/core/index-ttl/">TTL index feature of mongoDB</a> on their publishDate field.</p>
@@ -1899,8 +2030,8 @@ change the value of the option of an existing index, you must drop the index fir
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_operatorfabric_specific_configuration">3.4.3. OperatorFabric Specific configuration</h4>
+<div class="sect2">
+<h3 id="_operatorfabric_specific_configuration">11.3. OperatorFabric Specific configuration</h3>
 <div class="paragraph">
 <p>Below are description of OperatorFabric specific configuration properties.</p>
 </div>
@@ -1908,10 +2039,10 @@ change the value of the option of an existing index, you must drop the index fir
 <p>Note that other components may have specific configuration, see the relevant
 sub-sections.</p>
 </div>
+<div class="sect3">
+<h4 id="_security_configuration">11.3.1. Security Configuration</h4>
 <div class="sect4">
-<h5 id="_security_configuration">Security Configuration</h5>
-<div class="sect5">
-<h6 id="_common_configuration">Common configuration</h6>
+<h5 id="_common_configuration">Common configuration</h5>
 <div class="paragraph">
 <p>This concern is configured within the <code>${OF_HOME}/services/infra/config</code> project
 into 3 distinct files:</p>
@@ -1957,8 +2088,8 @@ Be aware that those changes will be lost after a new compilation or even a simpl
 use <code><a href="https://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#expressions">SpEL ${}</a></code> convention. For example,  <code>${AnotheProperty}</code> allows to re-use the value of <code>AnotherProperty</code> already declared.
 It helps to avoid typos or missing to report some changes. An example could be find below into the <code>delegate-url</code> property.</p>
 </div>
-<div class="sect6">
-<h7 id="_application_yml">application.yml</h7>
+<div class="sect5">
+<h6 id="_application_yml">application.yml</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -2032,8 +2163,8 @@ It helps to avoid typos or missing to report some changes. An example could be f
 <p>where <code>operatorfabric.security.jwt.expire-claim</code> could have been omitted because having the same value as the default one.</p>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_client_gateway_yml">client-gateway.yml</h7>
+<div class="sect5">
+<h6 id="_client_gateway_yml">client-gateway.yml</h6>
 <div class="paragraph">
 <p>In a configuration service <code>client-gateway.yml</code> file</p>
 </div>
@@ -2093,8 +2224,8 @@ the deployment domain</p>
 <code>opfab-client</code> as client-id and <code>opfab-keycloak-secret</code> its client secret.</p>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_web_ui_yml">web-ui.yml</h7>
+<div class="sect5">
+<h6 id="_web_ui_yml">web-ui.yml</h6>
 <div class="paragraph">
 <p>For OAuth2 security concerns into this file, there are two way to configure it, based on the Oauth2 chosen flow.
 There are two common properties:</p>
@@ -2114,8 +2245,8 @@ There are two common properties:</p>
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_oauth2_flows_and_specific_configuration">OAuth2 Flows and specific configuration</h6>
+<div class="sect4">
+<h5 id="_oauth2_flows_and_specific_configuration">OAuth2 Flows and specific configuration</h5>
 <div class="paragraph">
 <p>There are 3 OAuth2 Authentication flows available into OperatorFabric UI:</p>
 </div>
@@ -2132,8 +2263,8 @@ There are two common properties:</p>
 </li>
 </ul>
 </div>
-<div class="sect6">
-<h7 id="_oauth2_implicit_flow">OAuth2 IMPLICIT Flow</h7>
+<div class="sect5">
+<h6 id="_oauth2_implicit_flow">OAuth2 IMPLICIT Flow</h6>
 <div class="paragraph">
 <p>It had its own way of configuration.
 To enable IMPLICIT Flow authentication the following properties need to be set:</p>
@@ -2148,8 +2279,8 @@ To enable IMPLICIT Flow authentication the following properties need to be set:<
 </li>
 </ul>
 </div>
-<div class="sect7">
-<h8 id="_example_of_keycloak_configuration_for_operatorfabric_oauth2">Example of Keycloak configuration for OperatorFabric OAuth2</h8>
+<div class="sect6">
+<h7 id="_example_of_keycloak_configuration_for_operatorfabric_oauth2">Example of Keycloak configuration for OperatorFabric OAuth2</h7>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>operatorfabric:
@@ -2169,8 +2300,8 @@ For keycloak instance used for dev purposes, this <code>delegate-url</code> corr
 url look up by the implicit ui mechanism is <code><a href="http://localhost:89/auth/realms/dev/.well-known/openid-configuration" class="bare">localhost:89/auth/realms/dev/.well-known/openid-configuration</a></code>.</p>
 </div>
 </div>
-<div class="sect7">
-<h8 id="_keycloak_instance_additional_configuration_for_dev_purposes">Keycloak instance additional configuration for dev purposes</h8>
+<div class="sect6">
+<h7 id="_keycloak_instance_additional_configuration_for_dev_purposes">Keycloak instance additional configuration for dev purposes</h7>
 <div class="paragraph">
 <p>Once connected as Admin (login:_admin_,password:_admin_ ) on keycloak (<code><a href="http://localhost:89/auth/admin" class="bare">localhost:89/auth/admin</a></code>) The first thing is to enable the implicit flow for <code>opfa-client</code>. To do so
 select <code>Dev</code> in the upper select of the right panel then click on Clients. In the table, click on <code>opfab-client</code> in the column <code>Client ID</code>. Then in the <code>Settings</code> tabs turn on the
@@ -2178,8 +2309,8 @@ select <code>Dev</code> in the upper select of the right panel then click on Cli
 </div>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_oauth2_password_or_code_flows">OAuth2 PASSWORD or CODE Flows</h7>
+<div class="sect5">
+<h6 id="_oauth2_password_or_code_flows">OAuth2 PASSWORD or CODE Flows</h6>
 <div class="paragraph">
 <p>These two modes share the same way of declaring the delegate URL. The default configuration for dev is set to <code>CODE</code> and work straight away.</p>
 </div>
@@ -2193,8 +2324,8 @@ select <code>Dev</code> in the upper select of the right panel then click on Cli
 </li>
 </ul>
 </div>
-<div class="sect7">
-<h8 id="_example_of_keycloak_configuration_for_operatorfabric_oauth2_2">Example of Keycloak Configuration For OperatorFabric OAuth2</h8>
+<div class="sect6">
+<h7 id="_example_of_keycloak_configuration_for_operatorfabric_oauth2_2">Example of Keycloak Configuration For OperatorFabric OAuth2</h7>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>operatorfabric:
@@ -2215,10 +2346,10 @@ Here, the <code>client-id</code> value is <code>opfab-client</code> which is def
 </div>
 </div>
 </div>
+<div class="sect4">
+<h5 id="_using_token">Using token</h5>
 <div class="sect5">
-<h6 id="_using_token">Using token</h6>
-<div class="sect6">
-<h7 id="_get_a_token_2">Get a token</h7>
+<h6 id="_get_a_token_2">Get a token</h6>
 <div class="paragraph">
 <p>End point: <code><a href="http://localhost:2002/auth/token" class="bare">localhost:2002/auth/token</a></code></p>
 </div>
@@ -2248,8 +2379,8 @@ name;</p>
 <div class="paragraph">
 <p>The following examples will be for <code>admin</code> user.</p>
 </div>
-<div class="sect7">
-<h8 id="_curl">Curl</h8>
+<div class="sect6">
+<h7 id="_curl">Curl</h7>
 <div class="paragraph">
 <p>command:</p>
 </div>
@@ -2287,8 +2418,8 @@ user_info","jti":"02d82e85-13f0-4678-974d-18eb06215a65"}</pre>
 </div>
 </div>
 </div>
-<div class="sect7">
-<h8 id="_httpie">Httpie</h8>
+<div class="sect6">
+<h7 id="_httpie">Httpie</h7>
 <div class="literalblock">
 <div class="content">
 <pre>http --form POST http://localhost:2002/auth/token username=admin password=test
@@ -2339,8 +2470,8 @@ qO-fkjTVRjy_LBXGq9zkn0ZeQ3BUe1GuthvGjaA",
 </div>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_extract_token">Extract token</h7>
+<div class="sect5">
+<h6 id="_extract_token">Extract token</h6>
 <div class="paragraph">
 <p>From the previous results, the data need to be considered to be authenticated
 by OperatorFabric services is the content of the <code>"access_token"</code> attribute of
@@ -2351,8 +2482,8 @@ the body response.</p>
 http HEADER of type <code>Authorization:Bearer</code>.
 example from previous results:</p>
 </div>
-<div class="sect7">
-<h8 id="_curl_2">Curl</h8>
+<div class="sect6">
+<h7 id="_curl_2">Curl</h7>
 <div class="literalblock">
 <div class="content">
 <pre>Authorization:Bearer
@@ -2367,8 +2498,8 @@ L9rKf9EUNhxOG6GE0MDqB3LLLcyQ6sYUmpqdP5Z94IkAN-FpC7k93_-RDw</pre>
 </div>
 </div>
 </div>
-<div class="sect7">
-<h8 id="_httpie_2">Httpie</h8>
+<div class="sect6">
+<h7 id="_httpie_2">Httpie</h7>
 <div class="literalblock">
 <div class="content">
 <pre>Authorization:Bearer
@@ -2384,10 +2515,10 @@ scPy-93HmWpqORtJaFq1qy4QgU28N2LgHFEEEWCSzfhYXH-LngTCP3-JSNcox1hI51XBWEqoeApKdfDJ
 </div>
 </div>
 </div>
+<div class="sect5">
+<h6 id="_check_a_token">Check a token</h6>
 <div class="sect6">
-<h7 id="_check_a_token">Check a token</h7>
-<div class="sect7">
-<h8 id="_curl_3">Curl</h8>
+<h7 id="_curl_3">Curl</h7>
 <div class="paragraph">
 <p>from previous example</p>
 </div>
@@ -2421,8 +2552,8 @@ http://localhost:2002/auth/check_token</pre>
 </div>
 </div>
 </div>
-<div class="sect7">
-<h8 id="_httpie_3">Httpie</h8>
+<div class="sect6">
+<h7 id="_httpie_3">Httpie</h7>
 <div class="paragraph">
 <p>from previous example:</p>
 </div>
@@ -2476,8 +2607,8 @@ transfer-encoding: chunked
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_user_creation">User creation</h5>
+<div class="sect3">
+<h4 id="_user_creation">11.3.2. User creation</h4>
 <div class="paragraph">
 <p>Setting automated user creation==. Creation user requires an user id. Given name and family name are optional.</p>
 </div>
@@ -2518,8 +2649,8 @@ transfer-encoding: chunked
 </tbody>
 </table>
 </div>
-<div class="sect4">
-<h5 id="_alternative_way_to_manage_groups">Alternative way to manage groups</h5>
+<div class="sect3">
+<h4 id="_alternative_way_to_manage_groups">11.3.3. Alternative way to manage groups</h4>
 <div class="paragraph">
 <p>By default, <code>Operator-Fabric</code> manage groups through the user&#8217;s group. Another mode can be defined, the JWT mode. The groups come from the authentication token. The administrator of the authentication service has to set what claims define a group. In the <code>Operator-Fabric</code> configuration, the opfab administrator has to set properties to retrieve thoses groups.</p>
 </div>
@@ -2679,10 +2810,10 @@ transfer-encoding: chunked
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_service_specific_configuration">11.4. Service-specific configuration</h3>
 <div class="sect3">
-<h4 id="_service_specific_configuration">3.4.4. Service-specific configuration</h4>
-<div class="sect4">
-<h5 id="_actions_business_service">Actions Business service</h5>
+<h4 id="_actions_business_service">11.4.1. Actions Business service</h4>
 <div class="paragraph">
 <p>OperatorFabric Actions Business service is a Spring Webflux application
 bootstrapped using SpringBoot.</p>
@@ -2691,8 +2822,8 @@ bootstrapped using SpringBoot.</p>
 <p>In our spring micro service architecture this service depends on Eureka
 Registry.</p>
 </div>
-<div class="sect5">
-<h6 id="_mandatory_configuration_profiles_and_default_properties">Mandatory configuration, Profiles and default properties</h6>
+<div class="sect4">
+<h5 id="_mandatory_configuration_profiles_and_default_properties">Mandatory configuration, Profiles and default properties</h5>
 <div class="paragraph">
 <p>The service has no mandatory configuration beside global configuration and
 usual bootstrap configuration.</p>
@@ -2710,12 +2841,12 @@ usual bootstrap configuration.</p>
 </li>
 </ul>
 </div>
-<div class="sect6">
-<h7 id="_service_specific_properties">Service specific properties</h7>
+<div class="sect5">
+<h6 id="_service_specific_properties">Service specific properties</h6>
 
 </div>
-<div class="sect6">
-<h7 id="_default_properties">default properties</h7>
+<div class="sect5">
+<h6 id="_default_properties">default properties</h6>
 <div class="paragraph">
 <p>Note that you must provide a bootstrap file with a convenient registry configuration</p>
 </div>
@@ -2814,8 +2945,8 @@ development environment</p>
 </ul>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_sample_development_configuration">Sample development configuration</h7>
+<div class="sect5">
+<h6 id="_sample_development_configuration">Sample development configuration</h6>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>server:
@@ -2823,8 +2954,8 @@ development environment</p>
 </div>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_sample_docker_image_configuration">Sample docker image configuration</h7>
+<div class="sect5">
+<h6 id="_sample_docker_image_configuration">Sample docker image configuration</h6>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code></code></pre>
@@ -2832,8 +2963,8 @@ development environment</p>
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_specifying_external_configuration_properties_when_launching_a_jar_file">Specifying external configuration properties when launching a jar file</h6>
+<div class="sect4">
+<h5 id="_specifying_external_configuration_properties_when_launching_a_jar_file">Specifying external configuration properties when launching a jar file</h5>
 <div class="paragraph">
 <p>See <a href="https://docs.spring.io/spring-boot/docs/2.1.2.RELEASE//reference/htmlsingle/#boot-features-external-config-application-property-files">Application Property Files</a>
 on how to setup an external spring properties or yml file.</p>
@@ -2842,8 +2973,8 @@ on how to setup an external spring properties or yml file.</p>
 <p>See <a href="https://docs.spring.io/spring-boot/docs/2.1.2.RELEASE//reference/htmlsingle/#howto-set-active-spring-profiles">Set the Active Spring Profiles</a> for specifying alternate profile.</p>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_specifying_configuration_properties_when_launching_a_docker_image">Specifying configuration properties when launching a docker image</h6>
+<div class="sect4">
+<h5 id="_specifying_configuration_properties_when_launching_a_docker_image">Specifying configuration properties when launching a docker image</h5>
 <div class="paragraph">
 <p>Our docker image expects optional property file to be stored in the container
 /service-config folder. You can bind so docker volume to this path to make
@@ -2853,30 +2984,8 @@ properties or yml available.</p>
 <p>At time of writing, you cannot specify an alternate profile at runActions.
 The default profiles activated are docker and native.</p>
 </div>
-<div class="sect6">
-<h7 id="_available_environment_variables_for_docker_image">Available environment variables for docker image</h7>
-<div class="ulist">
-<ul>
-<li>
-<p>REGISTRY_HOST: Registry service host</p>
-</li>
-<li>
-<p>REGISTRY_PORT: Registry service port</p>
-</li>
-<li>
-<p>JAVA_OPTIONS: Additional java options</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <div class="sect5">
-<h6 id="_specifying_configuration_properties_when_launching_on_kubernetes">Specifying configuration properties when launching on Kubernetes</h6>
-<div class="paragraph">
-<p>In progress</p>
-</div>
-<div class="sect6">
-<h7 id="_available_environment_variables_when_launching_on_kubernetes">Available environment variables when launching on Kubernetes</h7>
+<h6 id="_available_environment_variables_for_docker_image">Available environment variables for docker image</h6>
 <div class="ulist">
 <ul>
 <li>
@@ -2889,12 +2998,34 @@ The default profiles activated are docker and native.</p>
 <p>JAVA_OPTIONS: Additional java options</p>
 </li>
 </ul>
-</div>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_cards_consultation_business_service">Cards-Consultation Business service</h5>
+<h5 id="_specifying_configuration_properties_when_launching_on_kubernetes">Specifying configuration properties when launching on Kubernetes</h5>
+<div class="paragraph">
+<p>In progress</p>
+</div>
+<div class="sect5">
+<h6 id="_available_environment_variables_when_launching_on_kubernetes">Available environment variables when launching on Kubernetes</h6>
+<div class="ulist">
+<ul>
+<li>
+<p>REGISTRY_HOST: Registry service host</p>
+</li>
+<li>
+<p>REGISTRY_PORT: Registry service port</p>
+</li>
+<li>
+<p>JAVA_OPTIONS: Additional java options</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_cards_consultation_business_service">11.4.2. Cards-Consultation Business service</h4>
 <div class="paragraph">
 <p>OperatorFabric Cards-Consultation Business service is a Spring Webflux application
 bootstrapped using SpringBoot.</p>
@@ -2903,8 +3034,8 @@ bootstrapped using SpringBoot.</p>
 <p>In our spring micro service architecture this service depends on Eureka
 Registry.</p>
 </div>
-<div class="sect5">
-<h6 id="_mandatory_configuration_profiles_and_default_properties_2">Mandatory configuration, Profiles and default properties</h6>
+<div class="sect4">
+<h5 id="_mandatory_configuration_profiles_and_default_properties_2">Mandatory configuration, Profiles and default properties</h5>
 <div class="paragraph">
 <p>The service has no mandatory configuration beside global configuration and
 usual bootstrap configuration.</p>
@@ -2922,12 +3053,12 @@ usual bootstrap configuration.</p>
 </li>
 </ul>
 </div>
-<div class="sect6">
-<h7 id="_service_specific_properties_2">Service specific properties</h7>
+<div class="sect5">
+<h6 id="_service_specific_properties_2">Service specific properties</h6>
 
 </div>
-<div class="sect6">
-<h7 id="_default_properties_2">default properties</h7>
+<div class="sect5">
+<h6 id="_default_properties_2">default properties</h6>
 <div class="paragraph">
 <p>Note that you must provide a bootstrap file with a convenient registry configuration</p>
 </div>
@@ -3026,8 +3157,8 @@ development environment</p>
 </ul>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_sample_development_configuration_2">Sample development configuration</h7>
+<div class="sect5">
+<h6 id="_sample_development_configuration_2">Sample development configuration</h6>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>server:
@@ -3036,8 +3167,8 @@ logging.level.root: DEBUG</code></pre>
 </div>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_sample_docker_image_configuration_2">Sample docker image configuration</h7>
+<div class="sect5">
+<h6 id="_sample_docker_image_configuration_2">Sample docker image configuration</h6>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code></code></pre>
@@ -3045,8 +3176,8 @@ logging.level.root: DEBUG</code></pre>
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_specifying_external_configuration_properties_when_launching_a_jar_file_2">Specifying external configuration properties when launching a jar file</h6>
+<div class="sect4">
+<h5 id="_specifying_external_configuration_properties_when_launching_a_jar_file_2">Specifying external configuration properties when launching a jar file</h5>
 <div class="paragraph">
 <p>See <a href="https://docs.spring.io/spring-boot/docs/2.1.2.RELEASE//reference/htmlsingle/#boot-features-external-config-application-property-files">Application Property Files</a>
 on how to setup an external spring properties or yml file.</p>
@@ -3055,8 +3186,8 @@ on how to setup an external spring properties or yml file.</p>
 <p>See <a href="https://docs.spring.io/spring-boot/docs/2.1.2.RELEASE//reference/htmlsingle/#howto-set-active-spring-profiles">Set the Active Spring Profiles</a> for specifying alternate profile.</p>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_specifying_configuration_properties_when_launching_a_docker_image_2">Specifying configuration properties when launching a docker image</h6>
+<div class="sect4">
+<h5 id="_specifying_configuration_properties_when_launching_a_docker_image_2">Specifying configuration properties when launching a docker image</h5>
 <div class="paragraph">
 <p>Our docker image expects optional property file to be stored in the container
 /service-config folder. You can bind so docker volume to this path to make
@@ -3066,30 +3197,8 @@ properties or yml available.</p>
 <p>At time of writing, you cannot specify an alternate profile at runCards-Consultation.
 The default profiles activated are docker and native.</p>
 </div>
-<div class="sect6">
-<h7 id="_available_environment_variables_for_docker_image_2">Available environment variables for docker image</h7>
-<div class="ulist">
-<ul>
-<li>
-<p>REGISTRY_HOST: Registry service host</p>
-</li>
-<li>
-<p>REGISTRY_PORT: Registry service port</p>
-</li>
-<li>
-<p>JAVA_OPTIONS: Additional java options</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <div class="sect5">
-<h6 id="_specifying_configuration_properties_when_launching_on_kubernetes_2">Specifying configuration properties when launching on Kubernetes</h6>
-<div class="paragraph">
-<p>In progress</p>
-</div>
-<div class="sect6">
-<h7 id="_available_environment_variables_when_launching_on_kubernetes_2">Available environment variables when launching on Kubernetes</h7>
+<h6 id="_available_environment_variables_for_docker_image_2">Available environment variables for docker image</h6>
 <div class="ulist">
 <ul>
 <li>
@@ -3102,12 +3211,34 @@ The default profiles activated are docker and native.</p>
 <p>JAVA_OPTIONS: Additional java options</p>
 </li>
 </ul>
-</div>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_cards_publication_business_service">Cards-Publication Business service</h5>
+<h5 id="_specifying_configuration_properties_when_launching_on_kubernetes_2">Specifying configuration properties when launching on Kubernetes</h5>
+<div class="paragraph">
+<p>In progress</p>
+</div>
+<div class="sect5">
+<h6 id="_available_environment_variables_when_launching_on_kubernetes_2">Available environment variables when launching on Kubernetes</h6>
+<div class="ulist">
+<ul>
+<li>
+<p>REGISTRY_HOST: Registry service host</p>
+</li>
+<li>
+<p>REGISTRY_PORT: Registry service port</p>
+</li>
+<li>
+<p>JAVA_OPTIONS: Additional java options</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_cards_publication_business_service">11.4.3. Cards-Publication Business service</h4>
 <div class="paragraph">
 <p>OperatorFabric Cards-Publication Business service is a Spring Webflux application
 bootstrapped using SpringBoot.</p>
@@ -3116,8 +3247,8 @@ bootstrapped using SpringBoot.</p>
 <p>In our spring micro service architecture this service depends on Eureka
 Registry.</p>
 </div>
-<div class="sect5">
-<h6 id="_mandatory_configuration_profiles_and_default_properties_3">Mandatory configuration, Profiles and default properties</h6>
+<div class="sect4">
+<h5 id="_mandatory_configuration_profiles_and_default_properties_3">Mandatory configuration, Profiles and default properties</h5>
 <div class="paragraph">
 <p>The service has no mandatory configuration beside global configuration and
 usual bootstrap configuration.</p>
@@ -3135,8 +3266,8 @@ usual bootstrap configuration.</p>
 </li>
 </ul>
 </div>
-<div class="sect6">
-<h7 id="_service_specific_properties_3">Service specific properties</h7>
+<div class="sect5">
+<h6 id="_service_specific_properties_3">Service specific properties</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -3180,8 +3311,8 @@ usual bootstrap configuration.</p>
 </tbody>
 </table>
 </div>
-<div class="sect6">
-<h7 id="_default_properties_3">default properties</h7>
+<div class="sect5">
+<h6 id="_default_properties_3">default properties</h6>
 <div class="paragraph">
 <p>Note that you must provide a bootstrap file with a convenient registry configuration</p>
 </div>
@@ -3279,8 +3410,8 @@ development environment</p>
 </ul>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_sample_development_configuration_3">Sample development configuration</h7>
+<div class="sect5">
+<h6 id="_sample_development_configuration_3">Sample development configuration</h6>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>server:
@@ -3288,8 +3419,8 @@ development environment</p>
 </div>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_sample_docker_image_configuration_3">Sample docker image configuration</h7>
+<div class="sect5">
+<h6 id="_sample_docker_image_configuration_3">Sample docker image configuration</h6>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code></code></pre>
@@ -3297,8 +3428,8 @@ development environment</p>
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_specifying_external_configuration_properties_when_launching_a_jar_file_3">Specifying external configuration properties when launching a jar file</h6>
+<div class="sect4">
+<h5 id="_specifying_external_configuration_properties_when_launching_a_jar_file_3">Specifying external configuration properties when launching a jar file</h5>
 <div class="paragraph">
 <p>See <a href="https://docs.spring.io/spring-boot/docs/2.1.2.RELEASE//reference/htmlsingle/#boot-features-external-config-application-property-files">Application Property Files</a>
 on how to setup an external spring properties or yml file.</p>
@@ -3307,8 +3438,8 @@ on how to setup an external spring properties or yml file.</p>
 <p>See <a href="https://docs.spring.io/spring-boot/docs/2.1.2.RELEASE//reference/htmlsingle/#howto-set-active-spring-profiles">Set the Active Spring Profiles</a> for specifying alternate profile.</p>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_specifying_configuration_properties_when_launching_a_docker_image_3">Specifying configuration properties when launching a docker image</h6>
+<div class="sect4">
+<h5 id="_specifying_configuration_properties_when_launching_a_docker_image_3">Specifying configuration properties when launching a docker image</h5>
 <div class="paragraph">
 <p>Our docker image expects optional property file to be stored in the container
 /service-config folder. You can bind so docker volume to this path to make
@@ -3318,30 +3449,8 @@ properties or yml available.</p>
 <p>At time of writing, you cannot specify an alternate profile at runCards-Publication.
 The default profiles activated are docker and native.</p>
 </div>
-<div class="sect6">
-<h7 id="_available_environment_variables_for_docker_image_3">Available environment variables for docker image</h7>
-<div class="ulist">
-<ul>
-<li>
-<p>REGISTRY_HOST: Registry service host</p>
-</li>
-<li>
-<p>REGISTRY_PORT: Registry service port</p>
-</li>
-<li>
-<p>JAVA_OPTIONS: Additional java options</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <div class="sect5">
-<h6 id="_specifying_configuration_properties_when_launching_on_kubernetes_3">Specifying configuration properties when launching on Kubernetes</h6>
-<div class="paragraph">
-<p>In progress</p>
-</div>
-<div class="sect6">
-<h7 id="_available_environment_variables_when_launching_on_kubernetes_3">Available environment variables when launching on Kubernetes</h7>
+<h6 id="_available_environment_variables_for_docker_image_3">Available environment variables for docker image</h6>
 <div class="ulist">
 <ul>
 <li>
@@ -3354,12 +3463,34 @@ The default profiles activated are docker and native.</p>
 <p>JAVA_OPTIONS: Additional java options</p>
 </li>
 </ul>
-</div>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_cloud_gateway_service">Cloud Gateway service</h5>
+<h5 id="_specifying_configuration_properties_when_launching_on_kubernetes_3">Specifying configuration properties when launching on Kubernetes</h5>
+<div class="paragraph">
+<p>In progress</p>
+</div>
+<div class="sect5">
+<h6 id="_available_environment_variables_when_launching_on_kubernetes_3">Available environment variables when launching on Kubernetes</h6>
+<div class="ulist">
+<ul>
+<li>
+<p>REGISTRY_HOST: Registry service host</p>
+</li>
+<li>
+<p>REGISTRY_PORT: Registry service port</p>
+</li>
+<li>
+<p>JAVA_OPTIONS: Additional java options</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_cloud_gateway_service">11.4.4. Cloud Gateway service</h4>
 <div class="paragraph">
 <p>OperatorFabric Client Gateway service is a Spring Cloud Gateway application
 bootstrapped using SpringBoot.</p>
@@ -3368,8 +3499,8 @@ bootstrapped using SpringBoot.</p>
 <p>In our spring micro service architecture the gateway service depends on Eureka
 Registry.</p>
 </div>
-<div class="sect5">
-<h6 id="_mandatory_configuration_profiles_and_default_properties_4">Mandatory configuration, Profiles and default properties</h6>
+<div class="sect4">
+<h5 id="_mandatory_configuration_profiles_and_default_properties_4">Mandatory configuration, Profiles and default properties</h5>
 <div class="paragraph">
 <p>To get a working gateway service, there a few mandatory configuration
 properties:</p>
@@ -3435,8 +3566,8 @@ the deployment domain</p>
 <div class="paragraph">
 <p>For other configuration see <a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-gateway/2.1.0.RELEASE/single/spring-cloud-gateway.html">spring cloud gateway documentation</a>.</p>
 </div>
-<div class="sect6">
-<h7 id="_service_specific_properties_4">Service specific properties</h7>
+<div class="sect5">
+<h6 id="_service_specific_properties_4">Service specific properties</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -3462,8 +3593,8 @@ the deployment domain</p>
 </tbody>
 </table>
 </div>
-<div class="sect6">
-<h7 id="_default_properties_4">default properties</h7>
+<div class="sect5">
+<h6 id="_default_properties_4">default properties</h6>
 <div class="paragraph">
 <p>Note that you must provide a bootstrap file with a convenient registry configuration</p>
 </div>
@@ -3562,8 +3693,8 @@ development environment</p>
 </ul>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_sample_developpement_configuration">Sample developpement configuration</h7>
+<div class="sect5">
+<h6 id="_sample_developpement_configuration">Sample developpement configuration</h6>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>server:
@@ -3594,8 +3725,8 @@ operatorfabric.gateway.configs:
 </div>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_sample_docker_image_configuration_4">Sample docker image configuration</h7>
+<div class="sect5">
+<h6 id="_sample_docker_image_configuration_4">Sample docker image configuration</h6>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>spring:
@@ -3624,8 +3755,8 @@ operatorfabric.gateway.configs:
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_specifying_external_configuration_properties_when_lauching_a_jar_file">Specifying external configuration properties when lauching a jar file</h6>
+<div class="sect4">
+<h5 id="_specifying_external_configuration_properties_when_lauching_a_jar_file">Specifying external configuration properties when lauching a jar file</h5>
 <div class="paragraph">
 <p>See <a href="https://docs.spring.io/spring-boot/docs/2.1.2.RELEASE//reference/htmlsingle/#boot-features-external-config-application-property-files">Application Property Files</a>
 on how to setup an external spring properties or yml file.</p>
@@ -3634,8 +3765,8 @@ on how to setup an external spring properties or yml file.</p>
 <p>See <a href="https://docs.spring.io/spring-boot/docs/2.1.2.RELEASE//reference/htmlsingle/#howto-set-active-spring-profiles">Set the Active Spring Profiles</a> for specifying alternate profile.</p>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_specifying_configuration_properties_when_lauching_a_docker_image">Specifying configuration properties when lauching a docker image</h6>
+<div class="sect4">
+<h5 id="_specifying_configuration_properties_when_lauching_a_docker_image">Specifying configuration properties when lauching a docker image</h5>
 <div class="paragraph">
 <p>Our docker image expects optional property file to be stored in the container
 /service-config folder. You can bind so docker volume to this path to make
@@ -3645,30 +3776,8 @@ properties or yml available.</p>
 <p>At time of writting, you cannot specify an alternate profile at runtime.
 The default profiles activated are docker and native.</p>
 </div>
-<div class="sect6">
-<h7 id="_available_environment_variables_for_docker_image_4">Available environment variables for docker image</h7>
-<div class="ulist">
-<ul>
-<li>
-<p>REGISTRY_HOST: Registry service host</p>
-</li>
-<li>
-<p>REGISTRY_PORT: Registry service port</p>
-</li>
-<li>
-<p>JAVA_OPTIONS: Additional java options</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <div class="sect5">
-<h6 id="_specifying_configuration_properties_when_lauching_on_kubernetes">Specifying configuration properties when lauching on Kubernetes</h6>
-<div class="paragraph">
-<p>In progress</p>
-</div>
-<div class="sect6">
-<h7 id="_available_environment_variables_when_launching_on_kubernetes_4">Available environment variables when launching on Kubernetes</h7>
+<h6 id="_available_environment_variables_for_docker_image_4">Available environment variables for docker image</h6>
 <div class="ulist">
 <ul>
 <li>
@@ -3681,12 +3790,34 @@ The default profiles activated are docker and native.</p>
 <p>JAVA_OPTIONS: Additional java options</p>
 </li>
 </ul>
-</div>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_cloud_configuration_service">Cloud Configuration service</h5>
+<h5 id="_specifying_configuration_properties_when_lauching_on_kubernetes">Specifying configuration properties when lauching on Kubernetes</h5>
+<div class="paragraph">
+<p>In progress</p>
+</div>
+<div class="sect5">
+<h6 id="_available_environment_variables_when_launching_on_kubernetes_4">Available environment variables when launching on Kubernetes</h6>
+<div class="ulist">
+<ul>
+<li>
+<p>REGISTRY_HOST: Registry service host</p>
+</li>
+<li>
+<p>REGISTRY_PORT: Registry service port</p>
+</li>
+<li>
+<p>JAVA_OPTIONS: Additional java options</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_cloud_configuration_service">11.4.5. Cloud Configuration service</h4>
 <div class="paragraph">
 <p>OperatorFabric Configuration service is a Spring Cloud Config application
 bootstrapped using SpringBoot.</p>
@@ -3696,8 +3827,8 @@ bootstrapped using SpringBoot.</p>
 services to bootstrap, thus they are configured in a specific way contrary to
 other services.</p>
 </div>
-<div class="sect5">
-<h6 id="_mandatory_configuration_profiles_and_default_properties_5">Mandatory configuration, Profiles and default properties</h6>
+<div class="sect4">
+<h5 id="_mandatory_configuration_profiles_and_default_properties_5">Mandatory configuration, Profiles and default properties</h5>
 <div class="paragraph">
 <p>To get a working configuration service, there a few mandatory configuration
 properties:</p>
@@ -3739,8 +3870,8 @@ Dev and Docker profile uses a file system backend which is not suitable for
 production and redundancy. You should prefer the usage of Git or Vault for
 production.</p>
 </div>
-<div class="sect6">
-<h7 id="_default_properties_5">default properties</h7>
+<div class="sect5">
+<h6 id="_default_properties_5">default properties</h6>
 <div class="paragraph">
 <p>It is preferable not to change the following bootstrap.yml file.</p>
 </div>
@@ -3772,8 +3903,8 @@ production.</p>
 * it exposes management endpoints</p>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_dev_profile">dev profile</h7>
+<div class="sect5">
+<h6 id="_dev_profile">dev profile</h6>
 <div class="paragraph">
 <p>dev is the profile we use internally for developpement we make it available for
 external developers so that they don&#8217;t need extensive configuration to get a
@@ -3824,8 +3955,8 @@ config from file system)</p>
 </ul>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_docker_profile">docker profile</h7>
+<div class="sect5">
+<h6 id="_docker_profile">docker profile</h6>
 <div class="paragraph">
 <p>docker is the profile we use in our docker images</p>
 </div>
@@ -3869,8 +4000,8 @@ config from file system)</p>
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_specifying_external_configuration_properties_when_lauching_a_jar_file_2">Specifying external configuration properties when lauching a jar file</h6>
+<div class="sect4">
+<h5 id="_specifying_external_configuration_properties_when_lauching_a_jar_file_2">Specifying external configuration properties when lauching a jar file</h5>
 <div class="paragraph">
 <p>See <a href="https://docs.spring.io/spring-boot/docs/2.1.2.RELEASE//reference/htmlsingle/#boot-features-external-config-application-property-files">Application Property Files</a>
 on how to setup an external spring properties or yml file.</p>
@@ -3879,8 +4010,8 @@ on how to setup an external spring properties or yml file.</p>
 <p>Seehttps://docs.spring.io/spring-boot/docs/2.1.2.RELEASE//reference/htmlsingle/#howto-set-active-spring-profiles[Set the Active Spring Profiles] for specifying alternate profile.</p>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_specifying_configuration_properties_when_lauching_a_docker_image_2">Specifying configuration properties when lauching a docker image</h6>
+<div class="sect4">
+<h5 id="_specifying_configuration_properties_when_lauching_a_docker_image_2">Specifying configuration properties when lauching a docker image</h5>
 <div class="paragraph">
 <p>Our docker image expects optional property file to be stored in the container
 /service-config folder. You can bind so docker volume to this path to make
@@ -3890,42 +4021,8 @@ properties or yml available.</p>
 <p>At time of writting, you cannot specify an alternate profile at runtime.
 The default profiles activated are docker and native.</p>
 </div>
-<div class="sect6">
-<h7 id="_available_environment_variables_for_docker_image_5">Available environment variables for docker image</h7>
-<div class="ulist">
-<ul>
-<li>
-<p>RABBITMQ_HOST: Rabbitmq host name</p>
-</li>
-<li>
-<p>RABBITMQ_PORT: Rabbitmq host port</p>
-</li>
-<li>
-<p>RABBITMQ_USER: Rabbitmq user name used for authentication service</p>
-</li>
-<li>
-<p>RABBITMQ_PASSWORD: Rabbitmq user password used for authentication service</p>
-</li>
-<li>
-<p>REGISTRY_HOST: Registry (eureka) host name</p>
-</li>
-<li>
-<p>REGISTRY_PORT: Registry (eureka) host port</p>
-</li>
-<li>
-<p>JAVA_OPTIONS: Additional java options</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <div class="sect5">
-<h6 id="_specifying_configuration_properties_when_lauching_on_kubernetes_2">Specifying configuration properties when lauching on Kubernetes</h6>
-<div class="paragraph">
-<p>In progress</p>
-</div>
-<div class="sect6">
-<h7 id="_available_environment_variables_when_launching_on_kubernetes_5">Available environment variables when launching on Kubernetes</h7>
+<h6 id="_available_environment_variables_for_docker_image_5">Available environment variables for docker image</h6>
 <div class="ulist">
 <ul>
 <li>
@@ -3950,12 +4047,46 @@ The default profiles activated are docker and native.</p>
 <p>JAVA_OPTIONS: Additional java options</p>
 </li>
 </ul>
-</div>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_cloud_registry_service">Cloud Registry service</h5>
+<h5 id="_specifying_configuration_properties_when_lauching_on_kubernetes_2">Specifying configuration properties when lauching on Kubernetes</h5>
+<div class="paragraph">
+<p>In progress</p>
+</div>
+<div class="sect5">
+<h6 id="_available_environment_variables_when_launching_on_kubernetes_5">Available environment variables when launching on Kubernetes</h6>
+<div class="ulist">
+<ul>
+<li>
+<p>RABBITMQ_HOST: Rabbitmq host name</p>
+</li>
+<li>
+<p>RABBITMQ_PORT: Rabbitmq host port</p>
+</li>
+<li>
+<p>RABBITMQ_USER: Rabbitmq user name used for authentication service</p>
+</li>
+<li>
+<p>RABBITMQ_PASSWORD: Rabbitmq user password used for authentication service</p>
+</li>
+<li>
+<p>REGISTRY_HOST: Registry (eureka) host name</p>
+</li>
+<li>
+<p>REGISTRY_PORT: Registry (eureka) host port</p>
+</li>
+<li>
+<p>JAVA_OPTIONS: Additional java options</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_cloud_registry_service">11.4.6. Cloud Registry service</h4>
 <div class="paragraph">
 <p>OperatorFabric Registry service is a Spring Eureka application
 bootstrapped using SpringBoot.</p>
@@ -3964,8 +4095,8 @@ bootstrapped using SpringBoot.</p>
 <p>In our spring micro service architecture Eureka Registry instances are the second
 services to bootstrap, its configuration relies on the <a href="#_cloud_configuration_service">Cloud Configuration service</a>.</p>
 </div>
-<div class="sect5">
-<h6 id="_mandatory_configuration_profiles_and_default_properties_6">Mandatory configuration, Profiles and default properties</h6>
+<div class="sect4">
+<h5 id="_mandatory_configuration_profiles_and_default_properties_6">Mandatory configuration, Profiles and default properties</h5>
 <div class="paragraph">
 <p>To get a working registry service, there a few mandatory configuration
 properties:</p>
@@ -4014,8 +4145,8 @@ properties:</p>
 <div class="paragraph">
 <p>For other configuration see <a href="https://cloud.spring.io/spring-cloud-static/spring-cloud-netflix/2.1.0.RC3/single/spring-cloud-netflix.html">spring cloud netflix documentation</a>.</p>
 </div>
-<div class="sect6">
-<h7 id="_default_properties_6">default properties</h7>
+<div class="sect5">
+<h6 id="_default_properties_6">default properties</h6>
 <div class="paragraph">
 <p>It is preferable not to change the following bootstrap.yml file.</p>
 </div>
@@ -4087,8 +4218,8 @@ developpement environment</p>
 * it must set the configuration service (example in bootstrap-docker.yml)</p>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_dev_profile_2">dev profile</h7>
+<div class="sect5">
+<h6 id="_dev_profile_2">dev profile</h6>
 <div class="paragraph">
 <p>dev is the profile we use internally for developpement we make it available for
 external developers so that they don&#8217;t need extensive configuration to get a
@@ -4104,8 +4235,8 @@ eureka:
 </div>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_sample_development_configuration_4">Sample development configuration</h7>
+<div class="sect5">
+<h6 id="_sample_development_configuration_4">Sample development configuration</h6>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>server:
@@ -4116,8 +4247,8 @@ eureka:
 </div>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_sample_docker_image_configuration_5">Sample docker image configuration</h7>
+<div class="sect5">
+<h6 id="_sample_docker_image_configuration_5">Sample docker image configuration</h6>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>eureka:
@@ -4132,8 +4263,8 @@ eureka:
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_specifying_external_configuration_properties_when_lauching_a_jar_file_3">Specifying external configuration properties when lauching a jar file</h6>
+<div class="sect4">
+<h5 id="_specifying_external_configuration_properties_when_lauching_a_jar_file_3">Specifying external configuration properties when lauching a jar file</h5>
 <div class="paragraph">
 <p>See <a href="https://docs.spring.io/spring-boot/docs/2.1.2.RELEASE//reference/htmlsingle/#boot-features-external-config-application-property-files">Application Property Files</a>
 on how to setup an external spring properties or yml file.</p>
@@ -4142,8 +4273,8 @@ on how to setup an external spring properties or yml file.</p>
 <p>See <a href="https://docs.spring.io/spring-boot/docs/2.1.2.RELEASE//reference/htmlsingle/#howto-set-active-spring-profiles">Set the Active Spring Profiles</a> for specifying alternate profile.</p>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_specifying_configuration_properties_when_lauching_a_docker_image_3">Specifying configuration properties when lauching a docker image</h6>
+<div class="sect4">
+<h5 id="_specifying_configuration_properties_when_lauching_a_docker_image_3">Specifying configuration properties when lauching a docker image</h5>
 <div class="paragraph">
 <p>Our docker image expects optional property file to be stored in the container
 /service-config folder. You can bind so docker volume to this path to make
@@ -4153,30 +4284,8 @@ properties or yml available.</p>
 <p>At time of writting, you cannot specify an alternate profile at runtime.
 The default profiles activated are docker and native.</p>
 </div>
-<div class="sect6">
-<h7 id="_available_environment_variables_for_docker_image_6">Available environment variables for docker image</h7>
-<div class="ulist">
-<ul>
-<li>
-<p>CONFIG_HOST: Configuration service host</p>
-</li>
-<li>
-<p>CONFIG_PORT: Configuration service port</p>
-</li>
-<li>
-<p>JAVA_OPTIONS: Additional java options</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <div class="sect5">
-<h6 id="_specifying_configuration_properties_when_lauching_on_kubernetes_3">Specifying configuration properties when lauching on Kubernetes</h6>
-<div class="paragraph">
-<p>In progress</p>
-</div>
-<div class="sect6">
-<h7 id="_available_environment_variables_when_launching_on_kubernetes_6">Available environment variables when launching on Kubernetes</h7>
+<h6 id="_available_environment_variables_for_docker_image_6">Available environment variables for docker image</h6>
 <div class="ulist">
 <ul>
 <li>
@@ -4189,12 +4298,34 @@ The default profiles activated are docker and native.</p>
 <p>JAVA_OPTIONS: Additional java options</p>
 </li>
 </ul>
-</div>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_thirds_business_service">Thirds Business service</h5>
+<h5 id="_specifying_configuration_properties_when_lauching_on_kubernetes_3">Specifying configuration properties when lauching on Kubernetes</h5>
+<div class="paragraph">
+<p>In progress</p>
+</div>
+<div class="sect5">
+<h6 id="_available_environment_variables_when_launching_on_kubernetes_6">Available environment variables when launching on Kubernetes</h6>
+<div class="ulist">
+<ul>
+<li>
+<p>CONFIG_HOST: Configuration service host</p>
+</li>
+<li>
+<p>CONFIG_PORT: Configuration service port</p>
+</li>
+<li>
+<p>JAVA_OPTIONS: Additional java options</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_thirds_business_service">11.4.7. Thirds Business service</h4>
 <div class="paragraph">
 <p>OperatorFabric Thirds Business service is a Spring MVC application
 bootstrapped using SpringBoot.</p>
@@ -4203,8 +4334,8 @@ bootstrapped using SpringBoot.</p>
 <p>In our spring micro service architecture this service depends on Eureka
 Registry.</p>
 </div>
-<div class="sect5">
-<h6 id="_mandatory_configuration_profiles_and_default_properties_7">Mandatory configuration, Profiles and default properties</h6>
+<div class="sect4">
+<h5 id="_mandatory_configuration_profiles_and_default_properties_7">Mandatory configuration, Profiles and default properties</h5>
 <div class="paragraph">
 <p>The service has no mandatory configuration beside global configuration and
 usual bootstrap configuration.</p>
@@ -4222,8 +4353,8 @@ usual bootstrap configuration.</p>
 </li>
 </ul>
 </div>
-<div class="sect6">
-<h7 id="_service_specific_properties_5">Service specific properties</h7>
+<div class="sect5">
+<h6 id="_service_specific_properties_5">Service specific properties</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -4249,8 +4380,8 @@ usual bootstrap configuration.</p>
 </tbody>
 </table>
 </div>
-<div class="sect6">
-<h7 id="_default_properties_7">default properties</h7>
+<div class="sect5">
+<h6 id="_default_properties_7">default properties</h6>
 <div class="paragraph">
 <p>Note that you must provide a bootstrap file with a convenient registry configuration</p>
 </div>
@@ -4348,8 +4479,8 @@ development environment</p>
 </ul>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_sample_development_configuration_5">Sample development configuration</h7>
+<div class="sect5">
+<h6 id="_sample_development_configuration_5">Sample development configuration</h6>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>server:
@@ -4360,8 +4491,8 @@ operatorfabric.thirds:
 </div>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_sample_docker_image_configuration_6">Sample docker image configuration</h7>
+<div class="sect5">
+<h6 id="_sample_docker_image_configuration_6">Sample docker image configuration</h6>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>operatorfabric.thirds:
@@ -4371,8 +4502,8 @@ operatorfabric.thirds:
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_specifying_external_configuration_properties_when_launching_a_jar_file_4">Specifying external configuration properties when launching a jar file</h6>
+<div class="sect4">
+<h5 id="_specifying_external_configuration_properties_when_launching_a_jar_file_4">Specifying external configuration properties when launching a jar file</h5>
 <div class="paragraph">
 <p>See <a href="https://docs.spring.io/spring-boot/docs/2.1.2.RELEASE//reference/htmlsingle/#boot-features-external-config-application-property-files">Application Property Files</a>
 on how to setup an external spring properties or yml file.</p>
@@ -4381,8 +4512,8 @@ on how to setup an external spring properties or yml file.</p>
 <p>See <a href="https://docs.spring.io/spring-boot/docs/2.1.2.RELEASE//reference/htmlsingle/#howto-set-active-spring-profiles">Set the Active Spring Profiles</a> for specifying alternate profile.</p>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_specifying_configuration_properties_when_launching_a_docker_image_4">Specifying configuration properties when launching a docker image</h6>
+<div class="sect4">
+<h5 id="_specifying_configuration_properties_when_launching_a_docker_image_4">Specifying configuration properties when launching a docker image</h5>
 <div class="paragraph">
 <p>Our docker image expects optional property file to be stored in the container
 /service-config folder. You can bind so docker volume to this path to make
@@ -4392,30 +4523,8 @@ properties or yml available.</p>
 <p>At time of writing, you cannot specify an alternate profile at runThirds.
 The default profiles activated are docker and native.</p>
 </div>
-<div class="sect6">
-<h7 id="_available_environment_variables_for_docker_image_7">Available environment variables for docker image</h7>
-<div class="ulist">
-<ul>
-<li>
-<p>REGISTRY_HOST: Registry service host</p>
-</li>
-<li>
-<p>REGISTRY_PORT: Registry service port</p>
-</li>
-<li>
-<p>JAVA_OPTIONS: Additional java options</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <div class="sect5">
-<h6 id="_specifying_configuration_properties_when_launching_on_kubernetes_4">Specifying configuration properties when launching on Kubernetes</h6>
-<div class="paragraph">
-<p>In progress</p>
-</div>
-<div class="sect6">
-<h7 id="_available_environment_variables_when_launching_on_kubernetes_7">Available environment variables when launching on Kubernetes</h7>
+<h6 id="_available_environment_variables_for_docker_image_7">Available environment variables for docker image</h6>
 <div class="ulist">
 <ul>
 <li>
@@ -4428,12 +4537,34 @@ The default profiles activated are docker and native.</p>
 <p>JAVA_OPTIONS: Additional java options</p>
 </li>
 </ul>
-</div>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_users_business_service">Users Business service</h5>
+<h5 id="_specifying_configuration_properties_when_launching_on_kubernetes_4">Specifying configuration properties when launching on Kubernetes</h5>
+<div class="paragraph">
+<p>In progress</p>
+</div>
+<div class="sect5">
+<h6 id="_available_environment_variables_when_launching_on_kubernetes_7">Available environment variables when launching on Kubernetes</h6>
+<div class="ulist">
+<ul>
+<li>
+<p>REGISTRY_HOST: Registry service host</p>
+</li>
+<li>
+<p>REGISTRY_PORT: Registry service port</p>
+</li>
+<li>
+<p>JAVA_OPTIONS: Additional java options</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_users_business_service">11.4.8. Users Business service</h4>
 <div class="paragraph">
 <p>OperatorFabric Users Business service is a Spring MVC application
 bootstrapped using SpringBoot.</p>
@@ -4442,8 +4573,8 @@ bootstrapped using SpringBoot.</p>
 <p>In our spring micro service architecture this service depends on Eureka
 Registry.</p>
 </div>
-<div class="sect5">
-<h6 id="_mandatory_configuration_profiles_and_default_properties_8">Mandatory configuration, Profiles and default properties</h6>
+<div class="sect4">
+<h5 id="_mandatory_configuration_profiles_and_default_properties_8">Mandatory configuration, Profiles and default properties</h5>
 <div class="paragraph">
 <p>The service has no mandatory configuration beside global configuration and
 usual bootstrap configuration.</p>
@@ -4461,8 +4592,8 @@ usual bootstrap configuration.</p>
 </li>
 </ul>
 </div>
-<div class="sect6">
-<h7 id="_service_specific_properties_6">Service specific properties</h7>
+<div class="sect5">
+<h6 id="_service_specific_properties_6">Service specific properties</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -4500,8 +4631,8 @@ usual bootstrap configuration.</p>
 </tbody>
 </table>
 </div>
-<div class="sect6">
-<h7 id="_default_properties_8">default properties</h7>
+<div class="sect5">
+<h6 id="_default_properties_8">default properties</h6>
 <div class="paragraph">
 <p>Note that you must provide a bootstrap file with a convenient registry configuration</p>
 </div>
@@ -4599,8 +4730,8 @@ development environment</p>
 </ul>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_sample_development_configuration_6">Sample development configuration</h7>
+<div class="sect5">
+<h6 id="_sample_development_configuration_6">Sample development configuration</h6>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>server:
@@ -4633,8 +4764,8 @@ operatorfabric.users.default:
 </div>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_sample_docker_image_configuration_7">Sample docker image configuration</h7>
+<div class="sect5">
+<h6 id="_sample_docker_image_configuration_7">Sample docker image configuration</h6>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>operatorfabric.users.default:
@@ -4662,8 +4793,8 @@ operatorfabric.users.default:
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_specifying_external_configuration_properties_when_launching_a_jar_file_5">Specifying external configuration properties when launching a jar file</h6>
+<div class="sect4">
+<h5 id="_specifying_external_configuration_properties_when_launching_a_jar_file_5">Specifying external configuration properties when launching a jar file</h5>
 <div class="paragraph">
 <p>See <a href="https://docs.spring.io/spring-boot/docs/2.1.2.RELEASE//reference/htmlsingle/#boot-features-external-config-application-property-files">Application Property Files</a>
 on how to setup an external spring properties or yml file.</p>
@@ -4672,8 +4803,8 @@ on how to setup an external spring properties or yml file.</p>
 <p>See <a href="https://docs.spring.io/spring-boot/docs/2.1.2.RELEASE//reference/htmlsingle/#howto-set-active-spring-profiles">Set the Active Spring Profiles</a> for specifying alternate profile.</p>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_specifying_configuration_properties_when_launching_a_docker_image_5">Specifying configuration properties when launching a docker image</h6>
+<div class="sect4">
+<h5 id="_specifying_configuration_properties_when_launching_a_docker_image_5">Specifying configuration properties when launching a docker image</h5>
 <div class="paragraph">
 <p>Our docker image expects optional property file to be stored in the container
 /service-config folder. You can bind so docker volume to this path to make
@@ -4683,30 +4814,8 @@ properties or yml available.</p>
 <p>At time of writing, you cannot specify an alternate profile at runUsers.
 The default profiles activated are docker and native.</p>
 </div>
-<div class="sect6">
-<h7 id="_available_environment_variables_for_docker_image_8">Available environment variables for docker image</h7>
-<div class="ulist">
-<ul>
-<li>
-<p>REGISTRY_HOST: Registry service host</p>
-</li>
-<li>
-<p>REGISTRY_PORT: Registry service port</p>
-</li>
-<li>
-<p>JAVA_OPTIONS: Additional java options</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
 <div class="sect5">
-<h6 id="_specifying_configuration_properties_when_launching_on_kubernetes_5">Specifying configuration properties when launching on Kubernetes</h6>
-<div class="paragraph">
-<p>In progress</p>
-</div>
-<div class="sect6">
-<h7 id="_available_environment_variables_when_launching_on_kubernetes_8">Available environment variables when launching on Kubernetes</h7>
+<h6 id="_available_environment_variables_for_docker_image_8">Available environment variables for docker image</h6>
 <div class="ulist">
 <ul>
 <li>
@@ -4719,12 +4828,34 @@ The default profiles activated are docker and native.</p>
 <p>JAVA_OPTIONS: Additional java options</p>
 </li>
 </ul>
-</div>
 </div>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_web_ui">Web UI</h5>
+<h5 id="_specifying_configuration_properties_when_launching_on_kubernetes_5">Specifying configuration properties when launching on Kubernetes</h5>
+<div class="paragraph">
+<p>In progress</p>
+</div>
+<div class="sect5">
+<h6 id="_available_environment_variables_when_launching_on_kubernetes_8">Available environment variables when launching on Kubernetes</h6>
+<div class="ulist">
+<ul>
+<li>
+<p>REGISTRY_HOST: Registry service host</p>
+</li>
+<li>
+<p>REGISTRY_PORT: Registry service port</p>
+</li>
+<li>
+<p>JAVA_OPTIONS: Additional java options</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_web_ui">11.4.9. Web UI</h4>
 <div class="paragraph">
 <p>OperatorFabric Web UI service is a Spring MVC application bootstrapped using
 SpringBoot. Its sole purpose is to serve the Angular SPA to browsers.</p>
@@ -4733,8 +4864,8 @@ SpringBoot. Its sole purpose is to serve the Angular SPA to browsers.</p>
 <p>In our spring micro service architecture this service depends on Eureka
 Registry.</p>
 </div>
-<div class="sect5">
-<h6 id="_mandatory_configuration_profiles_and_default_properties_9">Mandatory configuration, Profiles and default properties</h6>
+<div class="sect4">
+<h5 id="_mandatory_configuration_profiles_and_default_properties_9">Mandatory configuration, Profiles and default properties</h5>
 <div class="paragraph">
 <p>The service has no mandatory configuration beside global configuration and
 usual bootstrap configuration.</p>
@@ -4745,8 +4876,8 @@ NONE
 * <a href="https://docs.spring.io/spring-boot/docs/2.1.2.RELEASE//reference/htmlsingle/">Spring Boot documentation</a>.
 * <a href="https://docs.spring.io/spring/docs/5.1.4.RELEASE/spring-framework-reference/web-reactive.html#webflux">Spring MVC documentation</a>.</p>
 </div>
-<div class="sect6">
-<h7 id="_service_specific_properties_7">Service specific properties</h7>
+<div class="sect5">
+<h6 id="_service_specific_properties_7">Service specific properties</h6>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 25%;">
@@ -5219,8 +5350,8 @@ For this default value, with <code>'OperatorFabric'</code> as <code>name</code> 
 </tbody>
 </table>
 </div>
-<div class="sect6">
-<h7 id="_default_properties_9">default properties</h7>
+<div class="sect5">
+<h6 id="_default_properties_9">default properties</h6>
 <div class="paragraph">
 <p>Note that you must provide a bootstrap file with a convenient registry configuration</p>
 </div>
@@ -5318,8 +5449,8 @@ development environment</p>
 </ul>
 </div>
 </div>
-<div class="sect6">
-<h7 id="_sample_development_configuration_7">Sample development configuration</h7>
+<div class="sect5">
+<h6 id="_sample_development_configuration_7">Sample development configuration</h6>
 <div class="listingblock">
 <div class="content">
 <pre class="highlight"><code>server:
@@ -5404,101 +5535,101 @@ operatorfabric:
           version: 0.1.2-RELEASE
   time:
     pulse: 5000</code></pre>
-</div>
-</div>
-</div>
-<div class="sect6">
-<h7 id="_sample_docker_image_configuration_8">Sample docker image configuration</h7>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>server:
-  port: 2200
-operatorfabric:
-  security:
-    provider-url: http://localhost:89
-    provider-realm: dev
-    logout-url: ${operatorfabric.security.provider-url}/auth/realms/${operatorfabric.security.provider-realm}/protocol/openid-connect/logout?redirect_uri=http://localhost:2002/ui/
-    oauth2:
-      flow:
-        mode: CODE
-        provider: Opfab Keycloak
-        delagate-url: ${operatorfabric.security.provider-url}/auth/realms/${operatorfabric.security.provider-realm}/protocol/openid-connect/auth?response_type=code&amp;client_id=opfab-client
-  feed:
-    subscription:
-      timeout: 600000
-    card:
-      time:
-        display: BUSINESS
-    timeline:
-      domains:
-        - "TR"
-        - "J"
-        - "7D"
-        - "W"
-        - "M"
-        - "Y"
-    notify: false
-  archive:
-    filters:
-      page.size:
-        - "10"
-      page.first:
-        - "0"
-      publisher.list:
-        - value: "TEST"
-          label: "Test Publisher"
-        - value: "TEST2"
-          label: "Test Publisher 2"
-      process.list:
-            - process
-            - someOtherProcess
-      tags.list:
-        - value: "tag1"
-          label: "Label for tag 1"
-        - value: "tag2"
-          label: "Label for tag 2"
-  i10n.supported.time-zones:
-    - value: "Europe/Paris"
-      label: "Headquarters timezone"
-    - value: "Australia/Melbourne"
-      label: "Down Under"
-    - Europe/London
-    - Europe/Dublin
-    - Europe/Brussel
-    - Europe/Berlin
-    - Europe/Rome
-    - Europe/Madrid
-    - Europe/Lisbon
-    - Europe/Amsterdam
-    - Europe/Athens
-    - Pacific/Samoa
-  i18n.supported.locales:
-    - en
-    - fr
-  settings:
-    locale: en
-    infos:
-      description: true
-    about:
-      firstapplication:
-        name: First application
-        version: v12.34.56
-        rank: 1
-      keycloack:
-        name: Keycloak
-        version: 6.0.1
-        rank: 2
-      lastapplication:
-          name: Wonderful Solution
-          version: 0.1.2-RELEASE
-  time:
-    pulse: 5000</code></pre>
-</div>
 </div>
 </div>
 </div>
 <div class="sect5">
-<h6 id="_specifying_external_configuration_properties_when_lauching_a_jar_file_4">Specifying external configuration properties when lauching a jar file</h6>
+<h6 id="_sample_docker_image_configuration_8">Sample docker image configuration</h6>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>server:
+  port: 2200
+operatorfabric:
+  security:
+    provider-url: http://localhost:89
+    provider-realm: dev
+    logout-url: ${operatorfabric.security.provider-url}/auth/realms/${operatorfabric.security.provider-realm}/protocol/openid-connect/logout?redirect_uri=http://localhost:2002/ui/
+    oauth2:
+      flow:
+        mode: CODE
+        provider: Opfab Keycloak
+        delagate-url: ${operatorfabric.security.provider-url}/auth/realms/${operatorfabric.security.provider-realm}/protocol/openid-connect/auth?response_type=code&amp;client_id=opfab-client
+  feed:
+    subscription:
+      timeout: 600000
+    card:
+      time:
+        display: BUSINESS
+    timeline:
+      domains:
+        - "TR"
+        - "J"
+        - "7D"
+        - "W"
+        - "M"
+        - "Y"
+    notify: false
+  archive:
+    filters:
+      page.size:
+        - "10"
+      page.first:
+        - "0"
+      publisher.list:
+        - value: "TEST"
+          label: "Test Publisher"
+        - value: "TEST2"
+          label: "Test Publisher 2"
+      process.list:
+            - process
+            - someOtherProcess
+      tags.list:
+        - value: "tag1"
+          label: "Label for tag 1"
+        - value: "tag2"
+          label: "Label for tag 2"
+  i10n.supported.time-zones:
+    - value: "Europe/Paris"
+      label: "Headquarters timezone"
+    - value: "Australia/Melbourne"
+      label: "Down Under"
+    - Europe/London
+    - Europe/Dublin
+    - Europe/Brussel
+    - Europe/Berlin
+    - Europe/Rome
+    - Europe/Madrid
+    - Europe/Lisbon
+    - Europe/Amsterdam
+    - Europe/Athens
+    - Pacific/Samoa
+  i18n.supported.locales:
+    - en
+    - fr
+  settings:
+    locale: en
+    infos:
+      description: true
+    about:
+      firstapplication:
+        name: First application
+        version: v12.34.56
+        rank: 1
+      keycloack:
+        name: Keycloak
+        version: 6.0.1
+        rank: 2
+      lastapplication:
+          name: Wonderful Solution
+          version: 0.1.2-RELEASE
+  time:
+    pulse: 5000</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_specifying_external_configuration_properties_when_lauching_a_jar_file_4">Specifying external configuration properties when lauching a jar file</h5>
 <div class="paragraph">
 <p>See <a href="https://docs.spring.io/spring-boot/docs/2.1.2.RELEASE//reference/htmlsingle/#boot-features-external-config-application-property-files">Application Property Files</a>
 on how to setup an external spring properties or yml file.</p>
@@ -5507,8 +5638,8 @@ on how to setup an external spring properties or yml file.</p>
 <p>See <a href="https://docs.spring.io/spring-boot/docs/2.1.2.RELEASE//reference/htmlsingle/#howto-set-active-spring-profiles">Set the Active Spring Profiles</a> for specifying alternate profile.</p>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_specifying_configuration_properties_when_lauching_a_docker_image_4">Specifying configuration properties when lauching a docker image</h6>
+<div class="sect4">
+<h5 id="_specifying_configuration_properties_when_lauching_a_docker_image_4">Specifying configuration properties when lauching a docker image</h5>
 <div class="paragraph">
 <p>Our docker image expects optional property file to be stored in the container
 /service-config folder. You can bind so docker volume to this path to make
@@ -5518,8 +5649,8 @@ properties or yml available.</p>
 <p>At time of writing, you cannot specify an alternate profile at runCards-Publication.
 The default profiles activated are docker and native.</p>
 </div>
-<div class="sect6">
-<h7 id="_available_environment_variables_for_docker_image_9">Available environment variables for docker image</h7>
+<div class="sect5">
+<h6 id="_available_environment_variables_for_docker_image_9">Available environment variables for docker image</h6>
 <div class="ulist">
 <ul>
 <li>
@@ -5535,13 +5666,13 @@ The default profiles activated are docker and native.</p>
 </div>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_specifying_configuration_properties_when_lauching_on_kubernetes_4">Specifying configuration properties when lauching on Kubernetes</h6>
+<div class="sect4">
+<h5 id="_specifying_configuration_properties_when_lauching_on_kubernetes_4">Specifying configuration properties when lauching on Kubernetes</h5>
 <div class="paragraph">
 <p>In progress</p>
 </div>
-<div class="sect6">
-<h7 id="_available_environment_variables_when_launching_on_kubernetes_9">Available environment variables when launching on Kubernetes</h7>
+<div class="sect5">
+<h6 id="_available_environment_variables_when_launching_on_kubernetes_9">Available environment variables when launching on Kubernetes</h6>
 <div class="ulist">
 <ul>
 <li>
@@ -5559,15 +5690,15 @@ The default profiles activated are docker and native.</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_users_and_groups_administration">3.4.5. Users and Groups Administration</h4>
+<div class="sect2">
+<h3 id="_users_and_groups_administration">11.5. Users and Groups Administration</h3>
 <div class="paragraph">
 <p>A new operator call John Doe, who has OAuth granted right to connect ot current <code>OperatorFabric</code> instance, need to receive cards within current <code>OperatorFabric</code> instance. As a user of OperatorFabric, he needs to be added to the system with a <code>login</code> (john-doe-operator), his <code>firstName</code> (John) and his <code>lastName</code> (Doe).
 operator
 As there is no <code>Administration GUI</code> for the moment, it must be performed through command line, as specify <a href="https://opfab.github.io/projects/services/core/users/1.0.0.RELEASE/api/#SimpleUser">here</a>.</p>
 </div>
-<div class="sect4">
-<h5 id="_list_all_users">List all users</h5>
+<div class="sect3">
+<h4 id="_list_all_users">11.5.1. List all users</h4>
 <div class="paragraph">
 <p>First of all, list the users (who are the recipients in OperatorFabric) of the system with the following commands:</p>
 </div>
@@ -5654,8 +5785,8 @@ As there is no <code>Administration GUI</code> for the moment, it must be perfor
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_create_a_new_user">Create a new User</h5>
+<div class="sect3">
+<h4 id="_create_a_new_user">11.5.2. Create a new User</h4>
 <div class="paragraph">
 <p>We are sure that no John-doe-operator exists in our OperatorFabric instance. We can add him in our OperatorFabric instance using the following command use httpie:</p>
 </div>
@@ -5687,8 +5818,8 @@ As there is no <code>Administration GUI</code> for the moment, it must be perfor
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_fetch_user_details">Fetch user details</h5>
+<div class="sect3">
+<h4 id="_fetch_user_details">11.5.3. Fetch user details</h4>
 <div class="paragraph">
 <p>It&#8217;s always a good thing to verify if all the information has been correctly recorded in the system:</p>
 </div>
@@ -5724,8 +5855,8 @@ As there is no <code>Administration GUI</code> for the moment, it must be perfor
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_update_user_details">Update user details</h5>
+<div class="sect3">
+<h4 id="_update_user_details">11.5.4. Update user details</h4>
 <div class="paragraph">
 <p>As shown by this result, the firstName of the new operator has been misspelled.We need <a href="https://opfab.github.io/projects/services/core/users/1.0.0.RELEASE/api/#updateUser">to update the existing user</a> with <code>john-doe-operator</code> login. To correct this mistake, the following commands can be used :</p>
 </div>
@@ -5760,8 +5891,8 @@ As there is no <code>Administration GUI</code> for the moment, it must be perfor
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_list_groups">List groups</h5>
+<div class="sect3">
+<h4 id="_list_groups">11.5.5. List groups</h4>
 <div class="paragraph">
 <p>This operator is the first member of a new group operator called the <code>OPERATORS</code>, which doesn&#8217;t exist for the moment in the system. As shown when we <a href="https://opfab.github.io/projects/services/core/users/1.0.0.RELEASE/api/#fetchGroups">lists the groups existing in the server</a>.</p>
 </div>
@@ -5821,8 +5952,8 @@ As there is no <code>Administration GUI</code> for the moment, it must be perfor
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_create_a_new_group">Create a new Group</h5>
+<div class="sect3">
+<h4 id="_create_a_new_group">11.5.6. Create a new Group</h4>
 <div class="paragraph">
 <p>Firstly, the group called <code>OPERATORS</code> has <a href="https://opfab.github.io/projects/services/core/users/1.0.0.RELEASE/api/#createGroup">to be added to the system</a> using the following command:</p>
 </div>
@@ -5856,8 +5987,8 @@ As there is no <code>Administration GUI</code> for the moment, it must be perfor
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_fetch_details_of_a_given_group">Fetch details of a given group</h5>
+<div class="sect3">
+<h4 id="_fetch_details_of_a_given_group">11.5.7. Fetch details of a given group</h4>
 <div class="paragraph">
 <p>The result return seems strange, to verify if it&#8217;s the correct answer by <a href="https://opfab.github.io/projects/services/core/users/1.0.0.RELEASE/api/#fetchGroup">displaying the details of the group</a> called <code>OPERATORS</code>, use the following command:</p>
 </div>
@@ -5891,8 +6022,8 @@ As there is no <code>Administration GUI</code> for the moment, it must be perfor
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_update_details_of_a_group">Update details of a group</h5>
+<div class="sect3">
+<h4 id="_update_details_of_a_group">11.5.8. Update details of a group</h4>
 <div class="paragraph">
 <p>The description is really null. After verification, in our first command used to create the group, the attribute for the description is misspelled. Using the following command <a href="https://opfab.github.io/projects/services/core/users/1.0.0.RELEASE/api/#updateGroup">to update the group</a>, with the correct spelling, the new group of operator gets a proper description:</p>
 </div>
@@ -5924,8 +6055,8 @@ As there is no <code>Administration GUI</code> for the moment, it must be perfor
 </div>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_add_a_user_to_a_group">Add a user to a group</h5>
+<div class="sect3">
+<h4 id="_add_a_user_to_a_group">11.5.9. Add a user to a group</h4>
 <div class="paragraph">
 <p>As both new group and new user are correct it&#8217;s time <a href="https://opfab.github.io/projects/services/core/users/1.0.0.RELEASE/api/#addGroupUsers">to make the user member of the group</a>. To achieve this, use the following command:</p>
 </div>
@@ -5988,8 +6119,8 @@ As there is no <code>Administration GUI</code> for the moment, it must be perfor
 <p>It&#8217;s now possible to send cards either specifically to <code>john-doe-operator</code> or more generally to the <code>OPERATORS</code> group.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_remove_a_user_from_a_group">Remove a user from a Group</h5>
+<div class="sect3">
+<h4 id="_remove_a_user_from_a_group">11.5.10. Remove a user from a Group</h4>
 <div class="paragraph">
 <p>When John Doe is no longer in charge of hypervising cards for <code>OPERATORS</code> group, this group has to be removed from his login by using the following command:</p>
 </div>
@@ -6062,8 +6193,10 @@ As there is no <code>Administration GUI</code> for the moment, it must be perfor
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_service_port_table">3.5. Service port table</h3>
+</div>
+<div class="sect1">
+<h2 id="_service_port_table">12. Service port table</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>By default all service built artifacts are configured with server.port set
 to 8080</p>
@@ -6351,8 +6484,10 @@ docker-compose files (see [prj]/src/main/docker) the ports used are</p>
 <p> </div></details> </p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_restricted_operations_administration">3.6. Restricted operations (administration)</h3>
+</div>
+<div class="sect1">
+<h2 id="_restricted_operations_administration">13. Restricted operations (administration)</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Some operations are restricted to users with the <strong>ADMIN</strong> role, either because they are administration
 operations with the potential to impact the OperatorFabric instance as a whole, or because they
@@ -6398,18 +6533,18 @@ groups), just like any other user.
 </div>
 </div>
 </div>
-</div>
+<h1 id="_operatorfabric_community" class="sect0">OperatorFabric Community</h1>
 <div class="sect1">
-<h2 id="_operatorfabric_community">4. OperatorFabric Community</h2>
+<h2 id="_introduction_3">14. Introduction</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_introduction_3">4.1. Introduction</h3>
 <div class="paragraph">
 <p>The aim of this document is to present the OperatorFabric community, its code of conduct and to welcome contributors!</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_contributing">4.2. Contributing</h3>
+</div>
+<div class="sect1">
+<h2 id="_contributing">15. Contributing</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Thank you for your interest !</p>
 </div>
@@ -6419,16 +6554,16 @@ appreciated.
 However, because the project is still in its early stages, we&#8217;re not fully equipped for any of it yet, so please bear
 with us while the contribution process and tooling are sorted out.</p>
 </div>
-<div class="sect3">
-<h4 id="_code_of_conduct">4.2.1. Code of Conduct</h4>
+<div class="sect2">
+<h3 id="_code_of_conduct">15.1. Code of Conduct</h3>
 <div class="paragraph">
 <p>This project and everyone participating in it is governed by the <a href="CODE_OF_CONDUCT.adoc">OperatorFabric Code of Conduct</a>.
 By participating, you are expected to uphold this code.
 Please report unacceptable behavior to <a href="mailto:opfab_AT_lists.lfenergy.org">opfab_AT_lists.lfenergy.org</a>.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_license_and_developer_certificate_of_origin">4.2.2. License and Developer Certificate of Origin</h4>
+<div class="sect2">
+<h3 id="_license_and_developer_certificate_of_origin">15.2. License and Developer Certificate of Origin</h3>
 <div class="paragraph">
 <p>OperatorFabric is an open source project licensed under the <a href="https://www.mozilla.org/en-US/MPL/2.0/">Mozilla Public License 2.0</a>.
 By contributing to OperatorFabric, you accept and agree to the terms and conditions for your present and future
@@ -6464,22 +6599,22 @@ Signed-off-by: John Doe &lt;john.doe@email-provider.com&gt;</pre>
 contain a valid <code>Signed-off-by</code> line.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_how_can_i_contribute">4.2.3. How Can I Contribute ?</h4>
+<div class="sect2">
+<h3 id="_how_can_i_contribute">15.3. How Can I Contribute ?</h3>
 <div class="paragraph">
 <p>These processes and templates have been adapted from the ones defined by the <a href="https://github.com/powsybl">PowSyBl</a>
 project.</p>
 </div>
-<div class="sect4">
-<h5 id="_reporting_bugs_and_suggesting_enhancements">Reporting Bugs and Suggesting Enhancements</h5>
+<div class="sect3">
+<h4 id="_reporting_bugs_and_suggesting_enhancements">15.3.1. Reporting Bugs and Suggesting Enhancements</h4>
 <div class="paragraph">
 <p>Work in Progress</p>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_contributing_code">15.3.2. Contributing Code</h4>
 <div class="sect4">
-<h5 id="_contributing_code">Contributing Code</h5>
-<div class="sect5">
-<h6 id="_code_guidelines">Code Guidelines</h6>
+<h5 id="_code_guidelines">Code Guidelines</h5>
 <div class="ulist">
 <ul>
 <li>
@@ -6525,8 +6660,8 @@ you create or amend. See src/main/headers for examples.</p>
 </ul>
 </div>
 </div>
-<div class="sect5">
-<h6 id="_contribution_process">Contribution Process</h6>
+<div class="sect4">
+<h5 id="_contribution_process">Contribution Process</h5>
 <div class="paragraph">
 <p>Code Contribution is tracked as <a href="https://help.github.com/en/articles/about-pull-requests">GitHub Pull Requests</a>.
 Crafting a good pull request takes time and energy and we will help as much as we can, but be prepared to follow our
@@ -6590,18 +6725,18 @@ enforce the following:</p>
 </div>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_project_governance">15.4. Project Governance</h3>
 <div class="sect3">
-<h4 id="_project_governance">4.2.4. Project Governance</h4>
-<div class="sect4">
-<h5 id="_project_owner">Project Owner</h5>
+<h4 id="_project_owner">15.4.1. Project Owner</h4>
 <div class="paragraph">
 <p>OperatorFabric is part of the <a href="https://www.lfenergy.org/">LF Energy Foundation</a>, a project of the
 <a href="https://www.linuxfoundation.org/">Linux Foundation</a> that supports open source innovation projects within the energy
 and electricity sectors.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_committers">Committers</h5>
+<div class="sect3">
+<h4 id="_committers">15.4.2. Committers</h4>
 <div class="paragraph">
 <p>Committers are contributors who have made several valuable contributions to the project and are now relied upon to both
 write code directly to the repository and screen the contributions of others. In many cases they are programmers but it
@@ -6610,8 +6745,8 @@ the project, and will bring a level of expertise and understanding that earns th
 project owner.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_technical_steering_committee">Technical Steering Committee</h5>
+<div class="sect3">
+<h4 id="_technical_steering_committee">15.4.3. Technical Steering Committee</h4>
 <div class="paragraph">
 <p>The Technical Steering Committee (TSC) is composed of voting members elected by the active Committers as described in
 the project’s Technical Charter.</p>
@@ -6642,8 +6777,8 @@ the project’s Technical Charter.</p>
 <p>Boris Dolley will chair the TSC, with Hanae Safi as his deputy.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_contributors">Contributors</h5>
+<div class="sect3">
+<h4 id="_contributors">15.4.4. Contributors</h4>
 <div class="paragraph">
 <p>Contributors include anyone in the technical community that contributes code, documentation, or other technical
 artifacts to the project.</p>
@@ -6655,13 +6790,13 @@ are beneficial to the project.</p>
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_communication_channels">4.2.5. Communication channels</h4>
+<div class="sect2">
+<h3 id="_communication_channels">15.5. Communication channels</h3>
 <div class="paragraph">
 <p>In addition to GitHub we have set up:</p>
 </div>
-<div class="sect4">
-<h5 id="_website_opfab_org">Website: <a href="http://opfab.org" class="bare">opfab.org</a></h5>
+<div class="sect3">
+<h4 id="_website_opfab_org">15.5.1. Website: <a href="http://opfab.org" class="bare">opfab.org</a></h4>
 <div class="paragraph">
 <p>Our website contains all the documentation and resources we&#8217;re currently working on. Here is what we aim to provide:</p>
 </div>
@@ -6703,8 +6838,8 @@ RSS feed on the home page to be informed of any update.
 </table>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_spectrum_community_spectrum_chatopfab">Spectrum Community : <a href="https://spectrum.chat/opfab" class="bare">spectrum.chat/opfab</a></h5>
+<div class="sect3">
+<h4 id="_spectrum_community_spectrum_chatopfab">15.5.2. Spectrum Community : <a href="https://spectrum.chat/opfab" class="bare">spectrum.chat/opfab</a></h4>
 <div class="paragraph">
 <p>If you would like to join the discussions regarding OperatorFabric, please
 <a href="https://spectrum.chat/opfab">join our community on Spectrum</a>!</p>
@@ -6713,8 +6848,8 @@ RSS feed on the home page to be informed of any update.
 <p>Regarding issue tracking, our Jira platform should be open soon.</p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_lf_energy_mailing_lists">LF Energy Mailing Lists</h5>
+<div class="sect3">
+<h4 id="_lf_energy_mailing_lists">15.5.3. LF Energy Mailing Lists</h4>
 <div class="paragraph">
 <p>Several mailing lists have been created by LF Energy for the project, please feel free to subscribe to the ones you
 could be interested in:</p>
@@ -6737,16 +6872,18 @@ could be interested in:</p>
 <a href="https://lists.lfenergy.org/g/lfenergy">LF Energy General Discussion</a></p>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_jira">JIRA</h5>
+<div class="sect3">
+<h4 id="_jira">15.5.4. JIRA</h4>
 
 </div>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_contributor_covenant_code_of_conduct">16. Contributor Covenant Code of Conduct</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="_contributor_covenant_code_of_conduct">4.3. Contributor Covenant Code of Conduct</h3>
-<div class="sect3">
-<h4 id="_our_pledge">4.3.1. Our Pledge</h4>
+<h3 id="_our_pledge">16.1. Our Pledge</h3>
 <div class="paragraph">
 <p>In the interest of fostering an open and welcoming environment, we as
 contributors and maintainers pledge to making participation in our project and
@@ -6756,8 +6893,8 @@ level of experience, education, socioeconomic status, nationality, personal
 appearance, race, religion, or sexual identity and orientation.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_our_standards">4.3.2. Our Standards</h4>
+<div class="sect2">
+<h3 id="_our_standards">16.2. Our Standards</h3>
 <div class="paragraph">
 <p>Examples of behavior that contributes to creating a positive environment
 include:</p>
@@ -6807,8 +6944,8 @@ professional setting</p>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_our_responsibilities">4.3.3. Our Responsibilities</h4>
+<div class="sect2">
+<h3 id="_our_responsibilities">16.3. Our Responsibilities</h3>
 <div class="paragraph">
 <p>Project maintainers are responsible for clarifying the standards of acceptable
 behavior and are expected to take appropriate and fair corrective action in
@@ -6822,8 +6959,8 @@ permanently any contributor for other behaviors that they deem inappropriate,
 threatening, offensive, or harmful.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_scope">4.3.4. Scope</h4>
+<div class="sect2">
+<h3 id="_scope">16.4. Scope</h3>
 <div class="paragraph">
 <p>This Code of Conduct applies both within project spaces and in public spaces
 when an individual is representing the project or its community. Examples of
@@ -6833,8 +6970,8 @@ representative at an online or offline event. Representation of a project may be
 further defined and clarified by project maintainers.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_enforcement">4.3.5. Enforcement</h4>
+<div class="sect2">
+<h3 id="_enforcement">16.5. Enforcement</h3>
 <div class="paragraph">
 <p>Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported by contacting the project team at <a href="mailto:&#112;o&#119;&#x73;&#x79;&#x62;&#x6c;&#46;&#x64;&#x64;l&#64;&#x72;&#116;e&#45;&#102;&#114;a&#110;c&#x65;&#46;&#x63;&#x6f;&#109;">&#112;o&#119;&#x73;&#x79;&#x62;&#x6c;&#46;&#x64;&#x64;l&#64;&#x72;&#116;e&#45;&#102;&#114;a&#110;c&#x65;&#46;&#x63;&#x6f;&#109;</a>. All
@@ -6849,8 +6986,8 @@ faith may face temporary or permanent repercussions as determined by other
 members of the project&#8217;s leadership.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_attribution">4.3.6. Attribution</h4>
+<div class="sect2">
+<h3 id="_attribution">16.6. Attribution</h3>
 <div class="paragraph">
 <p>This Code of Conduct is adapted from the <a href="https://www.contributor-covenant.org">Contributor Covenant</a>, version 1.4,
 available at <a href="https://www.contributor-covenant.org/version/1/4/code-of-conduct.html">https://www.contributor-covenant.org/version/1/4/code-of-conduct.html</a></p>
@@ -6862,20 +6999,20 @@ available at <a href="https://www.contributor-covenant.org/version/1/4/code-of-c
 </div>
 </div>
 </div>
-</div>
+<h1 id="_operatorfabric_cicd" class="sect0">OperatorFabric CICD</h1>
 <div class="sect1">
-<h2 id="_operatorfabric_cicd">5. OperatorFabric CICD</h2>
+<h2 id="_introduction_4">17. Introduction</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_introduction_4">5.1. Introduction</h3>
 <div class="paragraph">
 <p>The aim of this document is to describe our CICD pipeline and our release process.</p>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_release_process">18. Release process</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="_release_process">5.2. Release process</h3>
-<div class="sect3">
-<h4 id="_version_numbers">5.2.1. Version numbers</h4>
+<h3 id="_version_numbers">18.1. Version numbers</h3>
 <div class="paragraph">
 <p>Version numbers X.Y.Z.label should be understood like this:</p>
 </div>
@@ -6907,8 +7044,8 @@ the same major version.</p>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_releasing_version">5.2.2. Releasing Version</h4>
+<div class="sect2">
+<h3 id="_releasing_version">18.2. Releasing Version</h3>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -6929,8 +7066,8 @@ It is thus crucial to double-check the content of this file before any push (tri
 <div class="paragraph">
 <p>Considering a version X.X.X.SNAPSHOT.</p>
 </div>
-<div class="sect4">
-<h5 id="_in_the_source_repository_operatorfabric_core">In the source repository (operatorfabric-core)</h5>
+<div class="sect3">
+<h4 id="_in_the_source_repository_operatorfabric_core">18.2.1. In the source repository (operatorfabric-core)</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7024,7 +7161,7 @@ The build job should have the following three stages:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="/home/guironnetale/IdeaProjects/opfab_doc_v2/images/running_build.png" alt="Running build status page screenshot">
+<img src="./images/running_build.png" alt="Running build status page screenshot">
 </div>
 </div>
 <div class="paragraph">
@@ -7061,8 +7198,8 @@ repository, so instead you can just type <a href="https://opfab.github.io/docume
 </ol>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_checking_deploy_docker_compose">Checking deploy docker-compose</h5>
+<div class="sect3">
+<h4 id="_checking_deploy_docker_compose">18.2.2. Checking deploy docker-compose</h4>
 <div class="paragraph">
 <p>The deploy docker-compose file should always rely on the latest RELEASE version
 available on DockerHub. Once the CI pipeline triggered by the previous steps has completed successfully,
@@ -7079,8 +7216,8 @@ and you can see X.X.X.RELEASE images for all services on DockerHub, you should:<
 </ol>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_in_the_documentation_repository_opfab_github_io">In the documentation repository (opfab.github.io)</h5>
+<div class="sect3">
+<h4 id="_in_the_documentation_repository_opfab_github_io">18.2.3. In the documentation repository (opfab.github.io)</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7131,8 +7268,8 @@ and you can see X.X.X.RELEASE images for all services on DockerHub, you should:<
 </ol>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_in_jira">In Jira</h5>
+<div class="sect3">
+<h4 id="_in_jira">18.2.4. In Jira</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7145,8 +7282,8 @@ and you can see X.X.X.RELEASE images for all services on DockerHub, you should:<
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_advertising_the_new_release_opfab_github_io_and_mailing_list">5.2.3. Advertising the new release (opfab.github.io and mailing list)</h4>
+<div class="sect2">
+<h3 id="_advertising_the_new_release_opfab_github_io_and_mailing_list">18.3. Advertising the new release (opfab.github.io and mailing list)</h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7155,7 +7292,7 @@ and you can see X.X.X.RELEASE images for all services on DockerHub, you should:<
 to get the release notes (click "Release notes" under the version name at the top) listing new features, fixed bugs etc&#8230;&#8203;</p>
 <div class="imageblock">
 <div class="content">
-<img src="/home/guironnetale/IdeaProjects/opfab_doc_v2/images/release_notes.png" alt="Release notes link">
+<img src="./images/release_notes.png" alt="Release notes link">
 </div>
 </div>
 </li>
@@ -7170,8 +7307,8 @@ This post should highlight new features and necessary upgrade actions if any.</p
 </ol>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_preparing_next_version">5.2.4. Preparing next version</h4>
+<div class="sect2">
+<h3 id="_preparing_next_version">18.4. Preparing next version</h3>
 <div class="admonitionblock important">
 <table>
 <tr>
@@ -7190,8 +7327,8 @@ new version will make rolling back or correcting any mistake on the release more
 <div class="paragraph">
 <p>To prepare a next version you simply need to increment the version after a release (see <a href="#_version_numbers">Version numbers</a>).</p>
 </div>
-<div class="sect4">
-<h5 id="_in_the_source_repository_operatorfabric_core_2">In the source repository (operatorfabric-core)</h5>
+<div class="sect3">
+<h4 id="_in_the_source_repository_operatorfabric_core_2">18.4.1. In the source repository (operatorfabric-core)</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7254,8 +7391,8 @@ notes for next version.</p>
 </ol>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_in_the_documentation_repository_opfab_github_io_2">In the documentation repository (opfab.github.io)</h5>
+<div class="sect3">
+<h4 id="_in_the_documentation_repository_opfab_github_io_2">18.4.2. In the documentation repository (opfab.github.io)</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7276,8 +7413,8 @@ notes for next version.</p>
 </ol>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_in_jira_2">In Jira</h5>
+<div class="sect3">
+<h4 id="_in_jira_2">18.4.3. In Jira</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -7286,8 +7423,8 @@ notes for next version.</p>
 </ol>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_checking_dockerhub_the_following_day">Checking DockerHub the following day</h5>
+<div class="sect3">
+<h4 id="_checking_dockerhub_the_following_day">18.4.4. Checking DockerHub the following day</h4>
 <div class="paragraph">
 <p>A CRON Travis job runs daily (the time of the day may vary) and generates the documentation and docker snapshot images.
 After you have finished switching to the Y.Y.Y.SNAPSHOT version, you should wait for such a job to run and check that
@@ -7296,8 +7433,10 @@ the snapshot images are correctly generated and pushed on DockerHub.</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_cicd_scripts">5.3. CICD Scripts</h3>
+</div>
+<div class="sect1">
+<h2 id="_cicd_scripts">19. CICD Scripts</h2>
+<div class="sectionbody">
 <div class="dlist">
 <dl>
 <dt class="hdlist1">CICD/prepare_release_version.sh</dt>
@@ -7312,14 +7451,12 @@ the snapshot images are correctly generated and pushed on DockerHub.</p>
 </div>
 </div>
 </div>
-</div>
+<h1 id="_operatorfabric_release_notes" class="sect0">OperatorFabric Release Notes</h1>
 <div class="sect1">
-<h2 id="_operatorfabric_release_notes">6. OperatorFabric Release Notes</h2>
+<h2 id="_version_1_0_0_release">20. Version 1.0.0.RELEASE</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_version_1_0_0_release">6.1. Version 1.0.0.RELEASE</h3>
-<div class="sect3">
-<h4 id="_story">6.1.1. Story</h4>
+<h3 id="_story">20.1. Story</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -7339,8 +7476,8 @@ into account, so that cards are sorted by closest lttd then latest publication d
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_bug">6.1.2. Bug</h4>
+<div class="sect2">
+<h3 id="_bug">20.2. Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -7370,8 +7507,8 @@ into account, so that cards are sorted by closest lttd then latest publication d
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_task">6.1.3. Task</h4>
+<div class="sect2">
+<h3 id="_task">20.3. Task</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -7421,8 +7558,8 @@ into account, so that cards are sorted by closest lttd then latest publication d
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_feature">6.1.4. Feature</h4>
+<div class="sect2">
+<h3 id="_feature">20.4. Feature</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -7445,10 +7582,12 @@ into account, so that cards are sorted by closest lttd then latest publication d
 </div>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_version_0_15_1_release">21. Version 0.15.1.RELEASE</h2>
+<div class="sectionbody">
 <div class="sect2">
-<h3 id="_version_0_15_1_release">6.2. Version 0.15.1.RELEASE</h3>
-<div class="sect3">
-<h4 id="_bug_2">6.2.1. Bug</h4>
+<h3 id="_bug_2">21.1. Bug</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -7474,8 +7613,8 @@ done to avoid conflicts.</em></p>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_story_2">6.2.2. Story</h4>
+<div class="sect2">
+<h3 id="_story_2">21.2. Story</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -7519,8 +7658,8 @@ done to avoid conflicts.</em></p>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_task_2">6.2.3. Task</h4>
+<div class="sect2">
+<h3 id="_task_2">21.3. Task</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -7586,11 +7725,10 @@ described in the <a href="https://github.com/opfab/operatorfabric-core#8-docker-
 </div>
 </div>
 </div>
-</div>
 <div id="footer">
 <div id="footer-text">
 Version 1.0.0.RELEASE<br>
-Last updated 2020-03-31 13:36:31 +0200
+Last updated 2020-04-01 08:17:22 +0200
 </div>
 </div>
 </body>

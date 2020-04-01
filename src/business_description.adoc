@@ -4,11 +4,9 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-:imagesdir: images
-
-
-//TODO Remove
-Imagesdir: {imagesdir}
+:sectnums:
+:icons: font
+:hide-uri-scheme:
 
 To perform their duties, an operator has to interact with multiple applications
 (perform actions, watch for alerts, etc.), which can prove difficult if

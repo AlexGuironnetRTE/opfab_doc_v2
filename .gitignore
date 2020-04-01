@@ -109,3 +109,7 @@ gradle-app.setting
 # ignoring .env file needed by docker-compose in deploy containers
 **/deploy/.env
 
+# Ignoring local vendor/bundle gems and bundle config
+**/vendor/bundle
+**/.bundle
+

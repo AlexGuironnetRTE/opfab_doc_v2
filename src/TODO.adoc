@@ -1,7 +1,7 @@
 //TODO Refactor root includes
 //TODO Proofreading
 //TODO Copyrights
-//TODO Test examples
+//TODO Test examples to see if they are still accurate
 //TODO Harmonize header attributes
 //TODO Maybe find better names for directories/categories
 //TODO Check links
@@ -29,10 +29,15 @@
 //TODO Change gradle tasks and travis on mock
 //TODO Decide how to present archives
 //TODO Read back notes
-//TODO Document new documentation org, guidelines and pipelines
+//TODO Document new documentation org, guidelines and pipeline
+
+//Website
+//TODO Add footer with social/contact/github/spectrum icons
+//TODO Handle responsive behaviour
 
 // Optional
 //TODO What should we do with javadoc/compodoc
+//TODO Manage toc levels for each document (have default and override)
 //TODO What should we do with security/dependencies reports
 //TODO What should we do with posts?
 //TODO What should we do with <1.0.0 docs
