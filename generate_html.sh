@@ -3,7 +3,7 @@
 # Setting image dir
 
 export source_folder=src
-export output_folder=$(pwd)/docs/documentation
+export output_folder=$(echo $(pwd)/documentation | sed "s opfab_doc_v2 opfab_site_v2 g" )
 export image_folder=images
 export output_imagesdir=$output_folder/$imagesdir
 
