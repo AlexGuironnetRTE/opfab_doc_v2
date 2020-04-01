@@ -3,7 +3,7 @@
 # Setting image dir
 
 export source_folder=src
-export output_folder=$(pwd)/website/documentation
+export output_folder=$(pwd)/docs/documentation
 export image_folder=images
 export output_imagesdir=$output_folder/$imagesdir
 
