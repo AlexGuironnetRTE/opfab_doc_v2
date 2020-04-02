@@ -1,33 +1,37 @@
-//TODO Refactor root includes
-//TODO Proofreading
-//TODO Copyrights
-//TODO Test examples to see if they are still accurate
+// Before moving to opfab.github.io
 //TODO Harmonize header attributes
-//TODO Maybe find better names for directories/categories
-//TODO Check links
-//TODO Change links starting with https://opfab.github.io/documentation
-//TODO Add link back to summary (only for html?)
-
-//TODO Check all images
+//TODO Copyrights
+//TODO Decide how to present archives
+//TODO Create 1.1.0.RELEASE or SNAPSHOT using diff
 //TODO Add link to API doc
 
+//TODO Change links starting with https://opfab.github.io/documentation
+//TODO Check links
+
+//TODO Proofreading
+
+//TODO Test examples to see if they are still accurate
+
+
+
+//TODO Add link back to summary (only for html?)
+//TODO Check all images
 //TODO yml examples: links to github repo, include from github repo, include copies? tradeoff between self-sufficient
 //and risk that 1) content is not available at the time of generation 2) content evolves (rather than remaining snapshot
 // of what it was for this version) -> not for html
 
 //TODO Add HSA archive doc
 //TODO Add CICD doc
-//TODO Create 1.1.0.RELEASE or SNAPSHOT using diff
+
 //TODO Organize root content
 //TODO Cross-reference troubleshooting and organize into sections
 //TODO Do links work in single page document?
 
-//TODO Turn doc into simple website
 //TODO Replace file copies by includes from code
 //TODO Test generation
 //TODO Put it on mock website
 //TODO Change gradle tasks and travis on mock
-//TODO Decide how to present archives
+
 //TODO Read back notes
 //TODO Document new documentation org, guidelines and pipeline
 
