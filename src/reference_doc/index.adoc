@@ -6,21 +6,37 @@
 
 :revnumber: 1.0.0.RELEASE
 :revdate: 09 March 2020
-:imagesdir: ../images
 :sectnums:
 :toc: left
 :toclevels: 2
 :icons: font
 :hide-uri-scheme:
 
-//TODO
+= OperatorFabric Reference Documentation
 
+The aim of this document is to:
 
+* Explain what OperatorFabric is about and define the concepts it relies on
+* Give a basic tour of its features from a user perspective
+* Describe the technical implementation that makes it possible
 
-Imagedir is {imagesdir}
-
-ifdef::env-github[]
-This content is for GitHub only. 1
-endif::[]
+== Introduction
 
 include::../business_description.adoc[]
+
+== A quick walk through the user interface
+
+Work in progress
+//TODO Explain timeline, archives?
+//TODO Go through each screen to explain buttons? Filters etc.
+
+== Technical overview
+
+include::thirds_service.adoc[leveloffset=+1]
+
+include::users_service.adoc[leveloffset=+1]
+
+include::cards_publication_service.adoc[leveloffset=+1]
+
+include::cards_consultation_service.adoc[leveloffset=+1]
+

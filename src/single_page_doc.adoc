@@ -19,7 +19,7 @@ include::architecture/index.adoc[]
 
 include::getting_started/index.adoc[]
 
-//TODO reference_documentation
+include::reference_doc/index.adoc[]
 
 include::deployment/index.adoc[]
 
@@ -30,15 +30,6 @@ include::community/index.adoc[]
 include::CICD/index.adoc[]
 
 //TODO Add introduction and move architecture after getting started?
-
-
-
-
-
-
-
-
-
 
 include::release_notes/index.adoc[]
 

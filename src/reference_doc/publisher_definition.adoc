@@ -4,7 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-== Declaring a Third Party Service
+= Declaring a Third Party Service
 
 This sections explains Third Party Service Configuration
 
@@ -16,12 +16,12 @@ The way configuration is done is explained throughout examples before a more tec
 The following instructions describe tests to perform on OperatorFabric to understand how customization is working in it.
 The card data used here are send automatically using a script as describe here <<CardSendingScript,Cards sending script>>.
 
-=== Requirements
+== Requirements
 
 Those examples are played in an environment where an OperatorFabric instance (all micro-services) is running along
 a MongoDB Database and a RabbitMQ instances.
 
-=== Bundle
+== Bundle
 
 Third bundles customize the way third card details are displayed. Those `tar.gz` archives contain a descriptor file
 named `config.json`, eventually some `css files`, `i18n files` and `handlebars templates` to do so.
@@ -54,7 +54,7 @@ bundle
 
 To summarize, there are 5 directories and 8 files.
 
-==== The config.json file
+=== The config.json file
 
 It's a description file in `json` format. It lists the content of the bundle.
 
@@ -137,7 +137,7 @@ The mandatory declarations are `name` and `version` attributes.
 
 link:../api/#Third[related api details]
 
-==== i18n
+=== i18n
 
 There are two ways of i18n for third service. The first one is done using l10n files which are located in the `i18n` folder, the second one throughout l10n name folder nested in the `template` folder or in the `media` folder.
 
@@ -145,7 +145,7 @@ The `i18n` folder contains one json file per l10n.
 
 These localisation is used for integration of the third service into OperatorFabric, i.e. the label displayed for the third service, the label displayed for each tab of the details of the third card, the label of the actions in cards if any or the additional third entries in OperatorFabric(more on that at the chapter ????).
 
-=====  Template and Media folders
+====  Template and Media folders
 
 The `template` and the `media` folder must contain localized folder for the i18n of the card details. This is why in our example, as the bundle is localized for `en` and `fr` language, the `template` folder contains a `en` and a `fr` folder.
 

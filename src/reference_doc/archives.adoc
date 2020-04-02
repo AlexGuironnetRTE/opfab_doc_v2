@@ -4,9 +4,9 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-== Archived Cards
+= Archived Cards
 
-=== Key concepts
+== Key concepts
 
 Every time a card is published, in addition to being delivered to the users
 and persisted as a "current" card in MongoDB, it is also immediately
@@ -21,7 +21,7 @@ show all the states that a given process instance went through.
 
 //TODO Card examples
 
-=== Archives screen in the UI
+== Archives screen in the UI
 
 The Archives screen in the UI allows the users to query these archives with different filters.
 The layout of this screen is very similar to the Feed screen: the results are displayed in a
@@ -33,7 +33,7 @@ of the card.
 
 //TODO Add screenshot
 
-=== Archive endpoints in the card-consultation API
+== Archive endpoints in the card-consultation API
 
 This Archives screen relies on dedicated endpoints in the card-consultation API, as described
 link:https://opfab.github.io/projects/services/core/cards-consultation/1.0.0.RELEASE/api/#Archives[here].
