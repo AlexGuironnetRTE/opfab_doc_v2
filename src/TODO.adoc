@@ -33,6 +33,8 @@
 //TODO Change gradle tasks and travis on mock
 
 //TODO Read back notes
+//TODO Favicon
+//TODO Look at old site and check that there is nothing left to take/move (footer, favicon, etc.)
 //TODO Document new documentation org, guidelines and pipeline
 
 //Website
