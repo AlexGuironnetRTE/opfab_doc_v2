@@ -1,14 +1,12 @@
-== Gradle Tasks
-
-== Custom tasks
+= Gradle Tasks
 
 In this section only custom tasks are described. For more
 information on tasks, refer to the output of the "tasks" gradle task and
 to gradle and plugins official documentation.
 
-==== Services
+== Services
 
-===== Common tasks for all sub-projects
+=== Common tasks for all sub-projects
 
 * Test tasks
 ** unitTest: runs unit tests
@@ -17,14 +15,14 @@ to gradle and plugins official documentation.
 [sub-project]/build/
 ** copyDependencies: copy dependencies to build/libs
 
-===== Core
+=== Core
 
 * Swagger Generator tasks
 ** debugSwaggerOperations: generate swagger code from
 /src/main/modeling/config.json to build/swagger-analyse
 ** swaggerHelp: display help regarding swagger configuration options for java
 
-===== Third Party Service
+=== Thirds Service
 
 * Test tasks
 ** prepareTestDataDir: prepare directory (build/test-data) for test data
@@ -37,13 +35,13 @@ during development
 ** copyCompileClasspathDependencies: copy compile classpath dependencies,
 catching lombok that must be sent for sonarqube
 
-===== infra/config
+=== infra/config
 
 * Test tasks
 ** createDevData: prepare data in build/test-data for running bootRun task
 during development
 
-===== tools/generic
+=== tools/generic
 
 * Test tasks
 ** prepareTestData: copy test data from src/test/data/simple to
@@ -51,7 +49,7 @@ build/test-data/
 ** compressTestArchive: compress the contents of /src/test/data/archive to
 /build/test-data/archive.tar.gz
 
-==== Gradle Plugins
+== Gradle Plugins
 
 In addition to these custom tasks and standard Gradle tasks, OperatorFabric
 uses several Gradle plugins, among which:

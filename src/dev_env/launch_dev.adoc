@@ -4,7 +4,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-== Getting Started
+= Setting up your development environment
 
 WARNING: The steps below assume that you have installed and are using
 https://sdkman.io/[sdkman] and
@@ -17,19 +17,17 @@ the section that best fits your needs.
 TIP: If you encounter any issue, see <<Troubleshooting>> below. In particular,
 a command that hangs then fails is often a proxy issue.
 
-=== Build and run using script
-
 The following steps describe how to launch MongoDB, RabbitMQ and SonarQube
 using Docker,  build OperatorFabric using gradle and run it using the
 `run_all.sh` script.
 
-==== Clone repository
+== Clone repository
 ----
 git clone https://github.com/opfab/operatorfabric-core.git
 cd operatorfabric-core
 ----
 
-==== Set up your environment (environment variables & appropriate versions of gradle, maven, etc…)
+== Set up your environment (environment variables & appropriate versions of gradle, maven, etc…)
 ----
 source bin/load_environment_light.sh
 ----
@@ -37,7 +35,7 @@ source bin/load_environment_light.sh
 TIP: From now on, you can use environment variable $OF_HOME to go back to
 the home repository of OperatorFabric.
 
-==== Deploy dockerized MongoDB, RabbitMQ and SonarQube
+== Deploy dockerized MongoDB, RabbitMQ and SonarQube
 MongoDB, RabbitMQ and SonarQube are needed for the tests to be run so the
 build can be done.
 
@@ -50,7 +48,7 @@ cd src/main/docker/test-quality-environment/
 docker-compose up -d
 ----
 
-==== Build OperatorFabric with Gradle
+== Build OperatorFabric with Gradle
 
 Using the wrapper in order to ensure building the project the same way from one machine to another.
 
@@ -66,19 +64,19 @@ cd $OF_HOME
 ./gradlew build
 ----
 
-==== Run OperatorFabric Services using the `run_all.sh` script
+== Run OperatorFabric Services using the `run_all.sh` script
 ----
 bin/run_all.sh start
 ----
 
 TIP: See `bin/run_all.sh -h` for details.
 
-==== Check services status
+== Check services status
 ----
 bin/run_all.sh status
 ----
 
-==== Log into the UI
+== Log into the UI
 
 URL: localhost:2002/ui/
 
@@ -91,7 +89,7 @@ services are running.
 
 WARNING: Don't forget the *final slash* in the URL or you will get an error.
 
-==== Push cards to the feed
+== Push cards to the feed
 
 You can check that you see cards into the feed by running the
 `push_card_loop.sh` script.

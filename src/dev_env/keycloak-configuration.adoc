@@ -1,16 +1,34 @@
-# Dev Keycloak configuration
+// Copyright (c) 2020, RTE (http://www.rte-france.com)
+//
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-Go to [host]:89/auth/admin
+:revnumber: 1.0.0.RELEASE
+:revdate: 09 March 2020
+:sectnums:
+:toc: left
+:icons: font
+:hide-uri-scheme:
 
-## Add Realm
+= Keycloak Configuration
+
+The configuration needed for development purposes is automatically loaded from the dev-realms.json file.
+However, the steps below describe how they can be reproduced from scratch on a blank Keycloak instance in case you
+want to add to it.
+
+The Keycloak Management interface is available here:  [host]:89/auth/admin
+Default credentials are admin/admin.
+
+== Add Realm
 
 * Click top left down arrow next to Master
 * Add Realm
 * Name it dev (or whatever)
 
-## Setup at least one client (or best one per service)
+== Setup at least one client (or best one per service)
 
-### Create client
+=== Create client
  * Click Clients in left menu
  * Click Create Button
  * Set client ID to "opfab-client" (or whatever)
@@ -19,13 +37,13 @@ Go to [host]:89/auth/admin
  * Access Type to Confidential
  * save
  
-### Add a Role to Client
+=== Add a Role to Client
 
 * In client view, click Roles tab
 * Click Add button
 * create a USER role (or whatever)
 * save
-### create a Mapper
+== create a Mapper
 
 Used to map the user name to a field that suits services
 
@@ -36,7 +54,7 @@ Used to map the user name to a field that suits services
 * enable add to access token
 * save
 
-## create Users
+== Create Users
 
  * Click Users in left menu
  * Click Add User button
@@ -53,9 +71,10 @@ repeat process for other users:
 rte-operator, tso1-operator, tso2-operator
 
 
-## Specific dev Configuration 
+=== Development-specific configuration
 
-To facilitate development, in  the configuration file provide in the git (dev-realms.json) ,  session are set to have a duration of 10 hours (36000 seconds) and SSL is not required. These parameters shoud not be used in production. 
+To facilitate development, in  the configuration file provided in the git (dev-realms.json) ,session are set to have
+a duration of 10 hours (36000 seconds) and SSL is not required. These parameters should not be used in production.
 
 The following parameters are set : 
 accessTokenLifespan : 36000

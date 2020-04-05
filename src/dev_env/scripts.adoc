@@ -1,4 +1,4 @@
-=== Scripts (bin and CICD)
+= Scripts (bin and CICD)
 
 [horizontal]
 bin/build_all.sh:: builds all artifacts as gradle is not able to manage
@@ -12,7 +12,7 @@ subdirectories to a ramdisk when *sourced* at ~/tmp
 bin/run_all.sh:: runs all all services (see below)
 bin/setup_dockerized_environment.sh:: generate docker images for all services
 
-==== load_environment_ramdisk.sh
+== load_environment_ramdisk.sh
 
 There are prerequisites before sourcing load_environment_ramdisk.sh:
 
@@ -21,7 +21,7 @@ There are prerequisites before sourcing load_environment_ramdisk.sh:
 
 CAUTION: Never ever run a `gradle clean` or `./gradlew clean` to avoid deleting those links.
 
-==== run_all.sh
+== run_all.sh
 
 Please see `run_all.sh -h` usage before running.
 
@@ -60,7 +60,7 @@ instance).
 
 +++ </div></details> +++
 
-==== setup_dockerized_environment.sh
+== setup_dockerized_environment.sh
 
 Please see `setup_dockerized_environment.sh -h` usage before running.
 

@@ -1,7 +1,0 @@
-
-Write docs with level 1 title (so they can be used on their own) + level offset (except for really short bits)
-
-All includes are defined based on root dir
-
-asciidoctor index.adoc -a imagesdir=images
-

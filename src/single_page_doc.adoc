@@ -23,14 +23,12 @@ include::reference_doc/index.adoc[]
 
 include::deployment/index.adoc[]
 
-//TODO dev_env
+include::dev_env/index.adoc[]
 
 include::community/index.adoc[]
 
 include::CICD/index.adoc[]
 
 //TODO Add introduction and move architecture after getting started?
-
-include::release_notes/index.adoc[]
 
 //TODO Reorder

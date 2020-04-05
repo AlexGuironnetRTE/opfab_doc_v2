@@ -13,8 +13,6 @@
 
 = Deployment and Administration of OperatorFabric
 
-== Introduction
-
 The aim of this document is to explain how to configure and deploy OperatorFabric.
 
 == Deployment

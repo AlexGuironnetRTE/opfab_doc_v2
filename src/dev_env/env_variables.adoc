@@ -1,4 +1,4 @@
-== Environment variables
+= Environment variables
 
 These variables are loaded by bin/load_environment_light.sh
 bin/load_environment_ramdisk.sh

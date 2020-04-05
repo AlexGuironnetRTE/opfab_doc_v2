@@ -1,8 +1,22 @@
-== Project Contents
+// Copyright (c) 2020, RTE (http://www.rte-france.com)
+//
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-=== Project Structure
+:revnumber: 1.0.0.RELEASE
+:revdate: 09 March 2020
+:doctype: book
+:sectnums:
+:toc: left
+:toclevels: 3
+:icons: font
+:hide-uri-scheme:
 
-==== Tree View
+
+= Project Structure
+
+== Tree View
 
 [source]
 ----
@@ -49,7 +63,8 @@ project
 └─ui
 ----
 
-==== Content Details
+
+== Content Details
 
 * link:bin[bin]: contains useful scripts
 ** link:bin/travis[travis]: travis script for documentation generation and
@@ -119,12 +134,12 @@ Spring-specific dependencies
 Boot generator for swagger, tailored for OperatorFabric needs
 * link:ui[ui]: Angular sources for the UI
 
-=== Conventions regarding project structure and configuration
+== Conventions regarding project structure and configuration
 
 Sub-projects must conform to a few rules in order for the configured Gradle
 tasks to work:
 
-==== Java
+=== Java
 
 [horizontal]
 [sub-project]/src/main/java:: contains java source code
@@ -132,7 +147,7 @@ tasks to work:
 [sub-project]/src/main/resources:: contains resource files
 [sub-project]/src/test/resources:: contains test resource files
 
-==== Modeling
+=== Modeling
 
 Core services projects declaring REST APIS that use Swagger for their
 definition must declare two files:
@@ -141,8 +156,7 @@ definition must declare two files:
 [sub-project]/src/main/modeling/swagger.yaml:: Swagger API definition
 [sub-project]/src/main/modeling/config.json:: Swagger generator configuration
 
-
-==== Docker
+=== Docker
 
 Services project all have docker image generated in their build cycle (See
 <<Gradle Tasks>>).
@@ -155,53 +169,5 @@ Per project configuration :
 *[sub-project]/build/docker-volume/* by task *copyWorkingDir*. The latest
 can then be mounted as volume in docker containers.
 
-= OperatorFabric - Core
 
-The core sub project contains OperatorFabric business logic services:
 
-[source]
-----
-core
-└──cards-consultation (cards-consultation-party-service)
-└──cards-publication (cards-publication-party-service)
-└──thirds (third-party-business-service)
-└──time (time-business-service)
-└──users (users-business-service)
-----
-
-* link:cards-consultation[cards-consultation (cards-consultation-party-service)] : Cards consultation (read only) service
-* link:cards-publication[cards-publication (cards-publication-party-service)] : Cards publication (write only) service
-* link:thirds[thirds (third-party-business-service)] : Third Party Management service
-* link:time[time (time-business-service)] : Time Management service
-* link:users[users (users-business-service)] : Users Management service
-
-= OperatorFabric - Tools
-
-The tools sub project contains OperatorFabric common utilities for all other subprojects
-
-[source]
-----
-├──tools
-│   ├──generic
-│   │   ├──test-utilities
-│   │   └──utilities
-│   ├── spring
-│   │   ├──spring-amqp-time-utilities
-│   │   ├──spring-mongo-utilities
-│   │   ├──spring-oauth2-utilities
-│   │   ├──spring-test-utilities
-│   │   └──spring-utilities
-│   └──swagger-spring-generators
-----
-
-* link:tools[tools]
-** link:tools/generic[generic]: Generic (as opposed to Spring-related) utility code
-*** link:tools/generic/test-utilities[test-utilities]: Test-specific utility code
-*** link:tools/generic/utilities[utilities]: Utility code
-** link:tools/spring[spring]: Spring-related utility code
-*** link:tools/spring/spring-amqp-time-utilities[spring-amqp-time-utilities] : Utility code with Spring-AMQP-specific dependencies, used to share common features across AMQP-dependent services
-*** link:tools/spring/spring-mongo-utilities[spring-mongo-utilities] : Utility code with Spring-specific dependencies, used to share common features across MongoDB-dependent services
-*** link:tools/spring/spring-oauth2-utilities[spring-oauth2-utilities] : Utility code with Spring-specific dependencies, used to share common features across OAuth2-dependent services
-*** link:tools/spring/spring-test-utilities[spring-test-utilities] : Utility code with Spring-specific dependencies for testing purposes
-*** link:tools/spring/spring-utilities[spring-utilities] : Utility code with Spring-specific dependencies
-** link:tools/swagger-spring-generators[swagger-spring-generators] : Spring Boot generator for swagger, tailored for OperatorFabric needs

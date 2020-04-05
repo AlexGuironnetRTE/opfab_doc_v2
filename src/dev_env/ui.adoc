@@ -4,9 +4,14 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
+:revnumber: 1.0.0.RELEASE
+:revdate: 09 March 2020
 :sectnums:
+:toc: left
+:icons: font
+:hide-uri-scheme:
 
-= OperatorFabric Core User Interface
+= User Interface
 
 This project was partially generated with https://github.com/angular/angular-cli[Angular CLI] version 6.0.8.
 
@@ -96,7 +101,7 @@ Run in the `$OF_HOME/ui/main` directory the command `ng test --watch=false` to e
 
 === Test during UI development
 
-. if the RabittMQ and MongoDB docker containers are not not running, launch them;
+. if the RabbitMQ and MongoDB docker containers are not not running, launch them;
 . set your environment variables with `. $OF_HOME/bin/load_environment_light.sh`;
 . run the micro services using the same command as earlier: `$OF_HOME/bin/run_all.sh start`;
 . if needed, enable a card-operation test flow using the script `$OF_HOME/service/core/cards-publication/src/main/bin/push_cards_loop.sh`;
