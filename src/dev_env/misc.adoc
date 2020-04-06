@@ -8,6 +8,7 @@
 :revdate: 09 March 2020
 :sectnums:
 :toc: left
+:toclevels: 3
 :icons: font
 :hide-uri-scheme:
 

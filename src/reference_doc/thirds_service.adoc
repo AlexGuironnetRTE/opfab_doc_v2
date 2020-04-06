@@ -4,15 +4,15 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-
-= Thirds service
 :revnumber: 1.0.0.RELEASE
 :revdate: 09 March 2020
 :sectnums:
 :toc: left
-:toclevels: 2
+:toclevels: 3
 :icons: font
 :hide-uri-scheme:
+
+= Thirds service
 
 As stated above, third-party applications (or "thirds" for short) interact with OperatorFabric by sending cards.
 The Thirds service allows them to tell OperatorFabric
