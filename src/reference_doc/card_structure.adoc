@@ -12,6 +12,7 @@
 :icons: font
 :hide-uri-scheme:
 
+[[card-structure, Card Structure]]
 = Card Structure
 
 Cards are modelized as `Json` objects. The technical design of card is describe in link:../api/#Card[the swagger api description of Card Publication Service]. A card correspond to the state of a Process in OperatorFabric.

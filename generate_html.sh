@@ -3,7 +3,7 @@
 # Setting image dir
 
 export source_folder=src
-export output_folder=$(echo $(pwd)/documentation | sed "s opfab_doc_v2 AlexGuironnetRTE.github.io g" )
+export output_folder=$(echo $(pwd)/documentation/current | sed "s opfab_doc_v2 AlexGuironnetRTE.github.io g" )
 export image_folder=images
 export output_imagesdir=$output_folder/$imagesdir
 
@@ -12,7 +12,7 @@ generate_html_from_index() {
     dirpath=$(dirname $1)
     output_dirpath=$(echo $dirpath | sed "s $source_folder $output_folder g" )
     imagesdir=$(realpath --relative-to=$output_dirpath $output_imagesdir)/$image_folder
-    asciidoctor -a imagesdir=$imagesdir -D $output_dirpath $filepath
+    asciidoctor -a imagesdir=$imagesdir -a nofooter='' -D $output_dirpath $filepath
 };
 export -f generate_html_from_index;
 
@@ -21,7 +21,7 @@ rm -r $output_folder/*
 
 # Generate output
 ## Images    echo imagesdir $imagesdir
-cp -r $source_folder/$image_folder $output_folder/$image_folder
+cp -pr $source_folder/$image_folder $output_folder/$image_folder
 
 ## Indexes for documents
 find $source_folder -path "*/index.adoc" -exec bash -c 'generate_html_from_index "$0"' {} \;
