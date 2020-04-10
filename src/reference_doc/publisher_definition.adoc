@@ -454,7 +454,7 @@ As seen above, the value of `{{card.data.level1.level1Prop}}` of a test card is 
 
 *Expected result*
 
-image::images/expected-result.png[Formatted root property]
+image::expected-result.png[Formatted root property]
 
 ==== Upload
 

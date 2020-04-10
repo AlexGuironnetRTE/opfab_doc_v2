@@ -45,12 +45,16 @@
 //TODO Test generation
 //TODO Put it on mock website
 //TODO Change gradle tasks and travis on mock
+//TODO Get new roadmap and make it prettier
 
 //TODO Read back notes
 //TODO Look at old site and check that there is nothing left to take/move (footer, favicon, etc.)
 //TODO Document new documentation org, guidelines and pipeline
 
 //TODO Find a way to share common resources (js, images) between apis
+
+//TODO Get rid of (useless?) API doc generation for client API ? Or at least don't trigger it in travis
+//TODO Set API properties (URL etc.) in config files
 
 //Website
 //TODO Add footer with social/contact/github/spectrum icons
