@@ -4,8 +4,10 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
-:revnumber: 1.0.0.RELEASE
-:revdate: 09 March 2020
+:imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
+
+
+
 
 
 // Before moving to opfab.github.io
@@ -16,8 +18,11 @@
 //TODO Change links starting with https://opfab.github.io/documentation
 //TODO Check links
 
-//TODO Try :imagesdir:{gradle-rootdir}/images instead of CLI param
+//TODO Try moving :imagesdir:{gradle-rootdir} to build config
 //TODO Use gradle-project-version / revnumber to avoid having to change version numbers by script
+//TODO Adapt release script and docs
+//TODO Update asciidoctor plugin
+
 
 //TODO Proofreading
 //TODO Test examples to see if they are still accurate
@@ -35,6 +40,7 @@
 //TODO Add CICD doc
 
 //TODO Organize root content
+//TODO Organize images into subfolders
 //TODO Cross-reference troubleshooting and organize into sections
 //TODO Do links work in single page document?
 
