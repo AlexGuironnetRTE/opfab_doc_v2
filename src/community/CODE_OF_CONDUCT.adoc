@@ -6,8 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
 = Contributor Covenant Code of Conduct
 
 == Our Pledge

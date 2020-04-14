@@ -6,10 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
 = Cards Consultation Service
 
 The User Interface depends on the Cards Consultation service to be notified of new cards and to consult existing cards,

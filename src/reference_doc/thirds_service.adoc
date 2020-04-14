@@ -6,10 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
 = Thirds service
 
 As stated above, third-party applications (or "thirds" for short) interact with OperatorFabric by sending cards.

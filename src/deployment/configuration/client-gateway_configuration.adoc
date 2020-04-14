@@ -6,10 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
 = Cloud Gateway service
 
 OperatorFabric Client Gateway service is a Spring Cloud Gateway application

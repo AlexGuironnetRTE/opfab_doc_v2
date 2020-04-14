@@ -6,10 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
 = Thirds Business service
 
 OperatorFabric Thirds Business service is a Spring MVC application

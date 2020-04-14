@@ -6,9 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
 :springboot_doc: https://docs.spring.io/spring-boot/docs/2.1.2.RELEASE/
 :spring_doc: https://docs.spring.io/spring/docs/5.1.4.RELEASE/
 :spring_cloud_config_doc: https://cloud.spring.io/spring-cloud-static/spring-cloud-config/2.1.0.RELEASE/

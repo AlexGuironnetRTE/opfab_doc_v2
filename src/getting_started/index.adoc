@@ -6,10 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
 = OperatorFabric Getting Started
 
 == Prerequisites 

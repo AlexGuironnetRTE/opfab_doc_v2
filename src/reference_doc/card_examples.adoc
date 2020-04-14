@@ -6,10 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
 = Cards Examples
 
 Before detailing the content of cards, let's show you what cards look like through few examples of json.

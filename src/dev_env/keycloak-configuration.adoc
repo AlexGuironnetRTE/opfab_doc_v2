@@ -6,10 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
 = Keycloak Configuration
 
 The configuration needed for development purposes is automatically loaded from the dev-realms.json file.

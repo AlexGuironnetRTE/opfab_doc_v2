@@ -6,10 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
 = Cards Publication Service
 
 The Cards Publication Service exposes a REST API through which third-party applications, or "publishers" can post cards

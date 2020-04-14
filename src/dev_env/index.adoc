@@ -6,10 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
 = Development environment
 
 The aim of this document is to provide all the necessary information to developers who would like to start working on

@@ -6,10 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
 = User Interface
 
 This project was partially generated with https://github.com/angular/angular-cli[Angular CLI] version 6.0.8.

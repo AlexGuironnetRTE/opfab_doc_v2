@@ -6,10 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
 = Users Business service
 
 OperatorFabric Users Business service is a Spring MVC application

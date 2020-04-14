@@ -6,10 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
 = Environment variables
 
 These variables are loaded by bin/load_environment_light.sh

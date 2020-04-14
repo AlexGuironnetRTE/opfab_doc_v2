@@ -6,10 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
 In a configuration service `client-gateway.yml` file
 
     * The application must set up a route to the oauth server

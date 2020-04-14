@@ -6,10 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
 = Web UI
 
 OperatorFabric Web UI service is a Spring MVC application bootstrapped using

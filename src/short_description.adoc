@@ -6,10 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
 OperatorFabric is a modular, extensible, industrial-strength and field-tested
 platform for use in electricity, water, and other utility operations.
 

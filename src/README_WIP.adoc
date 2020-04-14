@@ -6,8 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
 :sectnums:
 :toc: macro
 :toclevels: 2

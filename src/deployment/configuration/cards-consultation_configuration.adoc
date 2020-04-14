@@ -6,10 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
 = Cards-Consultation Business service
 
 OperatorFabric Cards-Consultation Business service is a Spring Webflux application

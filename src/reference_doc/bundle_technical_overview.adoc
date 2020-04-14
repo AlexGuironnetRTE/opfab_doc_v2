@@ -6,10 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
 = Bundle Technical overview
 
 See link:../api/#__Models[the model section of the swagger generated 

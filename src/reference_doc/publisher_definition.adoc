@@ -6,10 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
 = Declaring a Third Party Service
 
 This sections explains Third Party Service Configuration
