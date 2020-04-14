@@ -6,10 +6,7 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
+[[gradle_tasks]]
 = Gradle Tasks
 
 In this section only custom tasks are described. For more

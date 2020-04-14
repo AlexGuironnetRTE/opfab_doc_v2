@@ -6,10 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
 // Before moving to opfab.github.io
 //TODO Create 1.1.0.RELEASE using diff
 //TODO Create 1.2.0.SNAPSHOT using diff
@@ -22,6 +18,7 @@
 //TODO Use gradle-project-version / revnumber to avoid having to change version numbers by script
 //TODO Adapt release script and docs
 //TODO Update asciidoctor plugin
+//TODO Find tool to automatically check all links after rendering
 
 
 //TODO Proofreading

@@ -6,10 +6,7 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
+[[cloud_config_service_config]]
 = Cloud Configuration service
 
 OperatorFabric Configuration service is a Spring Cloud Config application

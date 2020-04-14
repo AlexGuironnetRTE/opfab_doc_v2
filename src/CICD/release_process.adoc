@@ -8,8 +8,7 @@
 
 = Release process
 
-
-
+[[version_numbers]]
 == Version numbers
 
 Version numbers X.Y.Z.label should be understood like this:
@@ -95,7 +94,7 @@ Wait for the build to complete (around 30 minutes).
 . Check that the documentation has been generated and pushed to the GitHub pages website (check version and revision
 date at the top of document)
 +
-NOTE: You won't be able to access it from the homepage until you have <<In the documentation repository (opfab.github.io),updated the _version.yml file>> in the opfab.github.io
+NOTE: You won't be able to access it from the homepage until you have updated the _version.yml file in the opfab.github.io
 repository, so instead you can just type https://opfab.github.io/documentation/X.X.X.SNAPSHOT/developer_guide/ in your browser.
 
 . Check that the tag was correctly pushed to GitHub and is visible under the
@@ -170,7 +169,10 @@ version to finish and make sure that they've had the expected output before star
 preparation of the next version. This is because any committed/pushed changes preparing the
 new version will make rolling back or correcting any mistake on the release more complicated.
 
-To prepare a next version you simply need to increment the version after a release (see <<Version numbers>>).
+To prepare a next version you simply need to increment the version after a release (see
+ifdef::single-page-doc[<<version_numbers, Version numbers>>]
+ifndef::single-page-doc[<<{gradle-rootdir}/documentation/current/CICD/index.adoc#version_numbers, Version numbers>>]
+).
 
 === In the source repository (operatorfabric-core)
 

@@ -6,10 +6,6 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
 = Project Structure
 
 == Tree View
@@ -154,8 +150,10 @@ definition must declare two files:
 
 === Docker
 
-Services project all have docker image generated in their build cycle (See
-<<Gradle Tasks>>).
+Services project all have docker image generated in their build cycle. See
+ifdef::single-page-doc[<<gradle_tasks, Gradle Tasks>>]
+ifndef::single-page-doc[<<{gradle-rootdir}/dev_env/index.adoc#gradle_tasks, Gradle Tasks>>]
+for details.
 
 Per project configuration :
 

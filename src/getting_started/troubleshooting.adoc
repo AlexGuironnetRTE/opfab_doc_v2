@@ -6,11 +6,10 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
+[[troubleshooting_bundle]]
 = Troubleshooting
+
+//TODO Merge with other troubleshooting?
 
 == My bundle is not loaded
 

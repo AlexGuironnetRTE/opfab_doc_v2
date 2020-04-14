@@ -6,10 +6,7 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
+[[troubleshooting]]
 = Troubleshooting
 
 +++ <details><summary> +++

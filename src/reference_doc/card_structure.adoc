@@ -6,11 +6,9 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
+//TODO Remove unnecessary anchors
 
-
-
-
-[[card-structure, Card Structure]]
+[[card_structure]]
 = Card Structure
 
 Cards are modelized as `Json` objects. The technical design of card is describe in link:../api/#Card[the swagger api description of Card Publication Service]. A card correspond to the state of a Process in OperatorFabric.
@@ -23,12 +21,12 @@ Those attributes are used by OperatorFabric to manage how cards are stored, to w
 
 Below, the `json` technical key is in the '()' following the title.
 
-[#_card_publisher]
+[[card_publisher]]
 ==== Publisher (`publisher`)
 
 Quite obviously it's the Third party which publish the card. This information is used to look up for Presentation resources of the card.
 
-[#_card_publisher_version]
+[[card_publisher_version]]
 ==== Publisher Version (`publisherVersion`)
 
 Refers the `version` of `publisher third` to use to render this card (i18n, title, summary, media and details).
@@ -38,10 +36,14 @@ As through time, the presentation of a publisher card data changes, this changes
 
 It's the way to identify the process to which the card is associated. A card represent a state of a process.
 
-[#startDate]
+[[start_date]]
 ==== Start Date (`startDate`)
 
-This attribute is a part of the card life management system. It's indicate OperatorFabric the moment since the card can be displayed to the operators or main recipients, <<_displaying_rules, see Displaying rules>>.
+This attribute is a part of the card life management system. It's indicate OperatorFabric the moment since the card
+can be displayed to the operators or main recipients, see
+ifdef::single-page-doc[<<display_rules, Display rules>>]
+ifndef::single-page-doc[<<{gradle-rootdir}/documentation/current/reference_doc/index.adoc#display_rules, Display rules>>]
+.
 
 ==== Severity (`severity`)
 
@@ -52,19 +54,22 @@ The severity is a core principe of the OperatorFabric Card system. There are 4 s
 3. COMPLIANT: the process related to the card is in a compliant status. In the UI, an action is green.;
 4. INFORMATION: give information to the operator. In the GUI, a information is blue.
 
-[#cardTitle]
+[[card_title]]
 ==== Title (`title`)
 
 This attribute is display as header of a card in the feed of the GUI. It's the main User destined Information of a card. The value refer to an `i18n` value used to localized this information.
 
-[#cardSummary]
+[[card_summary]]
 ==== Summary (`summary`)
 
 This attribute is display as a description of a card in the feed of the GUI, when the card is selected by the operator. It's completing the information of the card title. The value refer to an `i18n` value used to localized this information.
 
 === Recipient (`recipient`)
 
-Declares to whom the card is send. For more details about way recipient works <<_displaying_rules, see Displaying rules>>. Without recipient declaration a card is useless in `OperatorFabric` system.
+Declares to whom the card is send. For more details about way recipient works see
+ifdef::single-page-doc[<<display_rules, Display rules>>]
+ifndef::single-page-doc[<<{gradle-rootdir}/documentation/current/reference_doc/index.adoc#display_rules, Display rules>>]
+. Without recipient declaration a card is useless in `OperatorFabric` system.
 
 === Store information
 
@@ -86,11 +91,20 @@ With this attributes OperatorFabric know when to display or hide cards, but also
 
 ==== Start Date (`startDate`)
 
-<<startDate, see Start Date in Technical Information of the Card>> and <<_displaying_rules, for more examples>>.
+See
+ifdef::single-page-doc[<<start_date, Start Date>>]
+ifndef::single-page-doc[<<{gradle-rootdir}/documentation/current/reference_doc/index.adoc#start_date, Start Date>>]
+ and
+ifdef::single-page-doc[<<display_rules, Display rules>>]
+ifndef::single-page-doc[<<{gradle-rootdir}/documentation/current/reference_doc/index.adoc#display_rules, Display rules>>]
+for more examples.
 
 ==== End Date (`endDate`)
 
-Fixes the moment until when `OperatorFabric` displays the card. After the card is remove from the GUI feed, <<_display_rules, see Display Rules for some examples>>.
+Fixes the moment until when `OperatorFabric` displays the card. After the card is remove from the GUI feed,
+ifdef::single-page-doc[<<display_rules, Display rules>>]
+ifndef::single-page-doc[<<{gradle-rootdir}/documentation/current/reference_doc/index.adoc#display_rules, Display rules>>]
+for some examples.
 
 === Last Time to Decide (`lttd`)
 
@@ -114,27 +128,41 @@ There are two kind of User destined information in a card. Some are restricted t
 
 ==== Title (`title`)
 
-<<cardTitle, see Title in Technical Information of the Card>>
+See
+ifdef::single-page-doc[<<card_title, Title>>]
+ifndef::single-page-doc[<<{gradle-rootdir}/documentation/current/reference_doc/index.adoc#card_title, Title>>]
+.
 
 ==== Summary (`summary`)
 
-<<cardSummary, see Summary in Technical Information of the Card>>
+See
+ifdef::single-page-doc[<<card_summary, Summary>>]
+ifndef::single-page-doc[<<{gradle-rootdir}/documentation/current/reference_doc/index.adoc#card_summary, Summary>>]
+.
 
 === Custom part
 
 ==== Data (`data`)
 
-Determines where custom information is store. The content in this attribute, is purely `publisher` choice. This content, as long as it's in `json` format can be used to display details. For the way the details are displayed <<_presentation_information_of_the_card,see below>>.
+Determines where custom information is store. The content in this attribute, is purely `publisher` choice.
+This content, as long as it's in `json` format can be used to display details. For the way the details are
+displayed, see below.
 
 == Presentation Information of the card
 
-=== Media (`media`)
-
-Some cards can emit a sound when displayed in the feed of the GUI, the id of audio notification is indicated in this attribute.
-
 === details (`details`)
 
-This attribute is a string of objects containing a `title` attribute which is `i18n` key and a `template` attribute which refers to a template name contained in the publisher bundle. The bundle in which those resources will be looked for is the one corresponding of the <<_card_publisher_version, version>> declared in the card for the current <<_card_publisher, publisher>>. If no resource is found, either because there is no bundle for the given version or there is no resource for the given key, then the corresponding key is displayed in the details section of the GUI.
+This attribute is a string of objects containing a `title` attribute which is `i18n` key and a `template` attribute
+which refers to a template name contained in the publisher bundle. The bundle in which those resources will be looked
+for is the one corresponding of the
+ifdef::single-page-doc[<<card_publisher_version, version>>]
+ifndef::single-page-doc[<<{gradle-rootdir}/documentation/current/reference_doc/index.adoc#card_publisher_version, version>>]
+declared in the card for the current
+ifdef::single-page-doc[<<card_publisher, publisher>>]
+ifndef::single-page-doc[<<{gradle-rootdir}/documentation/current/reference_doc/index.adoc#card_publisher, publisher>>]
+.
+If no resource is found, either because there is no bundle for the given version or
+there is no resource for the given key, then the corresponding key is displayed in the details section of the GUI.
 
 link:../../../thirds/1.0.0.RELEASE/reference/#_bundle[See the documentation about third bundle in the Third service documentation].
 

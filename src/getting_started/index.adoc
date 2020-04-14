@@ -80,8 +80,10 @@ image::formated-card-details.jpg[detail card screenshot]
 ==== Anatomy of the card : 
 A card is containing information regarding the publisher, the recipients , the process , the data to show ... 
 
-More information can be found in the <<../reference_doc/index.adoc#_card_structure,card structure>> section of the
-reference documentation.
+More information can be found in the
+ifdef::single-page-doc[<<card_structure, Card Structure>>]
+ifndef::single-page-doc[<<{gradle-rootdir}/documentation/current/reference_doc/index.adoc#card_structure, Card Structure>>]
+section of the reference documentation.
 
 ----
 {

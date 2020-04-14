@@ -6,17 +6,17 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
-
-
-
-
+[[cloud_registry_service_config]]
 = Cloud Registry service
 
 OperatorFabric Registry service is a Spring Eureka application
 bootstrapped using SpringBoot.
 
 In our spring micro service architecture Eureka Registry instances are the second
-services to bootstrap, its configuration relies on the <<Cloud Configuration service>>.
+services to bootstrap, its configuration relies on the
+ifdef::single-page-doc[<<cloud_config_service_config, Cloud Configuration Service>>]
+ifndef::single-page-doc[<<{gradle-rootdir}/deployment/index.adoc#cloud_config_service_config, Cloud Configuration Service>>]
+.
 
 == Mandatory configuration, Profiles and default properties
 
