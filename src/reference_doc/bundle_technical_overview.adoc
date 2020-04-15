@@ -6,10 +6,13 @@
 
 :imagesdir: {gradle-rootdir}/src/docs/asciidoc/images
 
+[[bundle_technical_overview]]
 = Bundle Technical overview
 
-See link:../api/#__Models[the model section of the swagger generated 
-documentation] for data layout
+See
+ifdef::single-page-doc[link:api/thirds/index.html[the model section]]
+ifndef::single-page-doc[link:{gradle-rootdir}/documentation/current/api/thirds/index.html[the model section]]
+(at the bottom) of the swagger generated documentation for data structure.
 
 [[resource-serving]]
 == Resource serving
@@ -25,9 +28,10 @@ selector
 === Internationalization
 
 Internationalization (i18n) files are json file (JavaScript Object Notation).
-One file must be defined by module supported language. See 
-link:../api/#__Models[the model section of the swagger
-generated documentation] for data layout.
+One file must be defined by module supported language. See
+ifdef::single-page-doc[link:api/thirds/index.html[the model section]]
+ifndef::single-page-doc[link:{gradle-rootdir}/documentation/current/api/thirds/index.html[the model section]]
+(at the bottom) of the swagger generated documentation for data structure.
 
 Sample json i18n file
 
@@ -71,7 +75,11 @@ favor the lightest file formats (ogg,mp3, ...)
 Templates are https://handlebarsjs.com/[Handlebars] template files. Templates
 are fuelled with a scope structure composed of
 
- * a *card* property (See link:../api/#__Models[card data model] for more information)
+ * a *card* property (See
+ifdef::single-page-doc[link:api/cards/index.html[card data model]]
+ifndef::single-page-doc[link:{gradle-rootdir}/documentation/current/api/cards/index.html[card data model]]
+for more information)
+
  * a *userContext* :
    ** *login*: user login
    ** *token*: user jwt token

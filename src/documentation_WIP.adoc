@@ -13,6 +13,7 @@ All includes are defined based on root dir
 
 asciidoctor index.adoc -a imagesdir=images
 
+Avoid long lines (give char number)
 
 using custom ids : cumbersome but
 1) you get a warning if duplicates rather than silently link to the wrong section
@@ -24,3 +25,6 @@ defining label with the id doesn't work with relative links
 
 ifdef::single-page-doc[<<card_structure, Card Structure>>]
 ifndef::single-page-doc[<<{gradle-rootdir}/documentation/current/reference_doc/index.adoc#card_structure, Card Structure>>]
+
+ifdef::single-page-doc[link:api/cards/index.html#/archives[here]]
+ifndef::single-page-doc[link:{gradle-rootdir}/documentation/current/api/cards/index.html#/archives[here]]

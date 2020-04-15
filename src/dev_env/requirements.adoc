@@ -43,7 +43,7 @@ source bin/load_environment_light.sh
 
 == Software
 
-* link:RABBITMQ.md[RabbitMQ 3.7.6 +]: AMQP messaging layer allows inter
+* RabbitMQ 3.7.6 +: AMQP messaging layer allows inter
 service communication
 * MongoDB 4.0 +: Card persistent storage
 
@@ -62,7 +62,7 @@ MongoDB is required for :
 IMPORTANT: Installing MongoDB and RabbitMQ is not necessary as preconfigured
 MongoDB and RabbitMQ are available in the form of docker-compose configuration
 files at
-link:src/main/docker[src/main/docker]
+link:https://github.com/opfab/operatorfabric-core/tree/master/src/main/docker[src/main/docker]
 
 == Browser support
 

@@ -46,7 +46,7 @@ MongoDB, RabbitMQ and SonarQube are needed for the tests to be run so the
 build can be done.
 
 A docker-compose file with properly configured containers is available
-link:src/main/docker/test-quality-environment/[there].
+link:https://github.com/opfab/operatorfabric-core/tree/master/src/main/docker/test-quality-environment/[there].
 
 The `docker-compose` can be run in detached mode:
 ----

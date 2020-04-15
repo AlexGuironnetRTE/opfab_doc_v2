@@ -11,7 +11,10 @@
 [[card_structure]]
 = Card Structure
 
-Cards are modelized as `Json` objects. The technical design of card is describe in link:../api/#Card[the swagger api description of Card Publication Service]. A card correspond to the state of a Process in OperatorFabric.
+Cards are represented as `Json` objects. The technical design of cards is described in
+ifdef::single-page-doc[link:api/cards/[the cards api documentation]]
+ifndef::single-page-doc[link:{gradle-rootdir}/documentation/current/api/cards/[the cards api documentation]]
+. A card correspond to the state of a Process in OperatorFabric.
 
 == Technical Information of the card
 
@@ -47,12 +50,13 @@ ifndef::single-page-doc[<<{gradle-rootdir}/documentation/current/reference_doc/i
 
 ==== Severity (`severity`)
 
-The severity is a core principe of the OperatorFabric Card system. There are 4 severities available(link:../api/#SeverityEnum[Technical definition of OperatorFabric Card Severity]). A color is associated in the GUI to each severity. Here the details about severity and their meaning for OperatorFabric:
+The severity is a core principe of the OperatorFabric Card system. There are 4 severities available.
+A color is associated in the GUI to each severity. Here the details about severity and their meaning for OperatorFabric:
 
-1. ALARM: represents a critical state of the associated process, need an action from the operator. In the Gui, the card is red;
-2. ACTION: the associated process need an action form operators in order to evolve correctly. In the Gui, an action is orange;
-3. COMPLIANT: the process related to the card is in a compliant status. In the UI, an action is green.;
-4. INFORMATION: give information to the operator. In the GUI, a information is blue.
+1. ALARM: represents a critical state of the associated process, need an action from the operator. In the UI, the card is red;
+2. ACTION: the associated process need an action form operators in order to evolve correctly. In the UI, the card is orange;
+3. COMPLIANT: the process related to the card is in a compliant status. In the UI, the card is green.;
+4. INFORMATION: give information to the operator. In the UI, the card is blue.
 
 [[card_title]]
 ==== Title (`title`)
@@ -164,7 +168,10 @@ ifndef::single-page-doc[<<{gradle-rootdir}/documentation/current/reference_doc/i
 If no resource is found, either because there is no bundle for the given version or
 there is no resource for the given key, then the corresponding key is displayed in the details section of the GUI.
 
-link:../../../thirds/1.0.0.RELEASE/reference/#_bundle[See the documentation about third bundle in the Third service documentation].
+See more documentation about third bundles
+ifdef::single-page-doc[<<bundle_technical_overview, here>>]
+ifndef::single-page-doc[<<{gradle-rootdir}/documentation/current/reference_doc/index.adoc#bundle_technical_overview, here>>]
+.
 
 *example:*
 

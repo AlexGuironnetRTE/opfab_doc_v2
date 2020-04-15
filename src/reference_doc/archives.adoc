@@ -38,4 +38,5 @@ of the card.
 == Archive endpoints in the card-consultation API
 
 This Archives screen relies on dedicated endpoints in the card-consultation API, as described
-link:https://opfab.github.io/projects/services/core/cards-consultation/1.0.0.RELEASE/api/#Archives[here].
+ifdef::single-page-doc[link:api/cards/index.html#/archives[here]]
+ifndef::single-page-doc[link:{gradle-rootdir}/documentation/current/api/cards/index.html#/archives[here]]

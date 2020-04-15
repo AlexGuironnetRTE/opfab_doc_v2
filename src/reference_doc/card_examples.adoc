@@ -107,11 +107,17 @@ For this example we will use our previous example for the `TSO1` group with a `d
 }
 ....
 
-This card contains some data but when selected in the feed nothing more than the previous example of card happen because there is no rendering configuration.
+This card contains some data but when selected in the feed nothing more than the previous example of card happen because
+there is no rendering configuration.
 
 === Fully useful
 
-When a card is selected in the feed (of the GUI), the data is displayed in the detail panel. The way details are formatted depends on template uploaded by Third parties as link:https://opfab.github.io/projects/services/core/thirds/1.0.0.RELEASE/reference/#_bundle[describe here]. To have an effective example without to many actions to performed, the following example will use an already existing configuration.The one presents in the development version of OperatorFabric, for test purpose(`TEST` bundle).
+When a card is selected in the feed (of the GUI), the data is displayed in the detail panel.
+The way details are formatted depends on template uploaded by Third parties as
+ifdef::single-page-doc[<<bundle_technical_overview, described here>>]
+ifndef::single-page-doc[<<{gradle-rootdir}/documentation/current/reference_doc/index.adoc#bundle_technical_overview, described here>>]
+. To have an effective example without to many actions to performed, the following example will use an already existing
+configuration.The one presents in the development version of OperatorFabric, for test purpose(`TEST` bundle).
 
 At the card level, the attributes in the card telling OperatorFabric which template to use is the `details` attributes.
 
@@ -173,17 +179,17 @@ The card we are looking after, has the same value for the startDate than in the 
 
 So our card is present in the feed between "11h34" and "13h34". Before and after those hours, the card is not available.
 
-[#_card_recipients]
+[[card_recipients]]
 === Recipients
 
-The attribute `recipient` of a card tells to whom it's sent. It's value format is an link:../api/#Recipient[`object named recipient`] that describe the rule for recipient computation.
+The attribute `recipient` of a card tells to whom it's sent.
 
 The available types are:
 
-- `GROUP`
-- `USER`
-- `UNION`
-- `DEADEND`
+- `GROUP`: Card is sent to every user belonging to a group (identity)
+- `USER` : Card is sent to a single user (identity)
+- `UNION` : Card is sent to users according to the union of a recipient list (recipients)
+- `DEADEND` : Card is sent to no one (mostly for testing purposes)
 
 The simplest way to determine the recipient is to assign the card to a `user` or a `group` as seen previously in
 ifdef::single-page-doc[<<minimal_card, Minimal Card>>]
